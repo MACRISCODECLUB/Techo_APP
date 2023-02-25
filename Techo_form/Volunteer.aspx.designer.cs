@@ -11,7 +11,7 @@ namespace Techo_form
 {
 
 
-    public partial class _default
+    public partial class Volunteer
     {
 
         /// <summary>
