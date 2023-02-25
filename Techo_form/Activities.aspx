@@ -53,15 +53,10 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_typeactiv" runat="server" Text="Tipo"></asp:Label>
                     <!--Dropwdown selecct Type-->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar Tipo
-                        </button>
+                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server">
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" data-source-id="id_type">Tipo</a></li>
-                        </ul>
-                    </div>
+                    </asp:DropDownList>
+
                 </div>
             </div>
             <br />
