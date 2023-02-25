@@ -53,10 +53,12 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_typeactiv" runat="server" Text="Tipo"></asp:Label>
                     <!--Dropwdown selecct Type-->
-                    <asp:DropDownList CssClass="form-control" ID="DropDownList1" runat="server">
-
+                    <asp:DropDownList CssClass="dropdown-toggle" ID="ddl_ActivityType"
+                        runat="server" DataSourceID="ds_TypeActivities" DataTextField="Type_name" DataValueField="Id_Type" AppendDataBoundItems="True">
+                        <asp:ListItem Selected="True" Value="-1">Seleccione Tipo</asp:ListItem>
                     </asp:DropDownList>
 
+                    <asp:SqlDataSource runat="server" ID="ds_TypeActivities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [TYPE] ORDER BY [Type_name]"></asp:SqlDataSource>
                 </div>
             </div>
             <br />
