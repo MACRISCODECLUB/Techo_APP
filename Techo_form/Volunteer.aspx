@@ -25,11 +25,11 @@
         <div class="row gy-3">
             <div class="col-md-6">
                 <asp:Label ID="lbl_FirstName" runat="server" Text="NOMBRE" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="tb_FirstName" runat="server" placeholder="Juan"></asp:TextBox> <br />
+                <asp:TextBox Cssclass="form-control" ID="tb_FirstName" runat="server" placeholder="Juan"></asp:TextBox> <br />
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_LastName" runat="server" Text="APELLIDO" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="tb_LastName" runat="server" placeholder="Perez"></asp:TextBox>
+                <asp:TextBox Cssclass="form-control" ID="tb_LastName" runat="server" placeholder="Perez"></asp:TextBox>
             </div>
             <div class="col-md-6">
                <asp:Label ID="lbl_Gender" runat="server" Text="GENERO" Font-Bold="true"></asp:Label>
@@ -42,29 +42,38 @@
             <div class="col-md-6">
                 <asp:Label ID="lbl_DOB" runat="server" Text="FECHA DE NACIMIENTO" Font-Bold="true"></asp:Label> 
                 <asp:Label ID="lbl_EjDOB" runat="server" Text="Ej: 21/06/2023" ForeColor="#808080"></asp:Label> <br />
-                <asp:TextBox ID="tb_DOB" runat="server" placeholder="dd/mm/yyyy"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" ID="tb_DOB" runat="server" placeholder="dd/mm/yyyy"></asp:TextBox>
             </div>
             <div class="col-md-6">
-                <asp:Label ID="lbl_RNP_Number" runat="server" Text="NUMERO DE DOCUMENTO / PASAPORTE" Font-Bold="true"></asp:Label>
-                <asp:TextBox ID="tb_RNP_Number" runat="server" placeholder="0801200016916"></asp:TextBox>
+                <asp:Label ID="lbl_RNP_Number" runat="server" Text="NUMERO DE DOCUMENTO / PASAPORTE" Font-Bold="true"></asp:Label> <br />
+                <asp:TextBox CssClass="form-control" ID="tb_RNP_Number" runat="server" placeholder="0801200016916"></asp:TextBox>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_Cellphone" runat="server" Text="TELEFONO" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="tb_Cellphone" runat="server" placeholder="+504 9988-7766"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" ID="tb_Cellphone" runat="server" placeholder="+504 9988-7766"></asp:TextBox>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_Country" runat="server" Text="PAIS ACTUAL" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="TextBox1" runat="server" placeholder="Honduras"></asp:TextBox>
+                <asp:DropDownList Cssclass="form-control" ID="DDL_Country" runat="server" DataSourceID="ds_Country" DataTextField="Country_Name" DataValueField="Id_Country" AppendDataBoundItems="True">
+                    <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource runat="server" ID="ds_Country" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [COUNTRIES] ORDER BY [Country_Name]"></asp:SqlDataSource>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_State" runat="server" Text="ESTADO ACTUAL" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="tb_State" runat="server" placeholder="Francisco Morazan"></asp:TextBox>
+                <asp:DropDownList Cssclass="form-control" ID="DDL_State" runat="server" DataSourceID="ds_States" DataTextField="State_Name" DataValueField="Id_State" AppendDataBoundItems="True">
+                    <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource runat="server" ID="ds_States" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [STATES] ORDER BY [State_Name]"></asp:SqlDataSource>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_City" runat="server" Text="CIUDAD ACTUAL" Font-Bold="true"></asp:Label> <br />
-                <asp:TextBox ID="TextBox2" runat="server" placeholder="Tegucigalpa"></asp:TextBox> 
+                <asp:DropDownList CssClass="form-control" ID="DDL_City" runat="server" DataSourceID="ds_Cities" DataTextField="City_Name" DataValueField="Id_City" AppendDataBoundItems="True">
+                    <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
+                </asp:DropDownList>
+                <asp:SqlDataSource runat="server" ID="ds_Cities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [CITIES] ORDER BY [City_Name]"></asp:SqlDataSource>
             </div>
-            <div class="row g-1">
+            <div class="row g-1" style="padding-top:20px">
             <div class="col-md-6">
                 <asp:CheckBox ID="cb_Politica_Privacidad" runat="server" Text="Acepto la Politica de Privacidad" Font-Bold="true" /></div>
             <div class="col-md-16">

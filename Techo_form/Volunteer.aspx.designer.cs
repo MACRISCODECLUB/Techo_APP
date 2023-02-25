@@ -11,7 +11,7 @@ namespace Techo_form
 {
 
 
-    public partial class Volunteer
+    public partial class _default
     {
 
         /// <summary>
@@ -141,13 +141,22 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_Country;
 
         /// <summary>
-        /// TextBox1 control.
+        /// DDL_Country control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_Country;
+
+        /// <summary>
+        /// ds_Country control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_Country;
 
         /// <summary>
         /// lbl_State control.
@@ -159,13 +168,22 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_State;
 
         /// <summary>
-        /// tb_State control.
+        /// DDL_State control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_State;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_State;
+
+        /// <summary>
+        /// ds_States control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_States;
 
         /// <summary>
         /// lbl_City control.
@@ -177,13 +195,22 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_City;
 
         /// <summary>
-        /// TextBox2 control.
+        /// DDL_City control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_City;
+
+        /// <summary>
+        /// ds_Cities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_Cities;
 
         /// <summary>
         /// cb_Politica_Privacidad control.
