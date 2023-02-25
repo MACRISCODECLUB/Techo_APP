@@ -9,3 +9,25 @@
     padding-left: 1em;
 }
 
+
+.dp_1 {
+    border: 2px solid #7d6754;
+    border-radius: 5px;
+    padding: 3px;
+    -webkit-appearance: none;
+    background-image: url('https://i.ibb.co/7rD0qP2/caret-down-fill.png');
+    background-position: 95%;
+    background-repeat: no-repeat;
+    width: 25%;
+}
+
+.dp_big {
+    border: 2px solid #7d6754;
+    border-radius: 5px;
+    padding: 3px;
+    -webkit-appearance: none;
+    background-image: url('https://i.ibb.co/7rD0qP2/caret-down-fill.png');
+    background-position: 95%;
+    background-repeat: no-repeat;
+    width: 35%;
+}

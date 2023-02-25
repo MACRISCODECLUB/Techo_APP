@@ -13,5 +13,17 @@ namespace Techo_form
         {
 
         }
+
+        protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddl_ActivityType.Items.Clear();
+            ddl_ActivityType.DataBind();
+        }
+
+        protected void ddl_CountryActiv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddl_StateActiv.Items.Clear();
+            ddl_StateActiv.DataBind();
+        }
     }
 }

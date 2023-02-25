@@ -42,6 +42,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_categoryactiv;
 
         /// <summary>
+        /// ddl_CategoryActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_CategoryActiv;
+
+        /// <summary>
+        /// ds_CategoryActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_CategoryActiv;
+
+        /// <summary>
         /// lbl_typeactiv control.
         /// </summary>
         /// <remarks>
@@ -78,6 +96,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_countryactiv;
 
         /// <summary>
+        /// ddl_CountryActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_CountryActiv;
+
+        /// <summary>
+        /// ds_CountryActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_CountryActiv;
+
+        /// <summary>
         /// lbl_stateactiv control.
         /// </summary>
         /// <remarks>
@@ -85,6 +121,24 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_stateactiv;
+
+        /// <summary>
+        /// ddl_StateActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_StateActiv;
+
+        /// <summary>
+        /// ds_StateActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_StateActiv;
 
         /// <summary>
         /// lbl_officeactiv control.
@@ -96,6 +150,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_officeactiv;
 
         /// <summary>
+        /// ddl_officeactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_officeactiv;
+
+        /// <summary>
+        /// ds_OfficeActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_OfficeActiv;
+
+        /// <summary>
         /// lbl_statusactiv control.
         /// </summary>
         /// <remarks>
@@ -103,6 +175,24 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_statusactiv;
+
+        /// <summary>
+        /// ddl_status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_status;
+
+        /// <summary>
+        /// dsStatusActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsStatusActiv;
 
         /// <summary>
         /// lbl_visibilityactiv control.

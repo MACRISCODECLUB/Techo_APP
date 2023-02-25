@@ -36,29 +36,27 @@
                 <div class="dropdown col-md-6">
                     <asp:Label ID="lbl_categoryactiv" runat="server" Text="Categoria"></asp:Label>
                     <!--Dropdown select Category-->
-                    <div class="dropdwn">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar Categoria
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Actividades de Asentamiento</a></li>
-                            <li><a class="dropdown-item" href="#">Actividades de Oficina y Formacion</a></li>
-                            <li><a class="dropdown-item" href="#">Eventos Especiales</a></li>
-                            <li><a class="dropdown-item" href="#">Virtual</a></li>
-                        </ul>
-                    </div>
+                    <asp:DropDownList CssClass="form-control dp_big" ID="ddl_CategoryActiv" runat="server" DataSourceID="ds_CategoryActiv" DataTextField="Category" DataValueField="Id_Category" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="ddl_CategoryActiv_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="-1">Seleccione una Categoria</asp:ListItem>
+                    </asp:DropDownList>
+
+
+                    <asp:SqlDataSource runat="server" ID="ds_CategoryActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Category], [Category] FROM [CATEGORY]"></asp:SqlDataSource>
                 </div>
             
 
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_typeactiv" runat="server" Text="Tipo"></asp:Label>
                     <!--Dropwdown selecct Type-->
-                    <asp:DropDownList CssClass="dropdown-toggle" ID="ddl_ActivityType"
-                        runat="server" DataSourceID="ds_TypeActivities" DataTextField="Type_name" DataValueField="Id_Type" AppendDataBoundItems="True">
-                        <asp:ListItem Selected="True" Value="-1">Seleccione Tipo</asp:ListItem>
+                    <asp:DropDownList CssClass="form-control dp_big" ID="ddl_ActivityType"
+                        runat="server" DataSourceID="ds_TypeActivities" DataTextField="Type_name" DataValueField="Id_Type" AppendDataBoundItems="True" AutoPostBack="True">
+                        <asp:ListItem Selected="True" Value="-1">Escoja una Categoria</asp:ListItem>
                     </asp:DropDownList>
-
-                    <asp:SqlDataSource runat="server" ID="ds_TypeActivities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [TYPE] ORDER BY [Type_name]"></asp:SqlDataSource>
+                    <asp:SqlDataSource runat="server" ID="ds_TypeActivities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Type], [Type_name] FROM [TYPE] WHERE ([Id_Category] = @Id_Category)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddl_CategoryActiv" PropertyName="SelectedValue" DefaultValue="" Name="Id_Category" Type="Int32"></asp:ControlParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
             <br />
@@ -66,29 +64,23 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_countryactiv" runat="server" Text="País"></asp:Label>
                     <!--Dropwdown select Country-->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar País
-                        </button>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" data-source-id="id_country">Pais</a></li>
-                        </ul>
-                    </div>
+                    <asp:DropDownList CssClass="form-control dp_1" ID="ddl_CountryActiv" runat="server" DataSourceID="ds_CountryActiv" DataTextField="Country_Name" DataValueField="Id_Country" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="ddl_CountryActiv_SelectedIndexChanged">
+                        <asp:ListItem Selected="True" Value="-1">Seleccione Pais</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource runat="server" ID="ds_CountryActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Country], [Country_Name] FROM [COUNTRIES]"></asp:SqlDataSource>
                 </div>
 
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_stateactiv" runat="server" Text="Departamento"></asp:Label>
                     <!--Dropwdown select Country-->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar Departamento
-                        </button>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" data-source-id="id_State">Departamento</a></li>
-                        </ul>
-                    </div>
+                    <asp:DropDownList ID="ddl_StateActiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_StateActiv" DataTextField="State_Name" DataValueField="Id_State" AppendDataBoundItems="True" AutoPostBack="True">
+                        <asp:ListItem Selected="True">Seleccione Departamento</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource runat="server" ID="ds_StateActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [State_Name], [Id_State] FROM [STATES] WHERE ([Id_Country] = @Id_Country)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddl_CountryActiv" PropertyName="SelectedValue" Name="Id_Country" Type="Int32"></asp:ControlParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
             <br />
@@ -96,31 +88,17 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_officeactiv" runat="server" Text="Oficina"></asp:Label>
                     <!--Dropwdown select Office-->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar Oficina
-                        </button>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Oficina Tegucigalpa</a></li>
-                            <li><a class="dropdown-item" href="#">Oficina San Pedro Sula</a></li>
-                        </ul>
-                    </div>
+                    <asp:DropDownList CssClass="form-control dp_big" ID="ddl_officeactiv" runat="server" DataSourceID="ds_OfficeActiv" DataTextField="Office" DataValueField="Id_Office"></asp:DropDownList>
+                    <asp:SqlDataSource runat="server" ID="ds_OfficeActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Office], [Id_Office] FROM [OFFICE]"></asp:SqlDataSource>
                 </div>
 
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_statusactiv" runat="server" Text="Estado"></asp:Label>
                     <!--Dropwdown select Status-->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Seleccionar Oficina
-                        </button>
-
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Abierta</a></li>
-                            <li><a class="dropdown-item" href="#">Cerrada</a></li>
-                        </ul>
-                    </div>
+                    <asp:DropDownList ID="ddl_status" runat="server" DataSourceID="dsStatusActiv" DataTextField="Status" DataValueField="Id_Status" AppendDataBoundItems="True">
+                        <asp:ListItem>Escorger Estatus</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource runat="server" ID="dsStatusActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Status], [Status] FROM [STATUS]"></asp:SqlDataSource>
                 </div>
             </div>
             <br />
