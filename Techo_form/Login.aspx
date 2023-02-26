@@ -18,7 +18,7 @@
     <div class="col-md-5 p-lg-5 mx-auto my-5"></div>
         <h1 class="mb-3 h2">Techo.org</h1>
         <p>
-            Yo
+            Welcome
         </p>
   </div>
     <div class="container">
