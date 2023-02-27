@@ -14,7 +14,7 @@
         <div class="container position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
             <div class="row">
                 <div class="col-lg-12" id="logo_cont">
-                    <img src="https://actividades.techo.org/img/logo_large.png" alt="XD" />         
+                    <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />         
                 </div>
             </div>
         </div>
@@ -95,10 +95,10 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_statusactiv" runat="server" Text="Estado"></asp:Label>
                     <!--Dropwdown select Status-->
-                    <asp:DropDownList ID="ddl_status" runat="server" DataSourceID="dsStatusActiv" DataTextField="Status" DataValueField="Id_Status" AppendDataBoundItems="True">
-                        <asp:ListItem>Escorger Estatus</asp:ListItem>
+                    <asp:DropDownList ID="ddl_status" CssClass="form-control dp_1" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Status" DataValueField="Id_Status" AppendDataBoundItems="True">
+                        <asp:ListItem Selected="True" Value="-1">Escorger Estatus</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:SqlDataSource runat="server" ID="dsStatusActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Status], [Status] FROM [STATUS]"></asp:SqlDataSource>
+                    <asp:SqlDataSource runat="server" ID="ds_visibilityactiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [STATUS], [id_status] FROM [STATUS]"></asp:SqlDataSource>
                 </div>
             </div>
             <br />
@@ -106,30 +106,20 @@
         <div class="col-md-6">
             <!--Visibility-->
             <asp:Label ID="lbl_visibilityactiv" runat="server" Text="Visibilidad"></asp:Label>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Visibilidad
-                </button>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Pública</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrada</a></li>
-                </ul>
-            </div>
+            <asp:DropDownList CssClass="form-control dp_1" ss="form-control dp_1" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="STATUS" DataValueField="STATUS">
+                <asp:ListItem Selected="True" Value="-1">Configura Visibilidad</asp:ListItem>
+            </asp:DropDownList>
+        
         </div>
+
         <div class="col-md-6">
-            <asp:Label ID="lbl_adminconfirmation" runat="server" Text="Confirmacion  Administrativa"></asp:Label>
-            <div class="dropdown">
-                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Confirmacion de Admin
-                </button>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Activada</a></li>
-                    <li><a class="dropdown-item" href="#">Desactivada</a></li>
-                </ul>
-            </div>
+            <asp:Label ID="lbl_adminconfirm" runat="server" Text="Confirmacion  Administrativa"></asp:Label>
+            <asp:DropDownList CssClass="form-control dp_1" ID="ddl_cadminonfirm" runat="server">
+                <asp:ListItem Selected="True" Value="0"> No</asp:ListItem>
+                <asp:ListItem Value="1">Si</asp:ListItem>
+            </asp:DropDownList>
         </div>
+        
     </div>
     <br />
     <div class="row">
@@ -155,9 +145,16 @@
             <textarea class="form-control" id="DescriptionActiv" rows="3"></textarea>
         </div>
     </div>
+    <br />
     <div class="row">
-        <asp:Label ID="lbl_capacityactiv" runat="server" Text="Cupos"></asp:Label>
-        <input type="number" name="capacityactiv" value="" /> 
+     <div class="col-md-6">
+         <asp:Label ID="lbl_capacityactiv" runat="server" Text="Cupos"></asp:Label>
+        <input ID="tb_capacityactiv" style="width:10%;" type="number" name="capacityactiv" value="" /> 
+     </div>   
+    <div class="col-md-6">
+        <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" />
+    </div>
+
     </div>
 
 </div>

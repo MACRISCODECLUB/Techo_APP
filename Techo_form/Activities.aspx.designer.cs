@@ -186,13 +186,13 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.DropDownList ddl_status;
 
         /// <summary>
-        /// dsStatusActiv control.
+        /// ds_visibilityactiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsStatusActiv;
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_visibilityactiv;
 
         /// <summary>
         /// lbl_visibilityactiv control.
@@ -204,13 +204,31 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_visibilityactiv;
 
         /// <summary>
-        /// lbl_adminconfirmation control.
+        /// ddl_visibility control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_adminconfirmation;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_visibility;
+
+        /// <summary>
+        /// lbl_adminconfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_adminconfirm;
+
+        /// <summary>
+        /// ddl_cadminonfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_cadminonfirm;
 
         /// <summary>
         /// lbl_startdate control.
@@ -283,5 +301,14 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_capacityactiv;
+
+        /// <summary>
+        /// btn_Submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Submit;
     }
 }

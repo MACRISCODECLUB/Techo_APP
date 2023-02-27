@@ -31,3 +31,11 @@
     background-repeat: no-repeat;
     width: 35%;
 }
+
+.tb_capacityactiv{
+    width:10%;
+}
+
+.btn_submit {
+    background-color: aquamarine;
+}
