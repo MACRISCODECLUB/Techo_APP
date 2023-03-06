@@ -27,7 +27,7 @@
             <!--Activity Name-->
             <div class="form-group">
                 <asp:Label ID="lbl_Nameactiv" runat="server" Text="Nombre"></asp:Label>
-                <input class="form-control input-group-sm" type="text" value="" id="tb_nameactiv" />
+                <asp:TextBox ID="tb_nameactiv" runat="server"></asp:TextBox>
             </div>    
 
         </div>
@@ -61,7 +61,7 @@
             </div>
             <br />
             <div class="row">
-                <div class="dropdown_type col-md-6">
+                <div class="dropdown_type col-md-4">
                     <asp:Label ID="lbl_countryactiv" runat="server" Text="País"></asp:Label>
                     <!--Dropwdown select Country-->
                     <asp:DropDownList CssClass="form-control dp_1" ID="ddl_CountryActiv" runat="server" DataSourceID="ds_CountryActiv" DataTextField="Country_Name" DataValueField="Id_Country" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="ddl_CountryActiv_SelectedIndexChanged">
@@ -70,7 +70,7 @@
                     <asp:SqlDataSource runat="server" ID="ds_CountryActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Country], [Country_Name] FROM [COUNTRIES]"></asp:SqlDataSource>
                 </div>
 
-                <div class="dropdown_type col-md-6">
+                <div class="dropdown_type col-md-4">
                     <asp:Label ID="lbl_stateactiv" runat="server" Text="Departamento"></asp:Label>
                     <!--Dropwdown select Country-->
                     <asp:DropDownList ID="ddl_StateActiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_StateActiv" DataTextField="State_Name" DataValueField="Id_State" AppendDataBoundItems="True" AutoPostBack="True">
@@ -81,7 +81,20 @@
                             <asp:ControlParameter ControlID="ddl_CountryActiv" PropertyName="SelectedValue" Name="Id_Country" Type="Int32"></asp:ControlParameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
+
+                   </div>
+                <div class="col-md-4">
+                    <asp:Label ID="lbl_Cityactiv" runat="server" Text="Ciudad"></asp:Label>
+                    <asp:DropDownList ID="ddl_Cityactiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_Cityactiv" DataTextField="City_Name" DataValueField="Id_City"></asp:DropDownList>
+
+                    <asp:SqlDataSource runat="server" ID="ds_Cityactiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [City_Name], [Id_State], [Id_City] FROM [CITIES] WHERE ([Id_State] = @Id_State)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddl_StateActiv" Name="Id_State" PropertyName="SelectedValue" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
+                    
+                
             </div>
             <br />
             <div class="row">
@@ -95,10 +108,13 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_statusactiv" runat="server" Text="Estado"></asp:Label>
                     <!--Dropwdown select Status-->
-                    <asp:DropDownList ID="ddl_status" CssClass="form-control dp_1" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Status" DataValueField="Id_Status" AppendDataBoundItems="True">
-                        <asp:ListItem Selected="True" Value="-1">Escorger Estatus</asp:ListItem>
+                    <asp:DropDownList ID="ddl_status" CssClass="form-control dp_1" runat="server" DataSourceID="ds_statusactiv2" DataTextField="STATUS" DataValueField="id_status" AppendDataBoundItems="True">
+                        <asp:ListItem Selected="True" Value="-1">Escorger Estado</asp:ListItem>
+
                     </asp:DropDownList>
-                    <asp:SqlDataSource runat="server" ID="ds_visibilityactiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [STATUS], [id_status] FROM [STATUS]"></asp:SqlDataSource>
+                   
+                    <asp:SqlDataSource ID="ds_statusactiv2" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT [STATUS], [id_status] FROM [STATUS]"></asp:SqlDataSource>
+                   
                 </div>
             </div>
             <br />
@@ -106,10 +122,10 @@
         <div class="col-md-6">
             <!--Visibility-->
             <asp:Label ID="lbl_visibilityactiv" runat="server" Text="Visibilidad"></asp:Label>
-            <asp:DropDownList CssClass="form-control dp_1" ss="form-control dp_1" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="STATUS" DataValueField="STATUS">
-                <asp:ListItem Selected="True" Value="-1">Configura Visibilidad</asp:ListItem>
+            <asp:DropDownList CssClass="form-control dp_big" ss="form-control dp_1" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Visibility" DataValueField="Id_Visibility" AppendDataBoundItems="True">
+                <asp:ListItem Selected="True" Value="-1">Configurar Visibilidad</asp:ListItem>
             </asp:DropDownList>
-        
+         <asp:SqlDataSource ID="ds_visibilityactiv" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT [Visibility], [id_visibility] FROM [VISIBILITY]"></asp:SqlDataSource>
         </div>
 
         <div class="col-md-6">
@@ -142,20 +158,29 @@
     <div class="row">
         <div class="form-group">
             <asp:Label ID="lbl_descripactiv" runat="server" Text="Descipcion"></asp:Label>
-            <textarea class="form-control" id="DescriptionActiv" rows="3"></textarea>
+            <asp:TextBox ID="DescriptionActiv" CssClass="form-control" rows="3" runat="server"></asp:TextBox>
         </div>
     </div>
     <br />
     <div class="row">
      <div class="col-md-6">
          <asp:Label ID="lbl_capacityactiv" runat="server" Text="Cupos"></asp:Label>
-        <input ID="tb_capacityactiv" style="width:10%;" type="number" name="capacityactiv" value="" /> 
+         <asp:TextBox ID="tb_capacityactiv" style="width:10%;" runat="server"></asp:TextBox> 
+    <div class="col-md-6">
+        <asp:Label ID="lbl_Coordinatoractiv" runat="server" Text="Coordinador a Cargo"></asp:Label>
+        <asp:DropDownList ID="ddl_Coordinatoractiv" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Id_People" DataValueField="Id_People"></asp:DropDownList>
+        <asp:SqlDataSource runat="server" ID="ds_cordinatoractiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_People, (FirstName + ' ' + LastName) as Name
+            FROM USERS u
+            INNER JOIN PEOPLE p on p.Id_User = u.Id_User
+            WHERE Id_Profile = 2
+            ORDER BY FirstName ASC, LastName ASC"></asp:SqlDataSource>
+    </div>
      </div>   
     <div class="col-md-6">
-        <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" />
+        <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
+    </div>
     </div>
 
-    </div>
 
 </div>
     </main>

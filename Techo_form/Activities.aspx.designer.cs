@@ -33,6 +33,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_Nameactiv;
 
         /// <summary>
+        /// tb_nameactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_nameactiv;
+
+        /// <summary>
         /// lbl_categoryactiv control.
         /// </summary>
         /// <remarks>
@@ -141,6 +150,33 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.SqlDataSource ds_StateActiv;
 
         /// <summary>
+        /// lbl_Cityactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Cityactiv;
+
+        /// <summary>
+        /// ddl_Cityactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Cityactiv;
+
+        /// <summary>
+        /// ds_Cityactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_Cityactiv;
+
+        /// <summary>
         /// lbl_officeactiv control.
         /// </summary>
         /// <remarks>
@@ -186,13 +222,13 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.DropDownList ddl_status;
 
         /// <summary>
-        /// ds_visibilityactiv control.
+        /// ds_statusactiv2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_visibilityactiv;
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_statusactiv2;
 
         /// <summary>
         /// lbl_visibilityactiv control.
@@ -211,6 +247,15 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_visibility;
+
+        /// <summary>
+        /// ds_visibilityactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_visibilityactiv;
 
         /// <summary>
         /// lbl_adminconfirm control.
@@ -294,6 +339,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_descripactiv;
 
         /// <summary>
+        /// DescriptionActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DescriptionActiv;
+
+        /// <summary>
         /// lbl_capacityactiv control.
         /// </summary>
         /// <remarks>
@@ -301,6 +355,42 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_capacityactiv;
+
+        /// <summary>
+        /// tb_capacityactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_capacityactiv;
+
+        /// <summary>
+        /// lbl_Coordinatoractiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Coordinatoractiv;
+
+        /// <summary>
+        /// ddl_Coordinatoractiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Coordinatoractiv;
+
+        /// <summary>
+        /// ds_cordinatoractiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_cordinatoractiv;
 
         /// <summary>
         /// btn_Submit control.
