@@ -21,10 +21,10 @@ namespace Techo_form.code
         {
             string q = "";
 
-            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv";
+            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv, ";
             q += "Visibility, Status, Starts, Ends, capacityactiv, adminconfirm) VALUES('";
-            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "'"
-            + Status + "', '" + Ends + "', '" + capacityactiv + "" + adminconfirm + "');";
+            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "', '"
+            + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "');";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
 

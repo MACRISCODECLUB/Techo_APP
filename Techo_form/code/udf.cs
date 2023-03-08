@@ -67,5 +67,16 @@ namespace Techo_form.code
         {
             return Convert.ToDateTime(InitialDate);
         }
+
+        public bool convertBooleansdeBit(string booleano)
+        {
+            if(booleano == "1")
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
     }
 }

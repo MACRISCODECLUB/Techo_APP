@@ -14,7 +14,7 @@ namespace Techo_form
         Techo_form.code.activity activity = new code.activity();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,17 +31,19 @@ namespace Techo_form
 
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
+            //TODO hacer las validaciones del caso.
+
             try
             {
                 udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
                     , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
-                    , Convert.ToBoolean(ddl_visibility.Text), Convert.ToBoolean(ddl_status.Text), tb_startdate.Text, tb_enddate.Text
-                    , Convert.ToInt32(tb_capacityactiv.Text), Convert.ToBoolean(ddl_adminconfirm.Text)));
+                    , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
+                    , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text)));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                throw;
+
+                throw ex;
             }
         }
     }
