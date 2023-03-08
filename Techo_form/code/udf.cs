@@ -18,12 +18,12 @@ namespace Techo_form.code
         {
             SqlDataAdapter dta_Table = new SqlDataAdapter();
             DataSet dts_Table = new DataSet();
-            SqlCommand cmm_Configarable = new SqlCommand(str_Query, str_Conn);
-            cmm_Configarable.CommandTimeout = 0;
-            cmm_Configarable.CommandType = CommandType.Text;
+            SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
+            cmm_Configurable.CommandTimeout = 0;
+            cmm_Configurable.CommandType = CommandType.Text;
             try
             {
-                dta_Table.SelectCommand = cmm_Configarable;
+                dta_Table.SelectCommand = cmm_Configurable;
                 dta_Table.Fill(dts_Table);
             }
             catch (Exception)

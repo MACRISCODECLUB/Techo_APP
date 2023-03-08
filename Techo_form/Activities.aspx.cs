@@ -33,7 +33,10 @@ namespace Techo_form
         {
             try
             {
-                udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, ddl_Cityactiv.SelectedItem.Value, ddl_Coordinatoractiv.Text, tb_Workhours.Text, DescriptionActiv.Text, ddl_visibility.Text, ddl_status.Text, tb_startdate.Text, tb_enddate.Text, tb_capacityactiv.Text, ddl_adminconfirm.Text);
+                udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
+                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+                    , Convert.ToBoolean(ddl_visibility.Text), Convert.ToBoolean(ddl_status.Text), tb_startdate.Text, tb_enddate.Text
+                    , Convert.ToInt32(tb_capacityactiv.Text), Convert.ToBoolean(ddl_adminconfirm.Text)));
             }
             catch (Exception)
             {
