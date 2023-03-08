@@ -267,13 +267,13 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_adminconfirm;
 
         /// <summary>
-        /// ddl_cadminonfirm control.
+        /// ddl_adminconfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_cadminonfirm;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_adminconfirm;
 
         /// <summary>
         /// lbl_startdate control.
@@ -391,6 +391,24 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource ds_cordinatoractiv;
+
+        /// <summary>
+        /// lbl_Workhours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Workhours;
+
+        /// <summary>
+        /// tb_Workhours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_Workhours;
 
         /// <summary>
         /// btn_Submit control.
