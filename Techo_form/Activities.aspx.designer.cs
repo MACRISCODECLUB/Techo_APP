@@ -267,13 +267,13 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_adminconfirm;
 
         /// <summary>
-        /// ddl_adminonfirm control.
+        /// ddl_adminconfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_adminonfirm;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_adminconfirm;
 
         /// <summary>
         /// lbl_startdate control.

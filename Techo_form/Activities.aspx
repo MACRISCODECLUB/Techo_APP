@@ -130,7 +130,7 @@
 
         <div class="col-md-6">
             <asp:Label ID="lbl_adminconfirm" runat="server" Text="Confirmacion  Administrativa"></asp:Label>
-            <asp:DropDownList CssClass="form-control dp_1" ID="ddl_adminonfirm" runat="server">
+            <asp:DropDownList CssClass="form-control dp_1" ID="ddl_adminconfirm" runat="server">
                 <asp:ListItem Selected="True" Value="0"> No</asp:ListItem>
                 <asp:ListItem Value="1">Si</asp:ListItem>
             </asp:DropDownList>
@@ -178,16 +178,17 @@
             WHERE Id_Profile = 2
             ORDER BY FirstName ASC, LastName ASC"></asp:SqlDataSource>
     </div>
-       </div> 
-    <div class="row">
-        <asp:Label ID="lbl_Workhours" runat="server" Text="Horas de Trabajo"></asp:Label>
-        <asp:TextBox ID="tb_Workhours" runat="server"></asp:TextBox>
-    </div> 
-    <div class="row">
-        <div class="col-md-4">
-            <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
+        <div class="col-md-6">
+            <asp:Label ID="lbl_Workhours" runat="server" Text="Horas de Trabajo"></asp:Label>
+            <br />
+            <asp:TextBox ID="tb_Workhours" runat="server"></asp:TextBox>
         </div>
-    </div>     
+        <div class="row">
+    <div class="col-md-4">
+        <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
+    </div>
+            </div>
+    
 
 
 </div>

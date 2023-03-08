@@ -35,13 +35,37 @@ namespace Techo_form.code
             return dts_Table;
         }
 
-        public void Execue_Non_Query(string str_Query)
+        public void Execute_Non_Query(string str_Query)
         {
             SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
             cmm_Configurable.CommandTimeout = 60;
             str_Conn.Open();
             cmm_Configurable.ExecuteNonQuery();
             str_Conn.Close();
+        }
+
+        public string FormatDate(DateTime dtm_Fecha)
+        {
+            string myYear = dtm_Fecha.Year.ToString();
+            string myMonth = dtm_Fecha.Month.ToString();
+            string myDay = dtm_Fecha.Day.ToString();
+            
+            if (myMonth.Length == 1)
+            {
+                myMonth = "0" + myMonth;
+            }
+
+            if(myDay.Length == 1)
+            {
+                myDay = "0" + myDay;
+            }
+
+            return myYear + myMonth + myDay;
+        }
+
+        internal DateTime FormatDateToDate(string InitialDate)
+        {
+            return Convert.ToDateTime(InitialDate);
         }
     }
 }
