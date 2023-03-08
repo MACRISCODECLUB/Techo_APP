@@ -170,6 +170,7 @@
       <DependentUpon>Activities.aspx</DependentUpon>
     </Compile>
     <Compile Include="code\activity.cs" />
+    <Compile Include="code\volunteer.cs" />
     <Compile Include="code\udf.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
