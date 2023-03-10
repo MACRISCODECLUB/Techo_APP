@@ -39,11 +39,17 @@ namespace Techo_form
                     , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
                     , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
                     , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text)));
+                lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";
+                lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
+                lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
+                lbl_output_Form.Visible = true;
             }
             catch (Exception ex)
             {
-
                 throw ex;
+
+                lbl_output_Form.Text = "Error al ingresar la actividad, revise la informacion ingresa y vuelva a intentar. Error: " +
+                    ex.Message.ToString();
             }
         }
     }

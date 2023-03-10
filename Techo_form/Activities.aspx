@@ -63,7 +63,7 @@
                 <div class="dropdown_type col-md-4">
                     <asp:Label ID="lbl_countryactiv" runat="server" Text="País"></asp:Label>
                     <!--Dropwdown select Country-->
-                    <asp:DropDownList CssClass="form-control dp_1" ID="ddl_CountryActiv" runat="server" DataSourceID="ds_CountryActiv" DataTextField="Country_Name" DataValueField="Id_Country" AutoPostBack="True" OnSelectedIndexChanged="ddl_CountryActiv_SelectedIndexChanged">
+                    <asp:DropDownList CssClass="form-control dp_big" ID="ddl_CountryActiv" runat="server" DataSourceID="ds_CountryActiv" DataTextField="Country_Name" DataValueField="Id_Country" AutoPostBack="True" OnSelectedIndexChanged="ddl_CountryActiv_SelectedIndexChanged">
                         <asp:ListItem Selected="True" Value="-1">Seleccione Pais</asp:ListItem>
                     </asp:DropDownList>
                     <asp:SqlDataSource runat="server" ID="ds_CountryActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Id_Country], [Country_Name] FROM [COUNTRIES]"></asp:SqlDataSource>
@@ -107,7 +107,7 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_statusactiv" runat="server" Text="Estado"></asp:Label>
                     <!--Dropwdown select Status-->
-                    <asp:DropDownList ID="ddl_status" CssClass="form-control dp_1" runat="server" DataSourceID="ds_statusactiv2" DataTextField="STATUS" DataValueField="id_status">
+                    <asp:DropDownList ID="ddl_status" CssClass="form-control dp_big" runat="server" DataSourceID="ds_statusactiv2" DataTextField="STATUS" DataValueField="id_status">
                         <asp:ListItem Selected="True" Value="-1">Escorger Estado</asp:ListItem>
 
                     </asp:DropDownList>
@@ -121,7 +121,7 @@
         <div class="col-md-6">
             <!--Visibility-->
             <asp:Label ID="lbl_visibilityactiv" runat="server" Text="Visibilidad"></asp:Label>
-            <asp:DropDownList CssClass="form-control dp_big" ss="form-control dp_1" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Visibility" DataValueField="Id_Visibility">
+            <asp:DropDownList CssClass="form-control dp_big" ss="form-control dp_big" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Visibility" DataValueField="Id_Visibility">
                 <asp:ListItem Selected="True" Value="-1">Configurar Visibilidad</asp:ListItem>
             </asp:DropDownList>
          <asp:SqlDataSource ID="ds_visibilityactiv" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT [Visibility], [id_visibility] FROM [VISIBILITY]"></asp:SqlDataSource>
@@ -129,7 +129,7 @@
 
         <div class="col-md-6">
             <asp:Label ID="lbl_adminconfirm" runat="server" Text="Confirmacion  Administrativa"></asp:Label>
-            <asp:DropDownList CssClass="form-control dp_1" ID="ddl_adminconfirm" runat="server">
+            <asp:DropDownList CssClass="form-control dp_big" ID="ddl_adminconfirm" runat="server">
                 <asp:ListItem Selected="True" Value="0"> No</asp:ListItem>
                 <asp:ListItem Value="1">Si</asp:ListItem>
             </asp:DropDownList>
@@ -170,7 +170,7 @@
     <div class="col-md-4">
         <asp:Label ID="lbl_Coordinatoractiv" runat="server" Text="Coordinador a Cargo"></asp:Label>
         <br />
-        <asp:DropDownList ID="ddl_Coordinatoractiv" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People"></asp:DropDownList>
+        <asp:DropDownList ID="ddl_Coordinatoractiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People"></asp:DropDownList>
         <asp:SqlDataSource runat="server" ID="ds_cordinatoractiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_People, (FirstName + ' ' + LastName) as Name
             FROM USERS u
             INNER JOIN PEOPLE p on p.Id_User = u.Id_User
@@ -182,14 +182,21 @@
             <br />
             <asp:TextBox ID="tb_Workhours" runat="server"></asp:TextBox>
         </div>
+
+    </div>
+    <br />
         <div class="row">
     <div class="col-md-4">
         <asp:Button style="background-color:#367fa9; color:white; padding:0.5em; "  ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
     </div>
+   <div class="col-md-4">
+    <asp:Label style="font:bolder 12 px Halvetica; color:black;" ID="lbl_output_Form" runat="server" Text="Output Label" Visible="False"></asp:Label>
+    </div>
+    
             </div>
     
 
 
-</div>
+
     </main>
 </asp:Content>
