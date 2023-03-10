@@ -47,7 +47,7 @@ namespace Techo_form
             catch (Exception ex)
             {
                 throw ex;
-
+                //TODO Fix output error form.
                 lbl_output_Form.Text = "Error al ingresar la actividad, revise la informacion ingresa y vuelva a intentar. Error: " +
                     ex.Message.ToString();
             }
