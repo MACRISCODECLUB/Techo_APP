@@ -32,6 +32,14 @@ namespace Techo_form
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
             //TODO hacer las validaciones del caso.
+            if (udf.FormatDateToDate(tb_startdate.Text) < DateTime.Now)
+                {
+                lbl_output_Form.Text = "Fecha de Inicio invalida, de momento no es posible viajar en el tiempo";
+                }
+            else
+            {
+
+            }
 
             try
             {
@@ -46,10 +54,13 @@ namespace Techo_form
             }
             catch (Exception ex)
             {
-                throw ex;
                 //TODO Fix output error form.
-                lbl_output_Form.Text = "Error al ingresar la actividad, revise la informacion ingresa y vuelva a intentar. Error: " +
+                lbl_output_Form.Text = "Error al ingresar la actividad, " +
+                    "revise la informacion ingresa y vuelva a intentar. Error: " +
                     ex.Message.ToString();
+                lbl_output_Form.BackColor = System.Drawing.Color.Red;
+                lbl_output_Form.ForeColor= System.Drawing.Color.DarkRed;
+                lbl_output_Form.Visible = true;
             }
         }
     }

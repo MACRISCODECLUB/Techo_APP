@@ -11,6 +11,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="row">
             <div id="cont_logo">
+                <!-- Dont remove this text-center p-3 p-md-5 neither m-md-3, you will break it -->
         <div class="container position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
             <div class="row">
                 <div class="col-lg-12" id="logo_cont">
@@ -33,7 +34,7 @@
         </div>
     </div>
             <div class="row">
-                <div class="dropdown col-md-6">
+                <div class="dropdown col-md-7">
                     <asp:Label ID="lbl_categoryactiv" runat="server" Text="Categoria"></asp:Label>
                     <!--Dropdown select Category-->
                     <asp:DropDownList CssClass="form-control dp_big" ID="ddl_CategoryActiv" runat="server" DataSourceID="ds_CategoryActiv" DataTextField="Category" DataValueField="Id_Category" AutoPostBack="True" OnSelectedIndexChanged="ddl_CategoryActiv_SelectedIndexChanged">
@@ -44,7 +45,7 @@
                 </div>
             
 
-                <div class="dropdown_type col-md-6">
+                <div class="dropdown_type col-md-5">
                     <asp:Label ID="lbl_typeactiv" runat="server" Text="Tipo"></asp:Label>
                     <!--Dropwdown selecct Type-->
                     <asp:DropDownList CssClass="form-control dp_big" ID="ddl_ActivityType"
@@ -97,14 +98,14 @@
             </div>
             <br />
             <div class="row">
-                <div class="dropdown_type col-md-6">
+                <div class="dropdown_type col-md-5">
                     <asp:Label ID="lbl_officeactiv" runat="server" Text="Oficina"></asp:Label>
                     <!--Dropwdown select Office-->
                     <asp:DropDownList CssClass="form-control dp_big" ID="ddl_officeactiv" runat="server" DataSourceID="ds_OfficeActiv" DataTextField="Office" DataValueField="Id_Office"></asp:DropDownList>
                     <asp:SqlDataSource runat="server" ID="ds_OfficeActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Office], [Id_Office] FROM [OFFICE]"></asp:SqlDataSource>
                 </div>
 
-                <div class="dropdown_type col-md-6">
+                <div class="dropdown_type col-md-7">
                     <asp:Label ID="lbl_statusactiv" runat="server" Text="Estado"></asp:Label>
                     <!--Dropwdown select Status-->
                     <asp:DropDownList ID="ddl_status" CssClass="form-control dp_big" runat="server" DataSourceID="ds_statusactiv2" DataTextField="STATUS" DataValueField="id_status">
@@ -118,7 +119,7 @@
             </div>
             <br />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <!--Visibility-->
             <asp:Label ID="lbl_visibilityactiv" runat="server" Text="Visibilidad"></asp:Label>
             <asp:DropDownList CssClass="form-control dp_big" ss="form-control dp_big" ID="ddl_visibility" runat="server" DataSourceID="ds_visibilityactiv" DataTextField="Visibility" DataValueField="Id_Visibility">
@@ -127,7 +128,7 @@
          <asp:SqlDataSource ID="ds_visibilityactiv" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT [Visibility], [id_visibility] FROM [VISIBILITY]"></asp:SqlDataSource>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-7">
             <asp:Label ID="lbl_adminconfirm" runat="server" Text="Confirmacion  Administrativa"></asp:Label>
             <asp:DropDownList CssClass="form-control dp_big" ID="ddl_adminconfirm" runat="server">
                 <asp:ListItem Selected="True" Value="0"> No</asp:ListItem>
@@ -138,14 +139,14 @@
     </div>
     <br />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
                    <asp:Label ID="lbl_startdate" runat="server" Text="Fecha de Inicio"></asp:Label>
                     <br />
                    <asp:TextBox ID="tb_startdate" runat="server"></asp:TextBox>
                    <ajaxToolkit:CalendarExtender ID="AJAX_calend_startdate" runat="server"
                      BehaviorID="textbox1_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_startdate" />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <asp:Label ID="lbl_endate" runat="server" Text="Fecha de Finalizacion"></asp:Label>
                     <br />
                     <asp:TextBox ID="tb_enddate" runat="server"></asp:TextBox>
@@ -167,10 +168,10 @@
          <br />
          <asp:TextBox ID="tb_capacityactiv" style="width:10%;" runat="server"></asp:TextBox> 
     </div> 
-    <div class="col-md-4">
+    <div class="col-md-8">
         <asp:Label ID="lbl_Coordinatoractiv" runat="server" Text="Coordinador a Cargo"></asp:Label>
         <br />
-        <asp:DropDownList ID="ddl_Coordinatoractiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People"></asp:DropDownList>
+        <asp:DropDownList ID="ddl_Coordinatoractiv" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People" CssClass="form-control dp_big" ></asp:DropDownList>
         <asp:SqlDataSource runat="server" ID="ds_cordinatoractiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_People, (FirstName + ' ' + LastName) as Name
             FROM USERS u
             INNER JOIN PEOPLE p on p.Id_User = u.Id_User
@@ -197,6 +198,6 @@
     
 
 
-
+</div>
     </main>
 </asp:Content>
