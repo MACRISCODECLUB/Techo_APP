@@ -160,7 +160,7 @@
     <div class="row">
         <div class="form-group">
             <asp:Label ID="lbl_descripactiv" runat="server" Text="Descipcion"></asp:Label>
-            <asp:TextBox ID="tb_DescriptionActiv" CssClass="form-control" rows="3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="DescriptionActiv" CssClass="form-control" rows="3" runat="server"></asp:TextBox>
         </div>
     </div>
     <br />
