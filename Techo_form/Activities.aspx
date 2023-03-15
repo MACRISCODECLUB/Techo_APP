@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Activities.aspx.cs" Inherits="Techo_form.actividades" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="product.css" rel="stylesheet" />
@@ -158,7 +160,7 @@
     <div class="row">
         <div class="form-group">
             <asp:Label ID="lbl_descripactiv" runat="server" Text="Descipcion"></asp:Label>
-            <asp:TextBox ID="DescriptionActiv" CssClass="form-control" rows="3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="tb_DescriptionActiv" CssClass="form-control" rows="3" runat="server"></asp:TextBox>
         </div>
     </div>
     <br />
