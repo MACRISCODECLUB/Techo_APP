@@ -13,5 +13,20 @@
             <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />  
         </div>
     </div>
+
+   <div class="row">
+       <div class="col-md-11">
+       <asp:GridView ID="PanelActiv" CssClass="PanelActivCS" runat="server" AutoGenerateColumns="False" DataSourceID="ds_ActivityPanel">
+           <Columns>
+               <asp:BoundField DataField="Activ_Name" HeaderText="Nombre de la Actividad" SortExpression="Activ_Name"></asp:BoundField>
+               <asp:BoundField DataField="Starts" HeaderText="Fecha de Inicio" SortExpression="Starts"></asp:BoundField>
+               <asp:BoundField DataField="Ends" HeaderText="Fecha de Finalizacion" SortExpression="Ends"></asp:BoundField>
+               <asp:CheckBoxField DataField="Status" HeaderText="Estado" SortExpression="Status"></asp:CheckBoxField>
+           </Columns>
+       </asp:GridView>
+       <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Activ_Name], [Starts], [Ends], [Status] FROM [ACTIVITIES]"></asp:SqlDataSource>
+      </div>
+   </div>
+    
 </div>
 </asp:Content>
