@@ -15,6 +15,24 @@ namespace Techo_form
     {
 
         /// <summary>
+        /// tb_startdate_Filter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_startdate_Filter;
+
+        /// <summary>
+        /// startdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender startdatePanel;
+
+        /// <summary>
         /// PanelActiv control.
         /// </summary>
         /// <remarks>
