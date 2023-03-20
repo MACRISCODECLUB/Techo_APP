@@ -15,16 +15,19 @@
     </div>
 
    <div class="row">
-       <div class="col-md-11">
-       <asp:GridView ID="PanelActiv" CssClass="PanelActivCS" runat="server" AutoGenerateColumns="False" DataSourceID="ds_ActivityPanel">
+       <div class="col-md-10">
+           <!--Expr1 = Start Date -->
+           <!--Expr2 = End Date -->
+       <asp:GridView ID="PanelActiv" CssClass="PanelActivCS table table-condensed table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="ds_ActivityPanel">
            <Columns>
-               <asp:BoundField DataField="Activ_Name" HeaderText="Nombre de la Actividad" SortExpression="Activ_Name"></asp:BoundField>
-               <asp:BoundField DataField="Starts" HeaderText="Fecha de Inicio" SortExpression="Starts"></asp:BoundField>
-               <asp:BoundField DataField="Ends" HeaderText="Fecha de Finalizacion" SortExpression="Ends"></asp:BoundField>
-               <asp:CheckBoxField DataField="Status" HeaderText="Estado" SortExpression="Status"></asp:CheckBoxField>
+               <asp:BoundField DataField="Activ_Name" HeaderText="Nombre de Actividad" SortExpression="Activ_Name"></asp:BoundField>               
+               <asp:BoundField DataField="Expr1" HeaderText="Fecha de Inicio" SortExpression="Expr1" ReadOnly="True"></asp:BoundField>
+               <asp:BoundField DataField="Expr2" HeaderText="Fecha de Finalizacion" SortExpression="Expr2" ReadOnly="True"></asp:BoundField>
+               <asp:CheckBoxField DataField="Visibility" HeaderText="Visibilidad" SortExpression="Visibility"></asp:CheckBoxField>
+               
            </Columns>
        </asp:GridView>
-       <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Activ_Name], [Starts], [Ends], [Status] FROM [ACTIVITIES]"></asp:SqlDataSource>
+           <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Activ_Name, CONVERT (varchar(10), Starts, 111) AS Expr1, CONVERT (varchar(10), Ends, 111) AS Expr2, Visibility FROM ACTIVITIES"></asp:SqlDataSource>
       </div>
    </div>
     
