@@ -13,6 +13,16 @@
             <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />  
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!--TODO FINISH FILTERS AND FILTER BUTTON -->
+            <asp:TextBox ID="tb_startdate_Filter" runat="server"></asp:TextBox>
+           <ajaxToolkit:CalendarExtender ID="startdatePanel" runat="server" />
+        </div>
+    </div>
+    <div class="row">
+        <!-- Filter Button-->
+    </div>
 
    <div class="row">
        <div class="col-md-10">
@@ -29,6 +39,12 @@
        </asp:GridView>
            <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Activ_Name, CONVERT (varchar(10), Starts, 111) AS Expr1, CONVERT (varchar(10), Ends, 111) AS Expr2, Visibility FROM ACTIVITIES"></asp:SqlDataSource>
       </div>
+           
+    <br />
+    
+       <div class="row">
+
+       </div>
    </div>
     
 </div>
