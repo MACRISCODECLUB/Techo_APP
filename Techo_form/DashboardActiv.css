@@ -30,7 +30,3 @@ tr:nth-child(odd) {
     background: #fff;
 }
 
-#btnApplyFilter {
-    background-color: #f77d02;
-    color:white;
-}

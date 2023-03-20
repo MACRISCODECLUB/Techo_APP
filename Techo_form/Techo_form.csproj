@@ -135,6 +135,8 @@
     <Content Include="DashboardActiv.css" />
     <Content Include="default.aspx" />
     <Content Include="activstyle.css" />
+    <Content Include="DetalleActividad.aspx" />
+    <Content Include="DetalleActividad.css" />
     <Content Include="Login.aspx" />
     <Content Include="obj\Debug\Techo_form.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Techo_form.dll" />
@@ -188,6 +190,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleActividad.aspx.cs">
+      <DependentUpon>DetalleActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleActividad.aspx.designer.cs">
+      <DependentUpon>DetalleActividad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -24,6 +24,15 @@ namespace Techo_form
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// lbl_startdate_Filter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_startdate_Filter;
+
+        /// <summary>
         /// tb_startdate_Filter control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender AJAX_calend_startdate_filter;
+
+        /// <summary>
+        /// lbl_Enddate_Filter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Enddate_Filter;
 
         /// <summary>
         /// tb_Enddate_Filter control.

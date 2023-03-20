@@ -13,5 +13,12 @@ namespace Techo_form
         {
 
         }
+
+        protected void PanelActiv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView gv = PanelActiv;
+            string Id_Activity = gv.SelectedDataKey.Value.ToString();
+            Response.Redirect("DetalleActividad.aspx?i=" + Id_Activity);
+        }
     }
 }

@@ -32,6 +32,23 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string GetActivitybyId(string idactividad)
+        {
+            string q = "";
+            q += "SELECT * FROM ACTIVITIES ";
+            q += "WHERE [Id_Activity] = " + idactividad;
+
+            return q;
+        }
+
+        internal string GetCitybyId(string IdCity)
+        {
+            string q = "";
+            q += "SELECT * FROM CITIES";
+            q += "WHERE [Id_City] = " + IdCity;
+
+            return q;
+        }
     }
 
         
