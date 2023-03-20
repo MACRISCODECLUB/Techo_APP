@@ -15,6 +15,15 @@ namespace Techo_form
     {
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
         /// tb_startdate_Filter control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,40 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox tb_startdate_Filter;
 
         /// <summary>
-        /// startdatePanel control.
+        /// AJAX_calend_startdate_filter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender startdatePanel;
+        protected global::AjaxControlToolkit.CalendarExtender AJAX_calend_startdate_filter;
+
+        /// <summary>
+        /// tb_Enddate_Filter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_Enddate_Filter;
+
+        /// <summary>
+        /// Ajax_calend_enddate_filter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender Ajax_calend_enddate_filter;
+
+        /// <summary>
+        /// btn_Applyfilters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Applyfilters;
 
         /// <summary>
         /// PanelActiv control.

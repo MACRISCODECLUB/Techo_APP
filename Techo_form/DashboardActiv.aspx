@@ -4,25 +4,37 @@
     <link href="DashboardActiv.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="padding-top:8%;">    
+<div style="padding-top:8%;"> 
+    <div class="container">
+
+   
     <div class="row">
         <div class="col-md-10">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
            <h1>Panel de Actividades</h1> 
         </div>
         <div class="col-md-2 align-content-end float-end">
             <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />  
         </div>
     </div>
+        <br />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <!--TODO FINISH FILTERS AND FILTER BUTTON -->
             <asp:TextBox ID="tb_startdate_Filter" runat="server"></asp:TextBox>
-           <ajaxToolkit:CalendarExtender ID="startdatePanel" runat="server" />
+            <ajaxToolkit:CalendarExtender ID="AJAX_calend_startdate_filter" runat="server"
+            BehaviorID="textbox1_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_startdate_Filter" />
+        </div>
+        <div class="col-md-4">
+            <asp:TextBox ID="tb_Enddate_Filter" runat="server"></asp:TextBox>
+            <ajaxToolkit:CalendarExtender ID="Ajax_calend_enddate_filter" runat="server"
+            BehaviorID="textbox1_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_Enddate_Filter" />
+        </div>
+        <div class="col-md-4">
+            <asp:Button ID="btn_Applyfilters" CssClass="btnApplyFilter" runat="server" Text="Aplicar Filtros" />
         </div>
     </div>
-    <div class="row">
-        <!-- Filter Button-->
-    </div>
+   <br />
 
    <div class="row">
        <div class="col-md-10">
@@ -48,4 +60,5 @@
    </div>
     
 </div>
+     </div>
 </asp:Content>
