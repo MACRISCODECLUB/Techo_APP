@@ -45,7 +45,17 @@ namespace Techo_form.code
         {
             string q = "";
             q += "SELECT * FROM CITIES";
-            q += "WHERE [Id_City] = " + IdCity;
+            q += " WHERE [Id_City] = " + IdCity;
+
+            return q;
+        }
+
+        internal string GetCoordinatorbyId(string IdUser)
+        {
+            string q = "";
+            //TODO FINISH COORDINATOR LABEL
+            q += "SELECT * FROM USERS ";
+            q += "WHERE [Id_Profile] < 4";
 
             return q;
         }
