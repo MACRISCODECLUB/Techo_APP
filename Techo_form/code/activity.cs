@@ -54,8 +54,10 @@ namespace Techo_form.code
         {
             string q = "";
             //TODO FINISH COORDINATOR LABEL
-            q += "SELECT * FROM USERS ";
-            q += "WHERE [Id_Profile] < 4";
+            q += "SELECT FROM * USERS u ";
+            q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
+            q += "WHERE Id_Profile < 5 ";
+            q += "ORDER BY FirstName ASC, LastName ASC";
 
             return q;
         }
