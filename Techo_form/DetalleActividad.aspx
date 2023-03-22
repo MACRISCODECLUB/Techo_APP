@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     .<div CssClass="container" style="padding-top:10%">
+        <h1></h1>
         <!--If Activ is used in the ID of a lable, it refers to the parameter, if not it refers to the label for parameter -->
         <div class="row">
             <div class="col-md-4">
