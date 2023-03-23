@@ -15,18 +15,23 @@ namespace Techo_form.code
 
             return q;
         }
-
-        internal string Insert_New_Volunteer(int Id_People, string First_Name, string Last_Name, string DOB,
-            int Id_Gender, string Cellpone, string Email, string Address, int Id_Country, int Id_City, int Id_State,
-            int Id_User, string RNP_Number, string Nom_Cobertura_Med, string Num_Cobertura_Med, string Nom_Contacto_ER,
-            string Tel_Contacto_ER, string Rel_Contacto_ER, int Id_Blood_Type)
+        internal string Insert_New_Volunteer(string First_Name, string Last_Name, string DOB,
+            int Id_Gender, string Cellphone, string Email, int Id_Country, int Id_City, int Id_State,
+            string RNP_Number)
         {
                 string q = "";
 
-                q += "INSERT INTO VOLUNTEER";
-                q += "";
+                q += "INSERT INTO PEOPLE( FirstName, LastName, DOB, Id_Gender, Cellphone, Email, " +
+                     "Id_Country, Id_City, Id_State, RNP_Number) Values('";
+                q += First_Name + "','" + Last_Name + "','" + DOB + "'," + Id_Gender + ",'" + Cellphone + "','" + Email + "',"+ 
+                     Id_Country + "," + Id_City + "," + Id_State + ",'" + RNP_Number + "');";
+                q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
-                return q;
+
+            return q;
         }
+
+        
+    
     }
 }

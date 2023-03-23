@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form._default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form.Volunteer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="product.css" rel="stylesheet" />
@@ -33,11 +33,9 @@
             </div>
             <div class="col-md-6">
                <asp:Label ID="lbl_Gender" runat="server" Text="GENERO" Font-Bold="true"></asp:Label>
-               <asp:RadioButtonList ID="rbl_Gender" runat="server" RepeatDirection="Horizontal" Width="130px">
-                   <asp:ListItem>Fem</asp:ListItem>
-                   <asp:ListItem>Masc</asp:ListItem>
-                   <asp:ListItem>Otrx</asp:ListItem>
+                <asp:RadioButtonList ID="rbl_Gender" runat="server" RepeatDirection="Horizontal" Width="130px" DataSourceID="ds_gender" DataTextField="Gender" DataValueField="Id_Gender">
                 </asp:RadioButtonList>
+                <asp:SqlDataSource runat="server" ID="ds_gender" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [GENDER]"></asp:SqlDataSource>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_DOB" runat="server" Text="FECHA DE NACIMIENTO" Font-Bold="true"></asp:Label> 
@@ -51,6 +49,10 @@
             <div class="col-md-6">
                 <asp:Label ID="lbl_Cellphone" runat="server" Text="TELEFONO" Font-Bold="true"></asp:Label> <br />
                 <asp:TextBox CssClass="form-control" ID="tb_Cellphone" runat="server" placeholder="+504 9988-7766"></asp:TextBox>
+            </div>
+            <div class="col-md-6">
+                <asp:Label ID="lbl_Email" runat="server" Text="EMAIL" Font-Bold="true"></asp:Label>
+                <asp:TextBox CssClass="form_control" ID="tb_Email" runat="server" placeholder="techo@gmail.com"></asp:TextBox>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_Country" runat="server" Text="PAIS ACTUAL" Font-Bold="true"></asp:Label> <br />
@@ -83,7 +85,11 @@
                 <asp:Button ID="bt_volver" runat="server" Text="Volver" />
             </div>
             <div class="col-md-3">
-                <asp:Button ID="bt_siguiente" runat="server" Text="Siguiente" />
+                <asp:Button ID="bt_siguiente" runat="server" Text="Siguiente" OnClick="bt_siguiente_Click" />
+                <br />
+                <asp:Label ID="lbl_mensaje" runat="server" Text="" Visible="false">
+
+                </asp:Label>
             </div>
             </div>
         </div>

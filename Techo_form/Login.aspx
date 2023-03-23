@@ -39,7 +39,7 @@
             <div class="col-4"></div>
         </div>
     </div>
-
+</main>
 
 
 </asp:Content>

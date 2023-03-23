@@ -177,6 +177,7 @@
     <Compile Include="code\activity.cs" />
     <Compile Include="code\volunteer.cs" />
     <Compile Include="code\udf.cs" />
+
     <Compile Include="DashboardActiv.aspx.cs">
       <DependentUpon>DashboardActiv.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +185,7 @@
     <Compile Include="DashboardActiv.aspx.designer.cs">
       <DependentUpon>DashboardActiv.aspx</DependentUpon>
     </Compile>
+      <Compile Include="code\volunteer.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
