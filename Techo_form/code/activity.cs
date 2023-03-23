@@ -21,10 +21,10 @@ namespace Techo_form.code
         {
             string q = "";
 
-            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv";
+            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv, ";
             q += "Visibility, Status, Starts, Ends, capacityactiv, adminconfirm) VALUES('";
-            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "'"
-            + Status + "', '" + Ends + "', '" + capacityactiv + "" + adminconfirm + "');";
+            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "', '"
+            + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "');";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
 
@@ -32,6 +32,35 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string GetActivitybyId(string idactividad)
+        {
+            string q = "";
+            q += "SELECT * FROM ACTIVITIES ";
+            q += "WHERE [Id_Activity] = " + idactividad;
+
+            return q;
+        }
+
+        internal string GetCitybyId(string IdCity)
+        {
+            string q = "";
+            q += "SELECT * FROM CITIES";
+            q += " WHERE [Id_City] = " + IdCity;
+
+            return q;
+        }
+
+        internal string GetCoordinatorbyId(string IdUser)
+        {
+            string q = "";
+            //TODO FINISH COORDINATOR LABEL
+            q += "SELECT * FROM USERS u ";
+            q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
+            q += "WHERE Id_Profile < 5 ";
+            q += "ORDER BY FirstName ASC, LastName ASC";
+
+            return q;
+        }
     }
 
         

@@ -7,8 +7,6 @@ namespace Techo_form.code
 {
     public class volunteer
     {
-        
-
         internal string Get_All_Volunteer()
         {
             string q = "";
@@ -17,7 +15,6 @@ namespace Techo_form.code
 
             return q;
         }
-
         internal string Insert_New_Volunteer(string First_Name, string Last_Name, string DOB,
             int Id_Gender, string Cellphone, string Email, int Id_Country, int Id_City, int Id_State,
             string RNP_Number)
@@ -35,5 +32,6 @@ namespace Techo_form.code
         }
 
         
+    
     }
 }

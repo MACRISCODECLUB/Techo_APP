@@ -1,0 +1,32 @@
+﻿body {
+    background-color: #0982C7;
+    color: #ffffff;
+    width: 100%;
+}
+.TL_logo{
+    padding-top:15%;
+}
+
+#PanelActivCS{
+    width: 100%;
+
+}
+
+.table-condensed tr th {
+    border: 0px solid #f77d02;
+    color: white;
+    background-color: #f77d02;
+}
+
+.table-condensed, .table-condensed tr td {
+    border: 0px solid #000;
+}
+
+tr:nth-child(even) {
+    background: #f8f7ff
+}
+
+tr:nth-child(odd) {
+    background: #fff;
+}
+
