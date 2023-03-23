@@ -177,7 +177,7 @@
         <asp:SqlDataSource runat="server" ID="ds_cordinatoractiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_People, (FirstName + ' ' + LastName) as Name
             FROM USERS u
             INNER JOIN PEOPLE p on p.Id_User = u.Id_User
-            WHERE Id_Profile = 2
+            WHERE Id_Profile < 4
             ORDER BY FirstName ASC, LastName ASC"></asp:SqlDataSource>
     </div>
         <div class="col-md-6">
