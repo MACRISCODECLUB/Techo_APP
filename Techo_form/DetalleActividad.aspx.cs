@@ -44,7 +44,7 @@ namespace Techo_form
                 foreach (DataRow CORD in dt_Coordinators.Rows)
                 {
                     //CORD for Cordinator ID
-                    lbl_CoordinatorActiv.Text = CORD["Id_User"].ToString();
+                    lbl_CoordinatorActiv.Text = CORD["FirstName"].ToString();
                 }
             }
         }
