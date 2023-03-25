@@ -156,6 +156,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="bin\Techo_form.dll.config" />
+    <Content Include="DashboardVolunteer.aspx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -177,7 +178,6 @@
     <Compile Include="code\activity.cs" />
     <Compile Include="code\volunteer.cs" />
     <Compile Include="code\udf.cs" />
-
     <Compile Include="DashboardActiv.aspx.cs">
       <DependentUpon>DashboardActiv.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,7 +185,7 @@
     <Compile Include="DashboardActiv.aspx.designer.cs">
       <DependentUpon>DashboardActiv.aspx</DependentUpon>
     </Compile>
-      <Compile Include="code\volunteer.cs" />
+    <Compile Include="code\volunteer.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -200,6 +200,7 @@
     <Compile Include="DetalleActividad.aspx.designer.cs">
       <DependentUpon>DetalleActividad.aspx</DependentUpon>
     </Compile>
+    <Compile Include="code\email.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="Volunteer.aspx.designer.cs">
       <DependentUpon>Volunteer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardVolunteer.aspx.cs">
+      <DependentUpon>DashboardVolunteer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardVolunteer.aspx.designer.cs">
+      <DependentUpon>DashboardVolunteer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
