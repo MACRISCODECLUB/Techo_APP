@@ -27,7 +27,7 @@ namespace Techo_form.code
             + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "');";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
-
+            //Mandar correos electronicos en la creacion de la actividad
 
             return q;
         }
@@ -56,10 +56,11 @@ namespace Techo_form.code
             //TODO FINISH COORDINATOR LABEL
             q += "SELECT * FROM USERS u ";
             q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
-            q += "WHERE Id_Profile < 5 ";
+            q += "WHERE u.Id_User = " + IdUser;
             q += "ORDER BY FirstName ASC, LastName ASC";
 
             return q;
+
         }
     }
 

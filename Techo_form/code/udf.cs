@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace Techo_form.code
@@ -77,6 +78,36 @@ namespace Techo_form.code
             {
                 return false;
             }
+        }
+
+        public string RandomString(int size)
+        {
+            StringBuilder builder = new StringBuilder();
+            Random random = new Random();
+            char ch;
+                for (int x=0; x < size; x++)
+                {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(32 * random.NextDouble() + 65)));
+                builder.Append(ch);
+                }
+            return builder.ToString();
+        }
+
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+
+        }
+
+        public string RandomPassword(int size = 1)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(RandomString(4));
+            builder.Append(RandomNumber(1000,9999));
+            builder.Append(RandomString(2));
+            builder.ToString();
+            return builder.ToString();
         }
 
     }
