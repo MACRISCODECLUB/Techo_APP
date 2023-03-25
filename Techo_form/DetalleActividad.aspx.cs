@@ -33,6 +33,12 @@ namespace Techo_form
             string VisibilityText = "";
             Boolean Status;
             string StatusText = "";
+            string StartDate = "";
+            string EndDate = "";
+            string Capacity = "";
+            Boolean AdminConfirm = false;
+            string AdminConfirmText = "";
+
             foreach (DataRow r in dt_Actividad.Rows)
             {
                 lbl_ActivName.Text = r["Activ_Name"].ToString();
@@ -43,6 +49,10 @@ namespace Techo_form
                 dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Id_Coordinator)).Tables[0];
                 Visibility = Convert.ToBoolean(r["Visibility"].ToString());
                 Status = Convert.ToBoolean(r["Status"].ToString());
+                StartDate = Convert.ToString(r["StartF"]);
+                EndDate = Convert.ToString(r["EndF"]);
+                Capacity = Convert.ToString(r["capacityactiv"]);
+                lbl_DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 //Visibility function, convert boolean to string
                 if(Visibility == true)
                 {
@@ -66,7 +76,21 @@ namespace Techo_form
                 }
 
                 lbl_StatusActiv.Text = StatusText;
+                lbl_StartDateActiv.Text = StartDate;
+                lbl_EndDateActiv.Text = EndDate;
+                lbl_CapacityActiv.Text = Capacity;
 
+                //Admin confirm function, Convert boolean to Yes or No
+                if(AdminConfirm == true)
+                {
+                    AdminConfirmText = "Si";
+                }
+                else
+                {
+                    AdminConfirmText = "No";
+                }
+
+                lbl_AdminConfirmActiv.Text = AdminConfirmText;
                 foreach (DataRow c in dt_City.Rows)
                 {
                     lbl_ActivCity.Text = c["City_Name"].ToString();

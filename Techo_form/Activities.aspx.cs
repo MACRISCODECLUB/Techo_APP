@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 
 namespace Techo_form
@@ -12,9 +13,100 @@ namespace Techo_form
     {
         Techo_form.code.udf udf = new code.udf();
         Techo_form.code.activity activity = new code.activity();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                try
+                {
+                    Get_Actividad_Info(Request.QueryString["I"].ToString());
+                }
+                catch (Exception ex)
+                {
+
+                 
+                }
+                
+            } 
+        }
+
+        private void Get_Actividad_Info(string Idactividad)
+        {
+            DataTable dt_Coordinators = new DataTable();
+            DataTable dt_Actividad = new DataTable();
+            DataTable dt_City = new DataTable();
+            dt_Actividad = udf.Get_DataSet_Query(activity.GetActivitybyId(Idactividad)).Tables[0];
+            string Id_City = "";
+            dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Idactividad)).Tables[0];
+            string Id_Coordinator = "";
+            Boolean Visibility;
+            string VisibilityText = "";
+            Boolean Status;
+            string StatusText = "";
+            string StartDate = "";
+            string EndDate = "";
+            string Capacity = "";
+            Boolean AdminConfirm = false;
+            string AdminConfirmText = "";
+            string Id_State = "";
+
+            foreach (DataRow r in dt_Actividad.Rows)
+            {
+                tb_nameactiv.Text = r["Activ_Name"].ToString();
+                tb_Workhours.Text = r["Work_Hours"].ToString();
+                Id_City = r["Id_City"].ToString();
+                Id_State = r["Id_State"].ToString();
+                dt_City = udf.Get_DataSet_Query(activity.GetCitybyId(Id_City)).Tables[0];
+                Id_Coordinator = r["Id_Coordinator"].ToString();
+                dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Id_Coordinator)).Tables[0];
+                Visibility = Convert.ToBoolean(r["Visibility"].ToString());
+                Status = Convert.ToBoolean(r["Status"].ToString());
+                StartDate = Convert.ToString(r["StartF"]);
+                EndDate = Convert.ToString(r["EndF"]);
+                Capacity = Convert.ToString(r["capacityactiv"]);
+
+                tb_startdate.Text = StartDate;
+                tb_enddate.Text = EndDate;
+                DescriptionActiv.Text = (r["descripactiv"]).ToString();
+                tb_capacityactiv.Text = Capacity;
+                ddl_StateActiv.DataBind();
+                //TODO FIX STATE VALUE
+                //ddl_StateActiv.SelectedItem.Value = Id_State;
+
+                
+
+                //Visibility function, convert boolean to string
+                if (Visibility == true)
+                {
+                    VisibilityText = "Visible";
+                }
+                else
+                {
+                    VisibilityText = "Invisible";
+                }
+
+                //Status function, convert boolean to string
+                if (Status == true)
+                {
+                    StatusText = "Abierto";
+                }
+                else
+                {
+                    StatusText = "Cerrado";
+                }
+
+                //Admin confirm function, Convert boolean to Yes or No
+                if (AdminConfirm == true)
+                {
+                    AdminConfirmText = "Si";
+                }
+                else
+                {
+                    AdminConfirmText = "No";
+                }
+
+            }
         }
 
         protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)

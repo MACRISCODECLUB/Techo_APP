@@ -11,7 +11,7 @@ namespace Techo_form
 {
 
 
-    public partial class DashboardActiv
+    public partial class DashboardVolunteer
     {
 
         /// <summary>
@@ -78,33 +78,6 @@ namespace Techo_form
         protected global::AjaxControlToolkit.CalendarExtender Ajax_calend_enddate_filter;
 
         /// <summary>
-        /// lbl_visibilityactiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_visibilityactiv;
-
-        /// <summary>
-        /// ddl_visibility control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_visibility;
-
-        /// <summary>
-        /// ds_visibilityactiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ds_visibilityactiv;
-
-        /// <summary>
         /// btn_Applyfilters control.
         /// </summary>
         /// <remarks>
@@ -114,13 +87,13 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Button btn_Applyfilters;
 
         /// <summary>
-        /// PanelActiv control.
+        /// PanelActiv2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView PanelActiv;
+        protected global::System.Web.UI.WebControls.GridView PanelActiv2;
 
         /// <summary>
         /// ds_ActivityPanel control.

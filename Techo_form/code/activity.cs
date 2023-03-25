@@ -35,7 +35,9 @@ namespace Techo_form.code
         internal string GetActivitybyId(string idactividad)
         {
             string q = "";
-            q += "SELECT * FROM ACTIVITIES ";
+            q += "SELECT *,CONVERT(varchar(10),Starts,111) AS StartF,";
+            q += "CONVERT(varchar(10),Ends,111) AS EndF, Id_State FROM ACTIVITIES a ";
+            q += "INNER JOIN CITIES c on c.Id_City = a.Id_City ";
             q += "WHERE [Id_Activity] = " + idactividad;
 
             return q;

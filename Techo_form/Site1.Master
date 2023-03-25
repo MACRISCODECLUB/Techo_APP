@@ -37,7 +37,10 @@
             <a class="nav-link" aria-current="page" href="#">Mis actividades</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="DashboardActiv.aspx">Actividades</a>
+            <a class="nav-link active" aria-current="page" href="DashboardActiv.aspx">Actividades(Admin)</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="DashboardVolunteer.aspx">Actividades(Voluntario)</a>
             </li>
             <li class="nav-item active">
             <a class="nav-link active" aria-current="page" href="Activities.aspx">Crear Actividades</a>

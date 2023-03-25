@@ -4,8 +4,8 @@
      <link href="DetalleActividad.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    .<div CssClass="container" style="padding-top:10%">
-        <h1></h1>
+    <h1 style="padding-top:5%;">Informacion de la Actividad</h1>
+    <div CssClass="container" style="padding-top:5%">    
         <!--If Activ is used in the ID of a lable, it refers to the parameter, if not it refers to the label for parameter -->
         <div class="row">
             <div class="col-md-4">
@@ -36,6 +36,47 @@
                 <asp:Label ID="lbl_StatusActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
             </div>
         </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4">
+                <asp:Label ID="lbl_StarDate" CssClass="tb_Name" runat="server" Text="Fecha de Inicio"></asp:Label>
+                <asp:Label ID="lbl_StartDateActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+            <div class="col-md-4">
+                <asp:Label ID="lbl_EndDate" CssClass="tb_Name" runat="server" Text="Fecha de Finalizacion"></asp:Label>
+                <asp:Label ID="lbl_EndDateActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+            <div class="col-md-4">
+                <asp:Label ID="lbl_Capacity" CssClass="tb_Name" runat="server" Text="Cupos"></asp:Label>
+                <asp:Label ID="lbl_CapacityActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <asp:Label ID="lbl_AdminConfirm" CssClass="tb_Name" runat="server" Text="Confirmacion de Administrador"></asp:Label>
+                <asp:Label ID="lbl_AdminConfirmActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+            <div class="col-md-6">
+                <asp:Label ID="lbl_VacantSlots" CssClass="tb_Name" runat="server" Text="Cupos Disponibles"></asp:Label>
+                <!--TODO Function to count registered volunteer and compute available slots-->
+                <asp:Label ID="lbl_VacantSlotsActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <br />
+                <asp:Label ID="lbl_Description" CssClass="tb_Name" runat="server" Text="Descripcion de la Actividad"></asp:Label>
+            </div>
+        </div>
+              
+        <div class="row">
+            <div class="col-md-12">
+                <asp:Label ID="lbl_DescriptionActiv" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+        </div>
+
+        
      </div>
     <!--<asp:Label ID="lbl_Idactividad" runat="server" Text="Nada wey"></asp:Label>-->
 </asp:Content>
