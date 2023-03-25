@@ -44,11 +44,12 @@
            <!--Expr2 = End Date -->
        <asp:GridView ID="PanelActiv" CssClass="PanelActivCS table table-condensed table-hover" runat="server" AutoGenerateColumns="False" DataSourceID="ds_ActivityPanel" DataKeyNames="Id_Activity" OnSelectedIndexChanged="PanelActiv_SelectedIndexChanged">
            <Columns>
-               <asp:CommandField ShowSelectButton="True" />
                <asp:BoundField DataField="Activ_Name" HeaderText="Nombre de Actividad" SortExpression="Activ_Name"></asp:BoundField>               
                <asp:BoundField DataField="Expr1" HeaderText="Fecha de Inicio" SortExpression="Expr1" ReadOnly="True"></asp:BoundField>
                <asp:BoundField DataField="Expr2" HeaderText="Fecha de Finalizacion" SortExpression="Expr2" ReadOnly="True"></asp:BoundField>
                <asp:CheckBoxField DataField="Visibility" HeaderText="Visibilidad" SortExpression="Visibility"></asp:CheckBoxField>
+               
+               <asp:CommandField ShowSelectButton="True" HeaderText="Detalle de la Actividad" SelectText="Seleccionar" />
                
            </Columns>
        </asp:GridView>

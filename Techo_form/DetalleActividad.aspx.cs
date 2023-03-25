@@ -29,13 +29,44 @@ namespace Techo_form
             string Id_City = "";
             dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Idactividad)).Tables[0];
             string Id_Coordinator = "";
+            Boolean Visibility;
+            string VisibilityText = "";
+            Boolean Status;
+            string StatusText = "";
             foreach (DataRow r in dt_Actividad.Rows)
             {
                 lbl_ActivName.Text = r["Activ_Name"].ToString();
+                lbl_WorkHoursActiv.Text = r["Work_Hours"].ToString();
                 Id_City = r["Id_City"].ToString();
                 dt_City = udf.Get_DataSet_Query(activity.GetCitybyId(Id_City)).Tables[0];
                 Id_Coordinator = r["Id_Coordinator"].ToString();
                 dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Id_Coordinator)).Tables[0];
+                Visibility = Convert.ToBoolean(r["Visibility"].ToString());
+                Status = Convert.ToBoolean(r["Status"].ToString());
+                //Visibility function, convert boolean to string
+                if(Visibility == true)
+                {
+                    VisibilityText = "Visible";
+                }
+                else
+                {
+                    VisibilityText = "Invisible";
+                }
+                
+                lbl_VisibilityActiv.Text = VisibilityText;
+
+                //Status function, convert boolean to string
+                if(Status == true)
+                {
+                    StatusText = "Abierto";
+                }
+                else
+                {
+                    StatusText = "Cerrado";
+                }
+
+                lbl_StatusActiv.Text = StatusText;
+
                 foreach (DataRow c in dt_City.Rows)
                 {
                     lbl_ActivCity.Text = c["City_Name"].ToString();
@@ -50,3 +81,5 @@ namespace Techo_form
         }
     }
 }
+    //FOR DATE
+//CONVERT (varchar(10), Starts, 111) AS Expr1, CONVERT (varchar(10)

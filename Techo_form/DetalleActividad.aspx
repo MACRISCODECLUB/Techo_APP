@@ -21,8 +21,20 @@
                 <asp:Label ID="lbl_CoordinatorActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
             </div>
         </div> 
+        <br />
         <div class="row">
-
+            <div class="col-md-4">
+                 <asp:Label ID="lbl_WorkHours" CssClass="tb_Name" runat="server" Text="Horas de Trabajo"></asp:Label>
+                 <asp:Label ID="lbl_WorkHoursActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
+            </div>
+            <div class="col-md-4">
+                <asp:Label ID="lbl_Visibility" CssClass="tb_Name" runat="server" Text="Visibilidad de la Actividad"></asp:Label>
+                <asp:Label ID="lbl_VisibilityActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
+            </div>
+            <div class="col-md-4">
+                <asp:Label ID="lbl_Status" CssClass="tb_Name" runat="server" Text="Estatus de la Actividad"></asp:Label>
+                <asp:Label ID="lbl_StatusActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
+            </div>
         </div>
      </div>
     <!--<asp:Label ID="lbl_Idactividad" runat="server" Text="Nada wey"></asp:Label>-->

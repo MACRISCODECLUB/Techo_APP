@@ -69,6 +69,60 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_CoordinatorActiv;
 
         /// <summary>
+        /// lbl_WorkHours control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_WorkHours;
+
+        /// <summary>
+        /// lbl_WorkHoursActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_WorkHoursActiv;
+
+        /// <summary>
+        /// lbl_Visibility control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Visibility;
+
+        /// <summary>
+        /// lbl_VisibilityActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_VisibilityActiv;
+
+        /// <summary>
+        /// lbl_Status control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Status;
+
+        /// <summary>
+        /// lbl_StatusActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_StatusActiv;
+
+        /// <summary>
         /// lbl_Idactividad control.
         /// </summary>
         /// <remarks>
