@@ -36,28 +36,33 @@ namespace Techo_form
             DataTable dt_Coordinators = new DataTable();
             DataTable dt_Actividad = new DataTable();
             DataTable dt_City = new DataTable();
+            DataTable dt_Country = new DataTable();
+            DataTable dt_State = new DataTable();
+            DataTable dt_office = new DataTable();
             dt_Actividad = udf.Get_DataSet_Query(activity.GetActivitybyId(Idactividad)).Tables[0];
             string Id_City = "";
             dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Idactividad)).Tables[0];
+            string Id_State = "";
             string Id_Coordinator = "";
+            dt_Country = udf.Get_DataSet_Query(activity.GetCountryById()).Tables[0];
             Boolean Visibility;
-            string VisibilityText = "";
+            //string VisibilityText = "";
             Boolean Status;
-            string StatusText = "";
+            //string StatusText = "";
             string StartDate = "";
             string EndDate = "";
             string Capacity = "";
-            Boolean AdminConfirm = false;
-            string AdminConfirmText = "";
-            string Id_State = "";
+            //Boolean AdminConfirm = false;
+            //string AdminConfirmText = "";
 
             foreach (DataRow r in dt_Actividad.Rows)
             {
                 tb_nameactiv.Text = r["Activ_Name"].ToString();
                 tb_Workhours.Text = r["Work_Hours"].ToString();
                 Id_City = r["Id_City"].ToString();
-                Id_State = r["Id_State"].ToString();
                 dt_City = udf.Get_DataSet_Query(activity.GetCitybyId(Id_City)).Tables[0];
+                Id_State = r["Id_State"].ToString();
+                dt_State = udf.Get_DataSet_Query(activity.GetStatebyId(Id_State)).Tables[0];
                 Id_Coordinator = r["Id_Coordinator"].ToString();
                 dt_Coordinators = udf.Get_DataSet_Query(activity.GetCoordinatorbyId(Id_Coordinator)).Tables[0];
                 Visibility = Convert.ToBoolean(r["Visibility"].ToString());
@@ -70,40 +75,67 @@ namespace Techo_form
                 tb_enddate.Text = EndDate;
                 DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 tb_capacityactiv.Text = Capacity;
-                ddl_StateActiv.DataBind();
-                //TODO FIX STATE VALUE
-                //ddl_StateActiv.SelectedItem.Value = Id_State;
-
+                
                 
 
-                //Visibility function, convert boolean to string
-                if (Visibility == true)
-                {
-                    VisibilityText = "Visible";
-                }
-                else
-                {
-                    VisibilityText = "Invisible";
-                }
 
-                //Status function, convert boolean to string
-                if (Status == true)
-                {
-                    StatusText = "Abierto";
-                }
-                else
-                {
-                    StatusText = "Cerrado";
-                }
+                ////Visibility function, convert boolean to string
+                //if (Visibility == true)
+                //{
+                //    VisibilityText = "Visible";
+                //}
+                //else
+                //{
+                //    VisibilityText = "Invisible";
+                //}
 
-                //Admin confirm function, Convert boolean to Yes or No
-                if (AdminConfirm == true)
+                ////Status function, convert boolean to string
+                //if (Status == true)
+                //{
+                //    StatusText = "Abierto";
+                //}
+                //else
+                //{
+                //    StatusText = "Cerrado";
+                //}
+
+                ////Admin confirm function, Convert boolean to Yes or No
+                //if (AdminConfirm == true)
+                //{
+                //    AdminConfirmText = "Si";
+                //}
+                //else
+                //{
+                //    AdminConfirmText = "No";
+                //}
+                foreach(DataRow c in dt_Country.Rows)
                 {
-                    AdminConfirmText = "Si";
-                }
-                else
-                {
-                    AdminConfirmText = "No";
+                    ddl_CountryActiv.DataBind();
+                    ddl_CountryActiv.Items.FindByValue(c["Id_Country"].ToString()).Selected = true;                    
+
+                    foreach(DataRow s in dt_State.Rows)
+                    {
+                        ddl_StateActiv.DataBind();
+                        ddl_StateActiv.Items.FindByValue(s["Id_State"].ToString()).Selected = true;
+                        
+                        foreach(DataRow t in dt_City.Rows)
+                        {
+                            ddl_Cityactiv.DataBind();
+                            ddl_Cityactiv.Items.FindByValue(t["Id_City"].ToString()).Selected = true;
+
+                            foreach(DataRow CORD in dt_Coordinators.Rows)
+                            {
+                                ddl_Coordinatoractiv.DataBind();
+                                ddl_Coordinatoractiv.Items.FindByValue(CORD["Id_Coordinator"].ToString()).Selected = true;
+                                foreach(DataRow o in dt_office.Rows)
+                                {
+                                    ddl_officeactiv.DataBind();
+                                    ddl_officeactiv.Items.FindByValue(o["Id_Office"].ToString()).Selected = true;
+                                }
+                            }
+                        }
+                    }
+
                 }
 
             }
@@ -111,7 +143,6 @@ namespace Techo_form
 
         protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddl_ActivityType.Items.Clear();
             ddl_ActivityType.DataBind();
         }
 

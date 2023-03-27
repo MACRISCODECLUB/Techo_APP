@@ -58,12 +58,27 @@ namespace Techo_form.code
             //TODO FINISH COORDINATOR LABEL
             q += "SELECT * FROM USERS u ";
             q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
-            q += "WHERE u.Id_User = " + IdUser;
+            q += "WHERE u.Id_User =  " + IdUser;
             q += "ORDER BY FirstName ASC, LastName ASC";
 
             return q;
 
         }
+
+        internal string GetCountryById()
+        {
+            string q = "";
+            q += "Select * FROM COUNTRIES";
+            return q;
+        }
+
+        internal string GetStatebyId(string IdState)
+        {
+            string q = "";
+            q += "Select * FROM STATES ";
+            q += "WHERE [Id_State] =" + IdState;
+            return q;
+        }   
     }
 
         
