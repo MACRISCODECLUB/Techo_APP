@@ -31,6 +31,12 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string get_volunteer_info_by_Id(string Id_Vol)
+        {
+            string q = "";
+            q += "Select * from PEOPLE where Id_People = " + Id_Vol;
+            return q;
+        }
         
     
     }

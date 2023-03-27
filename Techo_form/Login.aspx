@@ -22,7 +22,7 @@
         </p>
   </div>
     <div class="container">
-        <div class="row">
+        <div class="row g-2">
             <div class="col-4"></div>
             <div class="col-4 text-center">
                 <asp:Label ID="lbl_Username" runat="server" Text="Mail"></asp:Label>
@@ -30,14 +30,23 @@
             </div>
             <div class="col-4"></div>
         </div>
-        <div class="row">
+        <div class="row g-2">
             <div class="col-4"></div>
             <div class="col-4 text-center">
                 <asp:Label ID="lbl_Password" runat="server" Text="Contraseña"></asp:Label>
                 <asp:TextBox CssClass="form-control" ID="tb_Password" runat="server"></asp:TextBox>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4"></div> 
         </div>
+        <br />
+         <div class="row g-2">
+             <div class="col-4"></div>
+             <div class="col-4 text-center">
+                 <asp:Button ID="bt_login" runat="server" Text="Ingresar" Width="90px" />
+             </div>
+             <div class="col-4"></div>
+         </div>
+        
     </div>
 </main>
 

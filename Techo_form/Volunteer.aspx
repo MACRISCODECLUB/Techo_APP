@@ -39,8 +39,8 @@
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_DOB" runat="server" Text="FECHA DE NACIMIENTO" Font-Bold="true"></asp:Label> 
-                <asp:Label ID="lbl_EjDOB" runat="server" Text="Ej: 21/06/2023" ForeColor="#808080"></asp:Label> <br />
-                <asp:TextBox CssClass="form-control" ID="tb_DOB" runat="server" placeholder="dd/mm/yyyy"></asp:TextBox>
+                <asp:Label ID="lbl_EjDOB" runat="server" Text="Ej: 2023/06/21" ForeColor="#808080"></asp:Label> <br />
+                <asp:TextBox CssClass="form-control" ID="tb_DOB" runat="server" placeholder="aaaa/mm/dd"></asp:TextBox>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_RNP_Number" runat="server" Text="NUMERO DE DOCUMENTO / PASAPORTE" Font-Bold="true"></asp:Label> <br />
@@ -51,8 +51,8 @@
                 <asp:TextBox CssClass="form-control" ID="tb_Cellphone" runat="server" placeholder="+504 9988-7766"></asp:TextBox>
             </div>
             <div class="col-md-6">
-                <asp:Label ID="lbl_Email" runat="server" Text="EMAIL" Font-Bold="true"></asp:Label>
-                <asp:TextBox CssClass="form_control" ID="tb_Email" runat="server" placeholder="techo@gmail.com"></asp:TextBox>
+                <asp:Label ID="lbl_Email" runat="server" Text="EMAIL" Font-Bold="true"></asp:Label> <br />
+                <asp:TextBox CssClass="form-control" ID="tb_Email" runat="server" placeholder="techo@gmail.com"></asp:TextBox>
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_Country" runat="server" Text="PAIS ACTUAL" Font-Bold="true"></asp:Label> <br />
