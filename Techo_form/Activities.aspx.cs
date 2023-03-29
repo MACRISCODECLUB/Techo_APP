@@ -46,14 +46,14 @@ namespace Techo_form
             string Id_Coordinator = "";
             dt_Country = udf.Get_DataSet_Query(activity.GetCountryById()).Tables[0];
             Boolean Visibility;
-            //string VisibilityText = "";
+            string VisibilityValue;
             Boolean Status;
-            //string StatusText = "";
+            string StatusValue;
             string StartDate = "";
             string EndDate = "";
             string Capacity = "";
-            //Boolean AdminConfirm = false;
-            //string AdminConfirmText = "";
+            Boolean AdminConfirm = false;
+            string AdminConfirmValue;
 
             foreach (DataRow r in dt_Actividad.Rows)
             {
@@ -70,45 +70,51 @@ namespace Techo_form
                 StartDate = Convert.ToString(r["StartF"]);
                 EndDate = Convert.ToString(r["EndF"]);
                 Capacity = Convert.ToString(r["capacityactiv"]);
-
+                
                 tb_startdate.Text = StartDate;
                 tb_enddate.Text = EndDate;
                 DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 tb_capacityactiv.Text = Capacity;
-                
-                
+
+                //Todo get booleans with functions
+                //Visibility function, convert boolean to string
+                if (Visibility == true)
+                {
+                    VisibilityValue = "1";
+                }
+                else
+                {
+                    VisibilityValue = "2";
+                }
+
+                //Status function, convert boolean to string
+                if (Status == true)
+                {
+                    StatusValue = "1";
+                }
+                else
+                {
+                    StatusValue = "2";
+                }
+
+                //Admin confirm function, Convert boolean to Yes or No
+                if (AdminConfirm == true)
+                {
+                    AdminConfirmValue = "0";
+                }
+                else
+                {
+                    AdminConfirmValue = "1";
+                }
+                ddl_adminconfirm.DataBind();
+                ddl_adminconfirm.Items.FindByValue((AdminConfirmValue).ToString()).Selected = true;
+                ddl_status.DataBind();
+                ddl_status.Items.FindByValue(StatusValue).Selected = true;
+                ddl_visibility.DataBind();
+                ddl_visibility.Items.FindByValue(VisibilityValue).Selected = true;
 
 
-                ////Visibility function, convert boolean to string
-                //if (Visibility == true)
-                //{
-                //    VisibilityText = "Visible";
-                //}
-                //else
-                //{
-                //    VisibilityText = "Invisible";
-                //}
-
-                ////Status function, convert boolean to string
-                //if (Status == true)
-                //{
-                //    StatusText = "Abierto";
-                //}
-                //else
-                //{
-                //    StatusText = "Cerrado";
-                //}
-
-                ////Admin confirm function, Convert boolean to Yes or No
-                //if (AdminConfirm == true)
-                //{
-                //    AdminConfirmText = "Si";
-                //}
-                //else
-                //{
-                //    AdminConfirmText = "No";
-                //}
-                foreach(DataRow c in dt_Country.Rows)
+                foreach (DataRow c in dt_Country.Rows)
                 {
                     ddl_CountryActiv.DataBind();
                     ddl_CountryActiv.Items.FindByValue(c["Id_Country"].ToString()).Selected = true;                    
@@ -126,7 +132,7 @@ namespace Techo_form
                             foreach(DataRow CORD in dt_Coordinators.Rows)
                             {
                                 ddl_Coordinatoractiv.DataBind();
-                                ddl_Coordinatoractiv.Items.FindByValue(CORD["Id_Coordinator"].ToString()).Selected = true;
+                                ddl_Coordinatoractiv.Items.FindByValue(CORD["Id_Profile"].ToString()).Selected = true;
                                 foreach(DataRow o in dt_office.Rows)
                                 {
                                     ddl_officeactiv.DataBind();
@@ -154,7 +160,7 @@ namespace Techo_form
 
         protected void btn_Submit_Click(object sender, EventArgs e)
         {
-            //TODO hacer las validaciones del caso.
+            //Data validation start
             if (udf.FormatDateToDate(tb_startdate.Text) < DateTime.Now)
                 {
                 lbl_output_Form.Text = "Fecha de Inicio invalida, de momento no es posible viajar en el tiempo";
@@ -261,7 +267,7 @@ namespace Techo_form
                                                             udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
                                                                 , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
                                                                 , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
-                                                                , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text)));
+                                                                , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value)));
                                                             lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";
                                                             lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
                                                             lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
