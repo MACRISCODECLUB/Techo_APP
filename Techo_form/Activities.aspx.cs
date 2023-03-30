@@ -45,6 +45,17 @@ namespace Techo_form
             string Id_State = "";
             string Id_Coordinator = "";
             dt_Country = udf.Get_DataSet_Query(activity.GetCountryById()).Tables[0];
+
+            dt_office = udf.Get_DataSet_Query(activity.GetOfficebyId(Idactividad)).Tables[0];
+            foreach (DataRow o in dt_office.Rows)
+            {
+                ddl_officeactiv.DataBind();
+                //ddl_officeactiv.ClearSelection();
+                string val = o["Id_Office"].ToString();
+                ddl_officeactiv.SelectedValue = val;
+                //ddl_officeactiv.Items.FindByText(val).Selected = true;
+            }
+
             Boolean Visibility;
             string VisibilityValue;
             Boolean Status;
@@ -119,30 +130,33 @@ namespace Techo_form
                     ddl_CountryActiv.DataBind();
                     ddl_CountryActiv.Items.FindByValue(c["Id_Country"].ToString()).Selected = true;                    
 
-                    foreach(DataRow s in dt_State.Rows)
-                    {
-                        ddl_StateActiv.DataBind();
-                        ddl_StateActiv.Items.FindByValue(s["Id_State"].ToString()).Selected = true;
-                        
-                        foreach(DataRow t in dt_City.Rows)
-                        {
-                            ddl_Cityactiv.DataBind();
-                            ddl_Cityactiv.Items.FindByValue(t["Id_City"].ToString()).Selected = true;
+                   
+                }
 
-                            foreach(DataRow CORD in dt_Coordinators.Rows)
-                            {
-                                ddl_Coordinatoractiv.DataBind();
-                                ddl_Coordinatoractiv.Items.FindByValue(CORD["Id_Profile"].ToString()).Selected = true;
-                                foreach(DataRow o in dt_office.Rows)
-                                {
-                                    ddl_officeactiv.DataBind();
-                                    ddl_officeactiv.Items.FindByValue(o["Id_Office"].ToString()).Selected = true;
-                                }
-                            }
-                        }
-                    }
+                foreach (DataRow s in dt_State.Rows)
+                {
+                    ddl_StateActiv.DataBind();
+                    ddl_StateActiv.Items.FindByValue(s["Id_State"].ToString()).Selected = true;
+
 
                 }
+
+                foreach (DataRow t in dt_City.Rows)
+                {
+                    ddl_Cityactiv.DataBind();
+                    ddl_Cityactiv.Items.FindByValue(t["Id_City"].ToString()).Selected = true;
+
+
+                }
+
+                foreach (DataRow CORD in dt_Coordinators.Rows)
+                {
+                    ddl_Coordinatoractiv.DataBind();
+                    ddl_Coordinatoractiv.Items.FindByValue(CORD["Id_People"].ToString()).Selected = true;
+                    
+                }
+
+                
 
             }
         }

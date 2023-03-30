@@ -96,7 +96,9 @@
                 <div class="dropdown_type col-md-6">
                     <asp:Label ID="lbl_officeactiv" runat="server" Text="Oficina"></asp:Label>
                     <!--Dropwdown select Office-->
-                    <asp:DropDownList Width="100%" CssClass="form-control dp_big" ID="ddl_officeactiv" runat="server" DataSourceID="ds_OfficeActiv" DataTextField="Office" DataValueField="Id_Office"></asp:DropDownList>
+                    <asp:DropDownList Width="100%" CssClass="form-control dp_big" 
+                        ID="ddl_officeactiv" runat="server" DataSourceID="ds_OfficeActiv" 
+                        DataTextField="Office" DataValueField="Id_Office"></asp:DropDownList>
                     <asp:SqlDataSource runat="server" ID="ds_OfficeActiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Office], [Id_Office] FROM [OFFICE]"></asp:SqlDataSource>
                 </div>
                 <div class="dropdown_type col-md-6">

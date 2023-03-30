@@ -58,8 +58,8 @@ namespace Techo_form.code
             //TODO FINISH COORDINATOR LABEL
             q += "SELECT * FROM USERS u ";
             q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
-            q += "WHERE u.Id_User =  " + IdUser;
-            q += "ORDER BY FirstName ASC, LastName ASC";
+            q += "WHERE u.Id_User = ";
+            q += IdUser + " ORDER BY FirstName ASC, LastName ASC";
 
             return q;
 
@@ -78,7 +78,17 @@ namespace Techo_form.code
             q += "Select * FROM STATES ";
             q += "WHERE [Id_State] =" + IdState;
             return q;
-        }   
+        }
+        
+        internal string GetOfficebyId(string IdActivity)
+        {
+            string q = "";
+            q += "SELECT Id_Office FROM ACTIVITIES ";
+            q += "WHERE [Id_Activity] = ";
+            q += IdActivity;
+
+            return q;
+        }
     }
 
         
