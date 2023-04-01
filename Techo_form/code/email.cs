@@ -22,6 +22,12 @@ namespace Techo_form
             mail.IsBodyHtml = true;
 
             SmtpClient smtp = new SmtpClient();
+
+            smtp.UseDefaultCredentials = false;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.Credentials = new NetworkCredential("techo@macrisschool.org", "M3CH2023!");
+
             smtp.EnableSsl = true;
             try
             {
