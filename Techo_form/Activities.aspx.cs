@@ -13,6 +13,8 @@ namespace Techo_form
     {
         Techo_form.code.udf udf = new code.udf();
         Techo_form.code.activity activity = new code.activity();
+        Techo_form.email email = new Techo_form.email();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +22,9 @@ namespace Techo_form
             {
                 try
                 {
+                    //btn_UpdateActivity.Visible = false;
                     Get_Actividad_Info(Request.QueryString["I"].ToString());
+                    
                 }
                 catch (Exception ex)
                 {
@@ -33,6 +37,7 @@ namespace Techo_form
 
         private void Get_Actividad_Info(string Idactividad)
         {
+            btn_Submit.Text = "Actualizar Actividad";
             DataTable dt_Coordinators = new DataTable();
             DataTable dt_Actividad = new DataTable();
             DataTable dt_City = new DataTable();
@@ -86,6 +91,7 @@ namespace Techo_form
                 tb_enddate.Text = EndDate;
                 DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 tb_capacityactiv.Text = Capacity;
+                tb_Cost.Text = Convert.ToString(r["Cost"]).ToString();
 
                 //Todo get booleans with functions
                 //Visibility function, convert boolean to string
@@ -175,6 +181,178 @@ namespace Techo_form
         }
 
         protected void btn_Submit_Click(object sender, EventArgs e)
+        {
+
+            if(btn_Submit.Text == "Crear Actividad")
+            {
+                DataValidation(1);
+            }
+            else
+            {
+                DataValidation(2);
+            }
+            //Data validation start
+            //if (udf.FormatDateToDate(tb_startdate.Text) < DateTime.Now)
+            //{
+            //    lbl_output_Form.Text = "Fecha de Inicio invalida, de momento no es posible viajar en el tiempo";
+            //    lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //    lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //    lbl_output_Form.Visible = true;
+            //}
+            //else
+            //{
+            //    //Check if End Date is less than current time, and if the end date is set before the start date
+            //    if (udf.FormatDateToDate(tb_enddate.Text) < DateTime.Now && udf.FormatDateToDate(tb_enddate.Text) < udf.FormatDateToDate(tb_startdate.Text))
+            //    {
+            //        lbl_output_Form.Text = "Fecha de Finalizacion invalida.";
+            //        lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //        lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //        lbl_output_Form.Visible = true;
+            //    }
+            //    else
+            //    {
+            //        if (tb_nameactiv.Text.Length < 4)
+            //        {
+            //            lbl_output_Form.Text = "Las actividades requieren de al menos 4 caracteres en su nombre.";
+            //            lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //            lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //            lbl_output_Form.Visible = true;
+            //        }
+            //        else
+            //        {
+            //            if (Convert.ToDouble(tb_Workhours.Text) <= 0.00)
+            //            {
+            //                lbl_output_Form.Text = "No se puede ingresar 0, o menos horas de trabajo.";
+            //                lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                lbl_output_Form.Visible = true;
+            //            }
+            //            else
+            //            {
+            //                if ((this.DescriptionActiv.Text.Length > 0) && (this.DescriptionActiv.Text.Length < 5))
+            //                {
+            //                    lbl_output_Form.Text = "La descripcion de las actividades requieren al menos 5 caracteres.";
+            //                    lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                    lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                    lbl_output_Form.Visible = true;
+            //                }
+            //                else
+            //                {
+            //                    if (Convert.ToInt32(ddl_ActivityType.SelectedValue) == -1)
+            //                    {
+            //                        lbl_output_Form.Text = "Escoja un tipo de actividad, si la actividad que usted gusta ingresar contacte a soporte tecnico o ponga Otros.";
+            //                        lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                        lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                        lbl_output_Form.Visible = true;
+            //                    }
+            //                    else
+            //                    {
+            //                        if (Convert.ToInt32(ddl_CountryActiv.SelectedValue) == -1)
+            //                        {
+            //                            lbl_output_Form.Text = "Escoga un pais valido para la actividad";
+            //                            lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                            lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                            lbl_output_Form.Visible = true;
+            //                        }
+            //                        else
+            //                        {
+            //                            if (Convert.ToInt32(ddl_status.SelectedValue) == -1)
+            //                            {
+            //                                lbl_output_Form.Text = "Escoga el estado de la actividad.";
+            //                                lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                lbl_output_Form.Visible = true;
+            //                            }
+            //                            else
+            //                            {
+            //                                if (Convert.ToInt32(ddl_status.SelectedValue) == -1)
+            //                                {
+            //                                    lbl_output_Form.Text = "Escoga la visibilidad la actividad.";
+            //                                    lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                                    lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                    lbl_output_Form.Visible = true;
+            //                                }
+            //                                else
+            //                                {
+            //                                    if (Convert.ToDouble(tb_capacityactiv.Text) <= 0)
+            //                                    {
+            //                                        lbl_output_Form.Text = "Los cupos de la actividad no pueden ser iguales o menores que 0. Valor Predeterminado = Sin Limite";
+            //                                        lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                                        lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                        lbl_output_Form.Visible = true;
+            //                                    }
+            //                                    else
+            //                                    {
+            //                                        if (!(int.TryParse(tb_capacityactiv.Text, out int value)))
+            //                                        {
+            //                                            lbl_output_Form.Text = "No se aceptan decimales en los cupos de la actividad";
+            //                                            lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                                            lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                            lbl_output_Form.Visible = true;
+            //                                        }
+
+            //                                        else
+            //                                        {
+            //                                            if (Convert.ToDouble(tb_Cost.Text) == 0.05 || Convert.ToDouble(tb_Cost.Text) < 0 || tb_Cost.Text.Length < 1)
+            //                                            {
+            //                                                lbl_output_Form.Text = "0.05 es un costo vacio. El costo de esta activididad no puede ser menor a 0, ni tampoco puede dejarse en blanco, si la actividad no tiene costo escriba 0";
+            //                                                lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+            //                                                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                                lbl_output_Form.Visible = true;
+            //                                            }
+            //                                            else
+            //                                            {
+            //                                                try
+            //                                                {
+            //                                                    udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
+            //                                                        , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+            //                                                        , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
+            //                                                        , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text)));
+            //                                                    lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";
+            //                                                    lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
+            //                                                    lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
+            //                                                    lbl_output_Form.Visible = true;
+
+            //                                                    //Traer en un datatable todos los correos
+            //                                                    DataTable dt_emails = new DataTable();
+            //                                                    dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+            //                                                    //Envio de correos electronicos
+            //                                                    foreach(DataRow em in dt_emails.Rows)
+            //                                                    {
+            //                                                        string Subject = "";
+            //                                                        Subject = "Sumate a la activididad:" + " " + tb_nameactiv.Text + " " + "junto a TECHO!";
+            //                                                        email.SendEmail(em["Email"].ToString(), Subject, GetBodyNewActivity());
+            //                                                    }
+            //                                                }
+            //                                                catch (Exception ex)
+            //                                                {
+            //                                                    lbl_output_Form.Text = "Error al ingresar la actividad, " +
+            //                                                        "revise la informacion ingresa y vuelva a intentar. Error: " +
+            //                                                        ex.Message.ToString();
+            //                                                    lbl_output_Form.BackColor = System.Drawing.Color.Red;
+            //                                                    lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+            //                                                    lbl_output_Form.Visible = true;
+            //                                                }
+            //                                            }
+
+
+            //                                        }
+
+
+            //                                    }
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+        }
+
+        protected void DataValidation(int Action)
         {
             //Data validation start
             if (udf.FormatDateToDate(tb_startdate.Text) < DateTime.Now)
@@ -287,26 +465,14 @@ namespace Techo_form
                                                         }
                                                         else
                                                         {
-                                                            try
+                                                            if(Action == 1)
                                                             {
-                                                                udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
-                                                                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
-                                                                    , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
-                                                                    , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text)));
-                                                                lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";
-                                                                lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
-                                                                lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
-                                                                lbl_output_Form.Visible = true;
-                                                            }
-                                                            catch (Exception ex)
+                                                                DoInsertActivity();
+                                                            } else
                                                             {
-                                                                lbl_output_Form.Text = "Error al ingresar la actividad, " +
-                                                                    "revise la informacion ingresa y vuelva a intentar. Error: " +
-                                                                    ex.Message.ToString();
-                                                                lbl_output_Form.BackColor = System.Drawing.Color.Red;
-                                                                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
-                                                                lbl_output_Form.Visible = true;
+                                                                DoUpdateActivity();
                                                             }
+                                                            
                                                         }
 
 
@@ -324,6 +490,106 @@ namespace Techo_form
                     }
                 }
             }
+        }
+
+        private void DoUpdateActivity()
+        {
+            //TODO Modify creation only for update
+            try
+            {
+                activity.UpdateActivity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
+                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+                    , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
+                    , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text), Request.QueryString["I"].ToString());
+                lbl_output_Form.Text = "La actividad fue actualizada satisfactoriamente";
+                lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
+                lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
+                lbl_output_Form.Visible = true;
+
+                //If(Date anterior == Date Nueva) {No hagas nada] else {Manda Correo}
+                //
+                //Traer en un datatable todos los correos
+                DataTable dt_emails = new DataTable();
+                dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+                //Envio de correos electronicos
+                //foreach (DataRow em in dt_emails.Rows)
+                //{
+                //    string Subject = "";
+                //    Subject = "Sumate a la activididad:" + " " + tb_nameactiv.Text + " " + "junto a TECHO!";
+                //    email.SendEmail(em["Email"].ToString(), Subject, GetBodyNewActivity());
+                //}
+            }
+            catch (Exception ex)
+            {
+                lbl_output_Form.Text = "Error al actualizar la actividad, " +
+                    "revise la informacion ingresada y vuelva a intentar. Error: " +
+                    ex.Message.ToString();
+                lbl_output_Form.BackColor = System.Drawing.Color.Red;
+                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+                lbl_output_Form.Visible = true;
+            }
+        }
+
+        private void DoInsertActivity()
+        {
+            try
+            {
+                udf.Execute_Non_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
+                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+                    , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
+                    , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text)));
+                lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";
+                lbl_output_Form.BackColor = System.Drawing.Color.LightGreen;
+                lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
+                lbl_output_Form.Visible = true;
+
+                //Traer en un datatable todos los correos
+                DataTable dt_emails = new DataTable();
+                dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+                //Envio de correos electronicos
+                foreach (DataRow em in dt_emails.Rows)
+                {
+                    string Subject = "";
+                    Subject = "Sumate a la activididad:" + " " + tb_nameactiv.Text + " " + "junto a TECHO!";
+                    email.SendEmail(em["Email"].ToString(), Subject, GetBodyNewActivity());
+                }
+            }
+            catch (Exception ex)
+            {
+                lbl_output_Form.Text = "Error al ingresar la actividad, " +
+                    "revise la informacion ingresa y vuelva a intentar. Error: " +
+                    ex.Message.ToString();
+                lbl_output_Form.BackColor = System.Drawing.Color.Red;
+                lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+                lbl_output_Form.Visible = true;
+            }
+        }
+
+        private string GetBodyNewActivity()
+        {
+            //b for the Body of the Email
+            string b = "";
+            //s for the style
+            string s = "";
+            s += "display: block;";
+            s += "width: 100 %;";
+            s += "padding: $input-padding-y $input-padding-x;";
+            s += "font-family: $input-font-family;";
+            s += "font-size:10px;";
+            s += "font-weight: $input-font-weight;";
+            s += "line-height: $input-line-height;";
+            s += "background-color: #f8f7ff;";
+            s += "background-clip: padding-box;";
+            s += "border: $input-border-width solid $input-border-color;";
+            s += "appearance: none;";
+            b += "<h1>Registrate en la nueva actividad</h1> <br /> ";
+            b += "<hr/>";
+            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
+
+
+            return b;
+            
+
         }
     }
 }

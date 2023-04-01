@@ -330,24 +330,6 @@ namespace Techo_form
         protected global::AjaxControlToolkit.CalendarExtender Ajax_calend_enddate;
 
         /// <summary>
-        /// lbl_descripactiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_descripactiv;
-
-        /// <summary>
-        /// DescriptionActiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescriptionActiv;
-
-        /// <summary>
         /// lbl_Cost control.
         /// </summary>
         /// <remarks>
@@ -364,6 +346,24 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Cost;
+
+        /// <summary>
+        /// lbl_descripactiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_descripactiv;
+
+        /// <summary>
+        /// DescriptionActiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DescriptionActiv;
 
         /// <summary>
         /// lbl_capacityactiv control.
@@ -445,5 +445,50 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_output_Form;
+
+        /// <summary>
+        /// lbl_WorkhoursHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_WorkhoursHidden;
+
+        /// <summary>
+        /// lbl_CostHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_CostHidden;
+
+        /// <summary>
+        /// lbl_StartDateHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_StartDateHidden;
+
+        /// <summary>
+        /// lbl_EndDateHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_EndDateHidden;
+
+        /// <summary>
+        /// lbl_CoordinatorHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_CoordinatorHidden;
     }
 }

@@ -110,5 +110,12 @@ namespace Techo_form.code
             return builder.ToString();
         }
 
+        internal string GetAllEmails()
+        {
+            string q = "";
+            q += "SELECT Email from PEOPLE";
+            return q;
+        }
+
     }
 }

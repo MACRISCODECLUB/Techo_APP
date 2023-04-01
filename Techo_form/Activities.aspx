@@ -132,32 +132,32 @@
             </div>
             <br />
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <asp:Label ID="lbl_startdate" runat="server" Text="Fecha de Inicio"></asp:Label>
                     <br />
                     <asp:TextBox CssClass="form-control" Width="100%" ID="tb_startdate" runat="server"></asp:TextBox>
                     <ajaxToolkit:CalendarExtender ID="AJAX_calend_startdate" runat="server"
                         BehaviorID="textbox1_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_startdate" />
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <asp:Label ID="lbl_endate" runat="server" Text="Fecha de Finalizacion"></asp:Label>
                     <br />
                     <asp:TextBox CssClass="form-control" Width="100%" ID="tb_enddate" runat="server"></asp:TextBox>
                     <ajaxToolkit:CalendarExtender ID="Ajax_calend_enddate" runat="server"
                         BehaviorID="TextBox2_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_enddate" />
                 </div>
+                <div class="col-md-4">
+                    <asp:Label ID="lbl_Cost" runat="server" Text="Costo de Inscripccion"></asp:Label>
+                    <asp:TextBox ID="tb_Cost" Text="0.05" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
             </div>
             <br />
             <div class="row">
-                <div class="col-10">
+                <div class="col-12">
                     <div class="form-group">
                         <asp:Label ID="lbl_descripactiv" runat="server" Text="Descipcion"></asp:Label>
-                        <asp:TextBox ID="DescriptionActiv" CssClass="form-control" Rows="3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="DescriptionActiv" TextMode="MultiLine" Rows="3" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
-                </div>
-                <div class="col-2">
-                    <asp:Label ID="lbl_Cost" runat="server" Text="Costo de Inscripccion"></asp:Label>
-                    <asp:TextBox ID="tb_Cost" Text="0.05" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -176,17 +176,25 @@
                 <div class="col-md-3">
                     <asp:Label ID="lbl_Workhours" runat="server" Text="Horas de Trabajo"></asp:Label>
                     <br />
-                    <asp:TextBox Width="100%" CssClass="form-control" ID="tb_Workhours" runat="server"></asp:TextBox>
+                    <asp:TextBox Width="100%" CssClass="form-control" ID="tb_Workhours" Text="0.00" runat="server"></asp:TextBox>
+
                 </div>
             </div>
             <br />
             <div class="row">
                 <div class="col-md-4">
-                    <asp:Button CssClass="btn btn-primary" BackColor="#367fa9" BorderColor="#367fa9" ID="btn_Submit" runat="server" Text="Submit" OnClick="btn_Submit_Click" />
+                    <asp:Button CssClass="btn btn-primary" BackColor="#367fa9" BorderColor="#367fa9" ID="btn_Submit" runat="server" Text="Crear Actividad" OnClick="btn_Submit_Click" />
+                                                                                                                                               <!--Add OnClick function --> 
+                    <%--<asp:Button CssClass="btn btn-primary" BackColor="#367fa9" BorderColor="#367fa9" ID="btn_UpdateActivity" runat="server" Text="Actualizar actividad" OnClick="btn_Submit_Click" />--%>
                 </div>
                 <div class="col-md-4">
                     <asp:Label Style="font: bolder 12 px Halvetica; color: black;" ID="lbl_output_Form" runat="server" Text="Output Label" Visible="False"></asp:Label>
                 </div>
+                    <asp:Label ID="lbl_WorkhoursHidden" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_CostHidden" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_StartDateHidden" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_EndDateHidden" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_CoordinatorHidden" runat="server" Text="Nada wey"></asp:Label>
                 
             </div>
         </div>

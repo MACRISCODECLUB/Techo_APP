@@ -27,7 +27,6 @@ namespace Techo_form.code
             + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "', " + Id_Office + ", " + Cost + ") ";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
-            //Mandar correos electronicos en la creacion de la actividad
 
             return q;
         }
@@ -86,6 +85,31 @@ namespace Techo_form.code
             q += "SELECT Id_Office FROM ACTIVITIES ";
             q += "WHERE [Id_Activity] = ";
             q += IdActivity;
+
+            return q;
+        }
+
+        internal string UpdateActivity(string Activ_Name, int Id_City, int Id_Coordinator,
+            double Work_Hours, string descripactiv, Boolean Visibility, Boolean Status,
+            string Starts, string Ends, int capacityactiv, Boolean adminconfirm, int Id_Office, double Cost, string IdActividad)
+        {
+            string q = "";
+            q += "UPDATE [ACTIVITIES] ";
+            q += "SET [Activ_Name] = '" + Activ_Name + "'";
+            q += " ,[Id_City] = " + Id_City;
+            q += " ,[Id_Coordinator] = " + Id_Coordinator;
+            q += " ,[Work_Hours] = " + Work_Hours;
+            q += " ,[descripactiv] = '" + descripactiv + "'";
+            q += " ,[Visibility] = " + Visibility;
+            q += " ,[Status] = " + Status;
+            q += " ,[Starts] = " + Starts;
+            q += " ,[Ends] = " + Ends;
+            q += " ,[capacityactiv] = " + capacityactiv;
+            q += " ,[adminconfirm] = " + adminconfirm;
+            q += " ,[Id_Office] = " + Id_Office;
+            q += " ,[Cost] = " + Cost;
+            q += " WHERE [Id_Activity] = " + IdActividad;
+
 
             return q;
         }
