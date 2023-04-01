@@ -11,6 +11,7 @@ namespace Techo_form
     {
         Techo_form.code.udf udf = new code.udf();
         Techo_form.code.volunteer volunteer = new code.volunteer();
+        Techo_form.email email = new email();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -137,6 +138,7 @@ namespace Techo_form
                 lbl_mensaje.BackColor = System.Drawing.Color.LightGreen;
                 lbl_mensaje.ForeColor = System.Drawing.Color.DarkGreen;
                 //MANDAR CORREO ELECTRONICO AL VOLUNTARIO PARA QUE SE CONFIRME
+                email.SendEmail(tb_Email.Text, "Nuevo voluntario", getBodyVolunteer());
             }
             catch (Exception ex)
             {
@@ -145,6 +147,15 @@ namespace Techo_form
                 lbl_mensaje.BackColor = System.Drawing.Color.LightPink;
                 lbl_mensaje.ForeColor = System.Drawing.Color.DarkRed;
             }
+        }
+
+        private string getBodyVolunteer()
+        {
+            string Body = "";
+            Body += "<h1> Muchas gracias por unirte a Techo! </h1> <br /> <hr />";
+            Body += "Para confirmar tu correo electronico y activar tu cuenta debes dar click en el link inferior";
+
+            return Body;
         }
     }
 }
