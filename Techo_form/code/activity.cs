@@ -17,14 +17,14 @@ namespace Techo_form.code
         }
         internal string Insert_New_Activity(string Activ_Name, int Id_City, int Id_Coordinator,
             double Work_Hours, string descripactiv, Boolean Visibility, Boolean Status,
-            string Starts, string Ends, int capacityactiv, Boolean adminconfirm, int Id_Office)
+            string Starts, string Ends, int capacityactiv, Boolean adminconfirm, int Id_Office, double Cost)
         {
             string q = "";
 
             q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv, ";
-            q += "Visibility, Status, Starts, Ends, capacityactiv, adminconfirm, Id_Office) VALUES('";
+            q += "Visibility, Status, Starts, Ends, capacityactiv, adminconfirm, Id_Office, Cost) VALUES('";
             q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "', '"
-            + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "', " + Id_Office + ") ";
+            + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "', " + Id_Office + ", " + Cost + ") ";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
             //Mandar correos electronicos en la creacion de la actividad

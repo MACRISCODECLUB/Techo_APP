@@ -348,6 +348,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox DescriptionActiv;
 
         /// <summary>
+        /// lbl_Cost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Cost;
+
+        /// <summary>
+        /// tb_Cost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_Cost;
+
+        /// <summary>
         /// lbl_capacityactiv control.
         /// </summary>
         /// <remarks>

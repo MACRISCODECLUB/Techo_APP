@@ -38,6 +38,7 @@ namespace Techo_form
             string Capacity = "";
             Boolean AdminConfirm = false;
             string AdminConfirmText = "";
+            string Cost = "";
 
             foreach (DataRow r in dt_Actividad.Rows)
             {
@@ -53,6 +54,8 @@ namespace Techo_form
                 EndDate = Convert.ToString(r["EndF"]);
                 Capacity = Convert.ToString(r["capacityactiv"]);
                 lbl_DescriptionActiv.Text = (r["descripactiv"]).ToString();
+                Cost = (r["Cost"]).ToString() + "L";
+                lbl_CostActiv.Text = Cost;
                 //Visibility function, convert boolean to string
                 if(Visibility == true)
                 {

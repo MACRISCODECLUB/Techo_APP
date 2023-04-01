@@ -72,7 +72,13 @@
               
         <div class="row">
             <div class="col-md-12">
-                <asp:Label ID="lbl_DescriptionActiv" runat="server" Text="Nada Wey"></asp:Label>
+                <asp:Label CssClass="tb_Detail" ID="lbl_DescriptionActiv" runat="server" Text="Nada Wey"></asp:Label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <asp:Label ID="lbl_Cost" CssClass="tb_Name" runat="server" Text="Costo de Inscripcion"></asp:Label>
+                <asp:Label ID="lbl_CostActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
             </div>
         </div>
 
