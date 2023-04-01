@@ -25,7 +25,7 @@
         <div class="row g-2">
             <div class="col-4"></div>
             <div class="col-4 text-center">
-                <asp:Label ID="lbl_Username" runat="server" Text="Mail"></asp:Label>
+                <asp:Label ID="lbl_Username" runat="server" Text="Correo Electronico"></asp:Label>
                 <asp:TextBox CssClass="form-control" ID="tb_Username" runat="server"></asp:TextBox>
             </div>
             <div class="col-4"></div>
