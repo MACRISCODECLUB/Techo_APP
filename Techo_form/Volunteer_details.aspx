@@ -51,6 +51,9 @@
         </div>
         <br /> <br />
         <div class="col-md-12">
+            <asp:Button ID="lbl_mensaje" runat="server" Text="" Visible="false"/>
+        </div>
+        <div class="col-md-12">
             <center>
                 <asp:Button CssClass="btn btn-primary" ID="bt_Update" runat="server" Text="Actualizar" OnClick="bt_Update_Click" />
             </center>

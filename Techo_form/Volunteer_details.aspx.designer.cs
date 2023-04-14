@@ -159,6 +159,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.SqlDataSource ds_Cities;
 
         /// <summary>
+        /// lbl_mensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button lbl_mensaje;
+
+        /// <summary>
         /// bt_Update control.
         /// </summary>
         /// <remarks>

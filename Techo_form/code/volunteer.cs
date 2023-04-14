@@ -83,8 +83,8 @@ namespace Techo_form.code
             string RNP_Number, string Id_Vol)
         {
             string q = "";
-            q += "UPDATE[PEOPLE] ";
-            q += "SET[FirstName] = '" + First_Name + "'";
+            q += " UPDATE [PEOPLE] ";
+            q += " SET[FirstName] = '" + First_Name + "'";
             q += ",[LastName] = '" + Last_Name + "'";
             q += ",[DOB] = '" + DOB + "'";
             q += ",[Id_Gender] = " + Id_Gender;
@@ -94,7 +94,7 @@ namespace Techo_form.code
             q += ",[Id_City] = " + Id_City;
             q += ",[Id_State] = " + Id_State;
             q += ",[RNP_Number] = '" + RNP_Number + "'";
-            q += "WHERE = " + Id_Vol;
+            q += " WHERE [Id_People] = " + Id_Vol;
 
             return q;
         }
