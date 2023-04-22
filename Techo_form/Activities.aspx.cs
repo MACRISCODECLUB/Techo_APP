@@ -164,7 +164,10 @@ namespace Techo_form
 
                 }
 
-
+                Session["WorkHours"] = tb_Workhours.Text;
+                Session["Cost"] = tb_Cost.Text;
+                Session["StartDate"] = udf.FormatDateToDate(tb_startdate.Text);
+                Session["EndDate"] = udf.FormatDateToDate(tb_enddate.Text);
 
             }
         }
@@ -506,11 +509,32 @@ namespace Techo_form
                 lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
                 lbl_output_Form.Visible = true;
 
-                //If(Date anterior == Date Nueva) {No hagas nada] else {Manda Correo}
                 
-                //Traer en un datatable todos los correos
-                DataTable dt_emails = new DataTable();
-                dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+                //Conditional to check if previos info is different before sending email
+                if (Convert.ToDateTime(Session["StartDate"]) != udf.FormatDateToDate(tb_startdate.Text) || Convert.ToDateTime(Session["EndDate"]) != udf.FormatDateToDate(tb_enddate.Text) 
+                    || Convert.ToString(Session["Cost"]) != tb_Cost.Text  || Convert.ToString(Session["WorkHours"]) != tb_Workhours.Text)
+                {
+                    DataTable dt_emails = new DataTable();
+                    dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+
+                    foreach(DataRow eml in dt_emails.Rows)
+                    {
+                        string Subject = "Se ha actualizado la informacion de la actividad" + " " + tb_nameactiv.Text;
+                        email.SendEmail(eml["Email"].ToString(), Subject, GetBodyUpdateActivity());
+                    }
+                } else
+                {
+                    lbl_output_Form.Text = "La informacin ingresada para fecha de inicio, fecha de finalizacion, costo, y horas de trabajo no difiere con la informacion original. Por lo cual un correo electronico no fue enviado.";
+                    lbl_output_Form.Visible = true;
+                    lbl_output_Form.ForeColor = System.Drawing.Color.Blue;
+                    lbl_output_Form.BackColor = System.Drawing.Color.White;
+                    
+                }
+                 
+                
+                
+               
+
                 //Envio de correos electronicos
                 //foreach (DataRow em in dt_emails.Rows)
                 //{
@@ -565,6 +589,38 @@ namespace Techo_form
             }
         }
 
+        private string GetBodyUpdateActivity()
+        {
+            string b = "<h1>La informacion de la actividad ha sido actualizada</>";
+            if(Convert.ToDateTime(Session["StartDate"]) != udf.FormatDateToDate(tb_startdate.Text) || Convert.ToDateTime(Session["EndDate"]) != udf.FormatDateToDate(tb_enddate.Text))
+            {
+                b += "<h2>Se han actualizado las fechas de la actividad</h2>" + " ";
+                b += "<br/>";
+                b += "<h3>Fecha de Inicio </h2>" + " ";
+                b += "<ul><li>" + udf.FormatDateToDate(tb_startdate.Text) + "<ol/>" + " ";
+                b += "<h3>Fecha de Finalizacion</h3>";
+                b += "<ul><li>" + udf.FormatDateToDate(tb_enddate.Text) + "<ol/>";
+            }
+            if(Convert.ToDouble(Convert.ToString(Session["Cost"])) != Convert.ToDouble(tb_Cost.Text))
+            {
+                b += " ";
+                b += "<h2>Nuevo costo de la actividad</h2>";
+                b += "<p> El nuevo costo de la actividad es" + " " + tb_Cost.Text;
+                b += " " + "Lempiras";
+                b += "</p>";
+            }
+            if(Convert.ToDouble(Convert.ToString(Session["WorkHours"])) != Convert.ToDouble(tb_Workhours.Text))
+            {
+                b += "<br/>";
+                b += "<p>Ahora se trabajaran" + " " + tb_Workhours.Text + " " + "horas de trabajo</p>";
+                b += "<hr/>";
+                b += "<h2> Gracias por apoyar a techo! </h2>";
+
+            }
+
+
+            return b;
+        }
         private string GetBodyNewActivity()
         {
             //b for the Body of the Email

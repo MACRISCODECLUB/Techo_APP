@@ -99,12 +99,12 @@ namespace Techo_form.code
             q += " ,[Id_Coordinator] = " + Id_Coordinator;
             q += " ,[Work_Hours] = " + Work_Hours;
             q += " ,[descripactiv] = '" + descripactiv + "'";
-            q += " ,[Visibility] = " + Visibility;
-            q += " ,[Status] = " + Status;
-            q += " ,[Starts] = " + Starts;
-            q += " ,[Ends] = " + Ends;
+            q += " ,[Visibility] = '" + Visibility + "'";
+            q += " ,[Status] = '" + Status + "'";
+            q += " ,[Starts] = '" + Starts + "'";
+            q += " ,[Ends] = '" + Ends + "'";
             q += " ,[capacityactiv] = " + capacityactiv;
-            q += " ,[adminconfirm] = " + adminconfirm;
+            q += " ,[adminconfirm] = '" + adminconfirm + "'";
             q += " ,[Id_Office] = " + Id_Office;
             q += " ,[Cost] = " + Cost;
             q += " WHERE [Id_Activity] = " + IdActividad;
