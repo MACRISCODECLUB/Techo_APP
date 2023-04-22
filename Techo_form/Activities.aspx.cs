@@ -623,8 +623,8 @@ namespace Techo_form
         }
         private string GetBodyNewActivity()
         {
-            //b for the Body of the Email
-            string b = "";
+            
+
             //s for the style
             string s = "";
             s += "display: block;";
@@ -638,10 +638,17 @@ namespace Techo_form
             s += "background-clip: padding-box;";
             s += "border: $input-border-width solid $input-border-color;";
             s += "appearance: none;";
-            b += "<h1>Registrate en la nueva actividad</h1> <br /> ";
-            b += "<hr/>";
-            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
 
+            //b for the Body of the Email
+            string b = "";
+            b += "<h1>Registrate en la nueva actividad</h1> <br />";
+            b += "<hr/>";
+            b += "<h2>Nombre de la actividad:</h2>";
+            b += "<br/>";
+            b += " " + tb_nameactiv.Text;
+            b += "<h2>Fecha de Inicio</h2>";
+            b += " " + DescriptionActiv.Text;
+            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
 
             return b;
             

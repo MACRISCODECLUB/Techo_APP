@@ -147,7 +147,7 @@
                         BehaviorID="TextBox2_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_enddate" />
                 </div>
                 <div class="col-md-4">
-                    <asp:Label ID="lbl_Cost" runat="server" Text="Costo de Inscripccion"></asp:Label>
+                    <asp:Label ID="lbl_Cost" runat="server" Text="Costo de Inscripcion"></asp:Label>
                     <asp:TextBox ID="tb_Cost" Text="0.05" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
             </div>
