@@ -37,10 +37,13 @@
             <a class="nav-link" aria-current="page" href="#">Mis actividades</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="DashboardActiv.aspx">Actividades(Admin)</a>
+            <a class="nav-link inactive" aria-current="page" href="#">Actividades(Admin)</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Volunteer_dashboard.aspx">Actividades(Voluntario)</a>
+            <a class="nav-link active" aria-current="page" href="DashboardActiv.aspx">Actividades(Voluntario)</a>
+            </li>
+            <li>
+                 <a class="nav-link active" aria-current="page" href="Volunteer_dashboard.aspx">Panel de Voluntarios</a>
             </li>
             <li class="nav-item active">
             <a class="nav-link active" aria-current="page" href="Activities.aspx">Crear Actividades</a>
