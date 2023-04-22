@@ -54,7 +54,6 @@ namespace Techo_form.code
         internal string GetCoordinatorbyId(string IdUser)
         {
             string q = "";
-            //TODO FINISH COORDINATOR LABEL
             q += "SELECT * FROM USERS u ";
             q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
             q += "WHERE u.Id_User = ";
