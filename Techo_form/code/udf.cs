@@ -117,5 +117,22 @@ namespace Techo_form.code
             return q;
         }
 
+        public decimal Execute_Scalar(string str_Query)
+        {
+            SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
+            cmm_Configurable.CommandTimeout = 60;
+            //cmm_Configurable.CommandType = CommandType.Text;
+            decimal x = 0;
+            str_Conn.Open();
+            x = Convert.ToDecimal(cmm_Configurable.ExecuteScalar());
+            str_Conn.Close();
+            return x;
+        }
+
+
+
     }
+
+
+
 }

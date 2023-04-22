@@ -19,13 +19,13 @@ namespace Techo_form.code
             int Id_Gender, string Cellphone, string Email, int Id_Country, int Id_City, int Id_State,
             string RNP_Number)
         {
-                string q = "";
+            string q = "";
 
-                q += "INSERT INTO PEOPLE( FirstName, LastName, DOB, Id_Gender, Cellphone, Email, " +
-                     "Id_Country, Id_City, Id_State, RNP_Number) Values('";
-                q += First_Name + "','" + Last_Name + "','" + DOB + "'," + Id_Gender + ",'" + Cellphone + "','" + Email + "',"+ 
-                     Id_Country + "," + Id_City + "," + Id_State + ",'" + RNP_Number + "');";
-                q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
+            q += "INSERT INTO PEOPLE( FirstName, LastName, DOB, Id_Gender, Cellphone, Email, " +
+                 "Id_Country, Id_City, Id_State, RNP_Number) Values('";
+            q += First_Name + "','" + Last_Name + "','" + DOB + "'," + Id_Gender + ",'" + Cellphone + "','" + Email + "'," +
+                 Id_Country + "," + Id_City + "," + Id_State + ",'" + RNP_Number + "');";
+            q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
 
             return q;
@@ -60,7 +60,7 @@ namespace Techo_form.code
             string q = "";
             q += "Select * from COUNTRIES where Id_Country = " + Id_Country;
 
-            return q; 
+            return q;
         }
 
         internal string get_city_by_Id_City(string Id_City)
@@ -98,5 +98,41 @@ namespace Techo_form.code
 
             return q;
         }
+
+        internal string Insert_into_user(string username, string password, int Id_Profile, int Confirmation_Number)
+        {
+            string q = "";
+            q += "INSERT INTO [USERS] ";
+            q += " ([username] ";
+            q += " ,[password] ";
+            q += " ,[Id_Profile] ";
+            q += ",[Confirmation_Number])";
+            q += " VALUES ";
+            q += " ( '" + username + "' , '" + password + "', " + Id_Profile + ", " + Confirmation_Number + ");";
+
+            return q;
+        }
+
+        internal string Update_Id_People(int Id_User, int Id_People)
+        {
+            string q = "";
+            q += " UPDATE[PEOPLE] ";
+            q += "SET[Id_User] = " + Id_User;
+            q += "WHERE Id_People = " + Id_People;
+
+            return q;
+        }
+
+        internal string Compare_cn_and_e_with_db(string email, int conf_number)
+        {
+            string q = "";
+            q += "SELECT * FROM USERS WHERE username = '" + email + "'";
+            q += "and Confirmation_Number = " + conf_number;
+
+            return q;
+        }
+
+        
+        
     }
 }
