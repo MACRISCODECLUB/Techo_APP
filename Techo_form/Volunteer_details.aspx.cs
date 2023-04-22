@@ -171,12 +171,20 @@ namespace Techo_form
                                                             tb_Cellphone.Text, tb_Email.Text, Convert.ToInt32(DDL_Country.SelectedValue), Convert.ToInt32(DDL_City.SelectedValue), Convert.ToInt32(DDL_State.SelectedValue),
                                                             tb_RNP.Text, Request.QueryString["idv"].ToString()));
 
+                                                        lbl_mensaje.Text = "Muchas Gracias!, El voluntario fue actualizado exitosamente.";
+                                                        lbl_mensaje.Visible = true;
+                                                        lbl_mensaje.BackColor = System.Drawing.Color.LightGreen;
+                                                        lbl_mensaje.ForeColor = System.Drawing.Color.DarkGreen;
                                                         //TODO agregar un mensaje de voluntario actualizado exitosamente
                                                     }
                                                     catch (Exception ex)
                                                     {
+                                                        lbl_mensaje.Text = "Ha ocurrido un error: " + ex.Message.ToString();
+                                                        lbl_mensaje.Visible = true;
+                                                        lbl_mensaje.BackColor = System.Drawing.Color.LightPink;
+                                                        lbl_mensaje.ForeColor = System.Drawing.Color.DarkRed;
 
-                                                    throw;
+                                                        throw;
                                                     }
                                                 }
                                             }
