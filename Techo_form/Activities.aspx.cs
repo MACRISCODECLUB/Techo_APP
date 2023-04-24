@@ -652,7 +652,8 @@ namespace Techo_form
             b += "<br/>" + tb_enddate.Text;
             b += "<h2>Descripcion de la Actividad";
             b += "<br/>" + DescriptionActiv.Text;
-            b += "<button text=\"Sumate a la Actividad \" />" 
+            b += "<h2>Costo de la Actividad<h2/>" + "<br/>";
+            b += "<button text=\"Sumate a la Actividad \" />"; 
             b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
 
             return b;

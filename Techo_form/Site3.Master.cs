@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Techo_form
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class Site3 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Convert.ToString(Session["profileId"]) == "4")
-            {
-                pnl_AdminTools.Visible = false;
-            }
+
         }
     }
 }

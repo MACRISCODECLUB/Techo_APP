@@ -11,7 +11,7 @@ namespace Techo_form
 {
 
 
-    public partial class Site1
+    public partial class Site3
     {
 
         /// <summary>
@@ -31,15 +31,6 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// pnl_AdminTools control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_AdminTools;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

@@ -31,7 +31,7 @@
             <a class="nav-link active" aria-current="page" href="default.aspx">Menu Principal</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Mi perfil</a>
+            <a class="nav-link" aria-current="page" href="http://localhost:50761/Volunteer_details.aspx?idv=12">Mi perfil</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Mis actividades</a>
@@ -42,30 +42,36 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="DashboardActiv.aspx">Actividades</a>
             </li>
+                <asp:Panel ID="pnl_AdminTools" runat="server">
             <li>
                  <a class="nav-link active" aria-current="page" href="Volunteer_dashboard.aspx">Panel de Voluntarios</a>
             </li>
-            <li class="nav-item active">
-            <a class="nav-link active" aria-current="page" href="Activities.aspx">Crear Actividades</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" href="Volunteer.aspx">Crear Voluntario</a>
-            </li>
+                
+                <li class="nav-item active">
+                <a class="nav-link active" aria-current="page" href="Activities.aspx">Crear Actividades</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="Volunteer.aspx">Crear Voluntario</a>
+                </li>
             
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Reportes
-            </a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Reporte por hora</a></li>
-                  <li><a class="dropdown-item" href="#">Reporte por voluntario</a></li>
-                  <li><a class="dropdown-item" href="#">Reporte de Actividades</a></li>
-                  <li>
-                      <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Contactar Soporte Tecnico</a></li>
-              </ul>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Reportes
+                </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Reporte por hora</a></li>
+                      <li><a class="dropdown-item" href="#">Reporte por voluntario</a></li>
+                      <li><a class="dropdown-item" href="#">Reporte de Actividades</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                 
+                  </ul>
+                  </asp:Panel>
           </li>
+            <li class="nav-item" >
+                <a src="#" >Contactar Soporte Tecnico </a>
+            </li>
             <li class="nav-item">
             <a class="nav-link active" href="Login.aspx">Cerrar Sesión</a>
             </li>
