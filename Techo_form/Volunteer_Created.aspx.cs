@@ -27,6 +27,8 @@ namespace Techo_form.Scripts
                 {
                     //Found
                     lbl_mensaje.Text = "Muchas Gracias!, El voluntario fue creado exitosamente.";
+
+                    //TODO go to my profile link
                     lbl_mensaje.BackColor = System.Drawing.Color.LightGreen;
                     lbl_mensaje.ForeColor = System.Drawing.Color.DarkGreen;
                 }
