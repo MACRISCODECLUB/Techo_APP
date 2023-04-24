@@ -16,8 +16,12 @@
                 <!-- Dont remove this text-center p-3 p-md-5 neither m-md-3, you will break it -->
                 <div class="container position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
                     <div class="row">
-                        <div class="col-lg-12" id="logo_cont">
+                        <div class="col-2" style="background-color:#367fa9">  
+                            <asp:Button ID="btn_Back" runat="server" Text="Regresar" CssClass="btn btn-default" ForeColor="White" OnClick="btn_Back_Click" />
+                        </div>
+                        <div class="col-lg-10" id="logo_cont">
                             <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />
+                            
                         </div>
                     </div>
                 </div>

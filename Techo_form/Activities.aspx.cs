@@ -654,5 +654,10 @@ namespace Techo_form
             
 
         }
+
+        protected void btn_Back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DashboardActiv.aspx");
+        }
     }
 }

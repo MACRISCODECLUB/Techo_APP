@@ -51,6 +51,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox tb_Last_Name;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// tb_DOB control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox tb_DOB;
 
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
         /// tb_RNP control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_RNP;
+
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
         /// DDL_Country control.
@@ -87,6 +114,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.SqlDataSource ds_Country;
 
         /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
         /// tb_Cellphone control.
         /// </summary>
         /// <remarks>
@@ -96,6 +132,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox tb_Cellphone;
 
         /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
         /// tb_Email control.
         /// </summary>
         /// <remarks>
@@ -103,6 +148,15 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_Email;
+
+        /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
         /// DDL_State control.
@@ -123,6 +177,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.SqlDataSource ds_States;
 
         /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+
+        /// <summary>
         /// rbl_Gender control.
         /// </summary>
         /// <remarks>
@@ -139,6 +202,15 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource ds_gender;
+
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
         /// DDL_City control.
