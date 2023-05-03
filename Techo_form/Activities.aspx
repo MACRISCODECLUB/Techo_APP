@@ -190,11 +190,11 @@
                 <div class="col-md-4">
                     <asp:Label Style="font: bolder 12 px Halvetica; color: black;" ID="lbl_output_Form" runat="server" Text="Output Label" Visible="False"></asp:Label>
                 </div>
-                    <asp:Label ID="lbl_WorkhoursHidden" runat="server" Text="Nada wey"></asp:Label>
-                    <asp:Label ID="lbl_CostHidden" runat="server" Text="Nada wey"></asp:Label>
-                    <asp:Label ID="lbl_StartDateHidden" runat="server" Text="Nada wey"></asp:Label>
-                    <asp:Label ID="lbl_EndDateHidden" runat="server" Text="Nada wey"></asp:Label>
-                    <asp:Label ID="lbl_CoordinatorHidden" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_WorkhoursHidden" Visible="false" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_CostHidden" Visible="false" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_StartDateHidden" Visible="false" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_EndDateHidden" Visible="false" runat="server" Text="Nada wey"></asp:Label>
+                    <asp:Label ID="lbl_CoordinatorHidden" Visible="false" runat="server" Text="Nada wey"></asp:Label>
                 
             </div>
         </div>

@@ -22,9 +22,9 @@
   </div>
       <div class="container">
         <div class="col-md-4">
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lbl_random" runat="server" Text="Pinche Random"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Button"/>
+            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="No hace nada`"/>
         </div>
       </div>
       

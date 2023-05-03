@@ -92,8 +92,8 @@ namespace Techo_form
                 DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 tb_capacityactiv.Text = Capacity;
                 tb_Cost.Text = Convert.ToString(r["Cost"]).ToString();
+                
 
-                //Todo get booleans with functions
                 //Visibility function, convert boolean to string
                 if (Visibility == true)
                 {
@@ -164,10 +164,14 @@ namespace Techo_form
 
                 }
 
-
-
+                lbl_CoordinatorHidden.DataBind();
             }
+            string EndDT = "";
+            
         }
+
+        
+
 
         protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -494,7 +498,8 @@ namespace Techo_form
 
         private void DoUpdateActivity()
         {
-            //TODO Modify creation only for update
+            //Modify creation only for update
+            
             try
             {
                 activity.UpdateActivity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
@@ -507,6 +512,7 @@ namespace Techo_form
                 lbl_output_Form.Visible = true;
 
                 //If(Date anterior == Date Nueva) {No hagas nada] else {Manda Correo}
+                
                 //
                 //Traer en un datatable todos los correos
                 DataTable dt_emails = new DataTable();
@@ -591,5 +597,7 @@ namespace Techo_form
             
 
         }
+
+        //TODO Function to count registered volunteers and compute available slots
     }
 }

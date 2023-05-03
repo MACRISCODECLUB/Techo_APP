@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-6">
                 <asp:Label ID="lbl_VacantSlots" CssClass="tb_Name" runat="server" Text="Cupos Disponibles"></asp:Label>
-                <!--TODO Function to count registered volunteer and compute available slots-->
+               
                 <asp:Label ID="lbl_VacantSlotsActiv" CssClass="tb_Detail" runat="server" Text="Nada Wey"></asp:Label>
             </div>
         </div>
