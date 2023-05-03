@@ -4,7 +4,7 @@
     <link href="DashboardActiv.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="padding-top:10%;"> 
+    <div style="padding-top:10%;"> 
     <div class="container">
 
    
@@ -40,7 +40,11 @@
         </div>
         <div class="col-md-3">
             <br />
-            <asp:Button ID="btn_Applyfilters" CssClass="btnApplyFilter form-control align-content" runat="server" Text="Aplicar Filtros" />
+            <asp:Button ID="btn_Applyfilters" CssClass="btnApplyFilter form-control align-content" runat="server" Text="Aplicar Filtros" Width="250px" />
+            <br />
+            <asp:DropDownList ID="ddl_Profiles" runat="server" DataSourceID="ds_Profiles" DataTextField="Profile_Name" DataValueField="Id_profile" Visible="False">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="ds_Profiles" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT * FROM [PROFILES]"></asp:SqlDataSource>
         </div>
     </div>
    <br />

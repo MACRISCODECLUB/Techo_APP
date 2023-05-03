@@ -6,29 +6,33 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
     <main>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Techo Honduras</h1>
-      <p class="lead fw-normal">
-          Somos una organización conformada por jóvenes voluntarios y voluntarias junto con habitantes de asentamientos populares de América Latina.
+        <div class="container py-4 bg-light shadow marginTop">
+             <br />
+    <br />
+            <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                    <h1 class="display-4 fw-normal">Techo Honduras</h1>
+                    <p class="lead fw-normal">
+                        Somos una organización conformada por jóvenes voluntarios y voluntarias junto con habitantes de asentamientos populares de América Latina.
           <br />
-          Mediante nuestra acción conjunta, trabajamos en superar la situación de pobreza en la que viven millones de personas.
-      </p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
-      <div class="container">
-        <div class="col-md-4">
-            <asp:Label ID="lbl_random" runat="server" Text="Pinche Random"></asp:Label>
+                        Mediante nuestra acción conjunta, trabajamos en superar la situación de pobreza en la que viven millones de personas.
+                    </p>
+                    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+                </div>
+                <div class="product-device shadow-sm d-none d-md-block"></div>
+                <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+            </div>
+            <div class="container">
+                <div class="col-md-4">
+                    <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="No hace nada`"/>
+            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Button"/>--%>
+                </div>
+            </div>
         </div>
-      </div>
-      
-</main>
+    </main>
 
 
 </asp:Content>

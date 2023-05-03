@@ -54,7 +54,6 @@ namespace Techo_form.code
         internal string GetCoordinatorbyId(string IdUser)
         {
             string q = "";
-            //TODO FINISH COORDINATOR LABEL
             q += "SELECT * FROM USERS u ";
             q += "INNER JOIN PEOPLE p on p.Id_User = u.Id_User ";
             q += "WHERE u.Id_User = ";
@@ -100,12 +99,12 @@ namespace Techo_form.code
             q += " ,[Id_Coordinator] = " + Id_Coordinator;
             q += " ,[Work_Hours] = " + Work_Hours;
             q += " ,[descripactiv] = '" + descripactiv + "'";
-            q += " ,[Visibility] = " + Visibility;
-            q += " ,[Status] = " + Status;
-            q += " ,[Starts] = " + Starts;
-            q += " ,[Ends] = " + Ends;
+            q += " ,[Visibility] = '" + Visibility + "'";
+            q += " ,[Status] = '" + Status + "'";
+            q += " ,[Starts] = '" + Starts + "'";
+            q += " ,[Ends] = '" + Ends + "'";
             q += " ,[capacityactiv] = " + capacityactiv;
-            q += " ,[adminconfirm] = " + adminconfirm;
+            q += " ,[adminconfirm] = '" + adminconfirm + "'";
             q += " ,[Id_Office] = " + Id_Office;
             q += " ,[Cost] = " + Cost;
             q += " WHERE [Id_Activity] = " + IdActividad;

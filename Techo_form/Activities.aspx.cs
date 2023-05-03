@@ -92,8 +92,8 @@ namespace Techo_form
                 DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 tb_capacityactiv.Text = Capacity;
                 tb_Cost.Text = Convert.ToString(r["Cost"]).ToString();
-                
 
+                //Get booleans with functions
                 //Visibility function, convert boolean to string
                 if (Visibility == true)
                 {
@@ -164,14 +164,13 @@ namespace Techo_form
 
                 }
 
-                lbl_CoordinatorHidden.DataBind();
+                Session["WorkHours"] = tb_Workhours.Text;
+                Session["Cost"] = tb_Cost.Text;
+                Session["StartDate"] = udf.FormatDateToDate(tb_startdate.Text);
+                Session["EndDate"] = udf.FormatDateToDate(tb_enddate.Text);
+
             }
-            string EndDT = "";
-            
         }
-
-        
-
 
         protected void ddl_CategoryActiv_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -511,12 +510,32 @@ namespace Techo_form
                 lbl_output_Form.ForeColor = System.Drawing.Color.DarkGreen;
                 lbl_output_Form.Visible = true;
 
-                //If(Date anterior == Date Nueva) {No hagas nada] else {Manda Correo}
                 
-                //
-                //Traer en un datatable todos los correos
-                DataTable dt_emails = new DataTable();
-                dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+                //Conditional to check if previos info is different before sending email
+                if (Convert.ToDateTime(Session["StartDate"]) != udf.FormatDateToDate(tb_startdate.Text) || Convert.ToDateTime(Session["EndDate"]) != udf.FormatDateToDate(tb_enddate.Text) 
+                    || Convert.ToString(Session["Cost"]) != tb_Cost.Text  || Convert.ToString(Session["WorkHours"]) != tb_Workhours.Text)
+                {
+                    DataTable dt_emails = new DataTable();
+                    dt_emails = udf.Get_DataSet_Query(udf.GetAllEmails()).Tables[0];
+
+                    foreach(DataRow eml in dt_emails.Rows)
+                    {
+                        string Subject = "Se ha actualizado la informacion de la actividad" + " " + tb_nameactiv.Text;
+                        email.SendEmail(eml["Email"].ToString(), Subject, GetBodyUpdateActivity());
+                    }
+                } else
+                {
+                    lbl_output_Form.Text = "La informacin ingresada para fecha de inicio, fecha de finalizacion, costo, y horas de trabajo no difiere con la informacion original. Por lo cual un correo electronico no fue enviado.";
+                    lbl_output_Form.Visible = true;
+                    lbl_output_Form.ForeColor = System.Drawing.Color.Blue;
+                    lbl_output_Form.BackColor = System.Drawing.Color.White;
+                    
+                }
+                 
+                
+                
+               
+
                 //Envio de correos electronicos
                 //foreach (DataRow em in dt_emails.Rows)
                 //{
@@ -571,10 +590,42 @@ namespace Techo_form
             }
         }
 
+        private string GetBodyUpdateActivity()
+        {
+            string b = "<h1>La informacion de la actividad ha sido actualizada</>";
+            if(Convert.ToDateTime(Session["StartDate"]) != udf.FormatDateToDate(tb_startdate.Text) || Convert.ToDateTime(Session["EndDate"]) != udf.FormatDateToDate(tb_enddate.Text))
+            {
+                b += "<h2>Se han actualizado las fechas de la actividad</h2>" + " ";
+                b += "<br/>";
+                b += "<h3>Fecha de Inicio </h2>" + " ";
+                b += "<ul><li>" + udf.FormatDateToDate(tb_startdate.Text) + "<ol/>" + " ";
+                b += "<h3>Fecha de Finalizacion</h3>";
+                b += "<ul><li>" + udf.FormatDateToDate(tb_enddate.Text) + "<ol/>";
+            }
+            if(Convert.ToDouble(Convert.ToString(Session["Cost"])) != Convert.ToDouble(tb_Cost.Text))
+            {
+                b += " ";
+                b += "<h2>Nuevo costo de la actividad</h2>";
+                b += "<p> El nuevo costo de la actividad es" + " " + tb_Cost.Text;
+                b += " " + "Lempiras";
+                b += "</p>";
+            }
+            if(Convert.ToDouble(Convert.ToString(Session["WorkHours"])) != Convert.ToDouble(tb_Workhours.Text))
+            {
+                b += "<br/>";
+                b += "<p>Ahora se trabajaran" + " " + tb_Workhours.Text + " " + "horas de trabajo</p>";
+                b += "<hr/>";
+                b += "<h2> Gracias por apoyar a techo! </h2>";
+
+            }
+
+
+            return b;
+        }
         private string GetBodyNewActivity()
         {
-            //b for the Body of the Email
-            string b = "";
+            
+
             //s for the style
             string s = "";
             s += "display: block;";
@@ -588,14 +639,32 @@ namespace Techo_form
             s += "background-clip: padding-box;";
             s += "border: $input-border-width solid $input-border-color;";
             s += "appearance: none;";
-            b += "<h1>Registrate en la nueva actividad</h1> <br /> ";
-            b += "<hr/>";
-            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
 
+            //b for the Body of the Email
+            string b = "";
+            b += "<h1>Registrate en la nueva actividad</h1> <br />";
+            b += "<hr/>";
+            b += "<h2>Nombre de la actividad:</h2>";
+            b += "<br/>";
+            b += " " + tb_nameactiv.Text;
+            b += "<h2>Fecha de Inicio</h2>";
+            b +=  "<br/>" + tb_startdate.Text;
+            b += "<h2>Fecha de Finalizacion<h2/>";
+            b += "<br/>" + tb_enddate.Text;
+            b += "<h2>Descripcion de la Actividad";
+            b += "<br/>" + DescriptionActiv.Text;
+            b += "<h2>Costo de la Actividad<h2/>" + "<br/>";
+            b += "<button text=\"Sumate a la Actividad \" />"; 
+            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
 
             return b;
             
 
+        }
+
+        protected void btn_Back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DashboardActiv.aspx");
         }
 
         //TODO Function to count registered volunteers and compute available slots

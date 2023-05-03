@@ -15,6 +15,15 @@ namespace Techo_form
     {
 
         /// <summary>
+        /// hl_VerTodas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hl_VerTodas;
+
+        /// <summary>
         /// lbl_Name control.
         /// </summary>
         /// <remarks>

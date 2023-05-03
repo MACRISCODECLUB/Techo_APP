@@ -18,7 +18,15 @@ namespace Techo_form
         {
             GridView gv = PanelActiv;
             string Id_Activity = gv.SelectedDataKey.Value.ToString();
-            Response.Redirect("DetalleActividad.aspx?i=" + Id_Activity);
+            //TODO if user profile is volunteer or else get user profile from Session["profileID"] when login
+            if (Session["profileId"].ToString() == "4")
+            {
+                Response.Redirect("DetalleActividad.aspx?i=" + Id_Activity);
+            }
+            else
+            {
+                Response.Redirect("Activities.aspx?i=" + Id_Activity);
+            }
         }
     }
 }

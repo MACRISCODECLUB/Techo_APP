@@ -24,6 +24,15 @@ namespace Techo_form
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// btn_Back control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Back;
+
+        /// <summary>
         /// lbl_Nameactiv control.
         /// </summary>
         /// <remarks>
@@ -445,50 +454,5 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_output_Form;
-
-        /// <summary>
-        /// lbl_WorkhoursHidden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_WorkhoursHidden;
-
-        /// <summary>
-        /// lbl_CostHidden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_CostHidden;
-
-        /// <summary>
-        /// lbl_StartDateHidden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_StartDateHidden;
-
-        /// <summary>
-        /// lbl_EndDateHidden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_EndDateHidden;
-
-        /// <summary>
-        /// lbl_CoordinatorHidden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_CoordinatorHidden;
     }
 }
