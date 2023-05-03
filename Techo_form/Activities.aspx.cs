@@ -641,20 +641,20 @@ namespace Techo_form
 
             //b for the Body of the Email
             string b = "";
-            b += "<h1>Registrate en la nueva actividad</h1> <br />";
+            b += "<h1>Registrate en la nueva actividad</h1>" += "<br />";
             b += "<hr/>";
             b += "<h2>Nombre de la actividad:</h2>";
-            b += "<br/>";
-            b += " " + tb_nameactiv.Text;
+            b += "<br>";
+            b += " " += "<h3>" += tb_nameactiv.Text + "<h3/>";
             b += "<h2>Fecha de Inicio</h2>";
-            b +=  "<br/>" + tb_startdate.Text;
+            b +=  "<br>" += "<h3>" += tb_startdate.Text += "<h3/>";
             b += "<h2>Fecha de Finalizacion<h2/>";
-            b += "<br/>" + tb_enddate.Text;
-            b += "<h2>Descripcion de la Actividad";
-            b += "<br/>" + DescriptionActiv.Text;
-            b += "<h2>Costo de la Actividad<h2/>" + "<br/>";
-            b += "<button text=\"Sumate a la Actividad \" />"; 
-            b += "<a href=\" \" style=\"" + s + "\" > <img src=\"\"> </img></a>";
+            b += "<br>" += "<h3>" += tb_enddate.Text += "<h3/>" ;
+            b += "<br>" += "<h2>Descripcion de la Actividad<h2/>";
+            b += "<br>" +="<p>" += DescriptionActiv.Text += "<p/>";
+            b += "<br>" += "<h2>Costo de la Actividad<h2/>" + "<br>";
+            b += "<h3>" + tb_Cost.Text += "<h3/>";
+            b += "<a href=\"sumate.aspx\"> <img src=\"\"> </img></a>";
 
             return b;
             
