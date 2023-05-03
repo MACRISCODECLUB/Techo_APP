@@ -497,7 +497,8 @@ namespace Techo_form
 
         private void DoUpdateActivity()
         {
-            // Modify creation only for update
+            //Modify creation only for update
+            
             try
             {
                 activity.UpdateActivity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
@@ -665,5 +666,7 @@ namespace Techo_form
         {
             Response.Redirect("DashboardActiv.aspx");
         }
+
+        //TODO Function to count registered volunteers and compute available slots
     }
 }
