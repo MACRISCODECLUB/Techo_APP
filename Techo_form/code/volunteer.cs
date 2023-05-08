@@ -132,7 +132,16 @@ namespace Techo_form.code
             return q;
         }
 
-        
+        internal string Update_Verification_Users(string Verified, string email, int conf_number)
+        {
+            string q = "";
+            q += "UPDATE [USERS] "; 
+            q += "SET [Verified] = " + 1;
+            q += "WHERE username = '" + email + "'";
+            q += "and Confirmation_Number = " + conf_number;
+
+            return q;
+        }
         
     }
 }
