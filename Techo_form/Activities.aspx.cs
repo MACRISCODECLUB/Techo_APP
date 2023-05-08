@@ -642,6 +642,7 @@ namespace Techo_form
 
             //b for the Body of the Email
             string b = "";
+            b += ""
             b += "<h1>Registrate en la nueva actividad</h1>" += "<br />";
             b += "<hr/>";
             b += "<h2>Nombre de la actividad:</h2>";
