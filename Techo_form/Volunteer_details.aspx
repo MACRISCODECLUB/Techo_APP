@@ -2,12 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <br />
     <br />
     <br />
     <br />
     <br />
-    <div class="container py-4 bg-light shadow marginTop">
+    <ajaxToolkit:TabContainer runat="server" Width=100% ActiveTabIndex="1" ID="TC_Details">
+        <ajaxToolkit:TabPanel runat="server" HeaderText="Informacion General" ID="TP_General"> 
+            <ContentTemplate>
+                <div class="container py-4 bg-light shadow marginTop">
         <div class="container g-4">
             <div class="row">
                 <div class="col-md-6">
@@ -19,26 +23,26 @@
                     <asp:TextBox CssClass="form-control" ID="tb_Last_Name" runat="server"></asp:TextBox><br />
                 </div>
                 <div class="col-md-4">
-                    <asp:Label ID="Label1" runat="server" Text="Fecha de Nacimiento"></asp:Label>
+                    <asp:Label ID="lbl_DOB" runat="server" Text="Fecha de Nacimiento"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="tb_DOB" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="Label2" runat="server" Text="Número de identidad"></asp:Label>
+                    <asp:Label ID="lbl_RNP" runat="server" Text="Número de identidad"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="tb_RNP" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="Label8" runat="server" Text="País"></asp:Label>
+                    <asp:Label ID="lbl_Country" runat="server" Text="País"></asp:Label>
                     <asp:DropDownList CssClass="form-control" ID="DDL_Country" runat="server" DataSourceID="ds_Country" DataTextField="Country_Name" DataValueField="Id_Country" AutoPostBack="True">
                         <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                     </asp:DropDownList>
                     <asp:SqlDataSource runat="server" ID="ds_Country" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [COUNTRIES] ORDER BY [Country_Name]"></asp:SqlDataSource>
                 </div>
                 <div class="col-md-4">
-                    <asp:Label ID="Label3" runat="server" Text="Número de celular"></asp:Label>
+                    <asp:Label ID="lbl_Cellphone" runat="server" Text="Número de celular"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="tb_Cellphone" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="Label4" runat="server" Text="Correo Electrónico"></asp:Label>
+                    <asp:Label ID="lbl_Email" runat="server" Text="Correo Electrónico"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="tb_Email" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="Label5" runat="server" Text="Estado"></asp:Label>
+                    <asp:Label ID="lbl_State" runat="server" Text="Estado"></asp:Label>
                     <asp:DropDownList CssClass="form-control" ID="DDL_State" runat="server" DataSourceID="ds_States" DataTextField="State_Name" DataValueField="Id_State" AutoPostBack="True">
                         <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                     </asp:DropDownList>
@@ -50,12 +54,12 @@
                 </div>
                 <div class="col-md-4">
                     <div style="margin-top: -6px">
-                        <asp:Label ID="Label6" runat="server" Text="Género"></asp:Label>
+                        <asp:Label ID="lbl_gender" runat="server" Text="Género"></asp:Label>
                         <asp:RadioButtonList CssClass="form-check-input" ID="rbl_Gender" runat="server" RepeatDirection="Horizontal" Width="100%" DataSourceID="ds_gender" DataTextField="Gender" DataValueField="Id_Gender" CellSpacing="0" CellPadding="8"></asp:RadioButtonList><br />
                         <asp:SqlDataSource runat="server" ID="ds_gender" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [GENDER]"></asp:SqlDataSource>
                     </div>
                     <div style="margin-top: -4px">
-                        <asp:Label ID="Label7" runat="server" Text="Ciudad"></asp:Label>
+                        <asp:Label ID="lbl_City" runat="server" Text="Ciudad"></asp:Label>
                         <asp:DropDownList CssClass="form-control" ID="DDL_City" runat="server" DataSourceID="ds_Cities" DataTextField="City_Name" DataValueField="Id_City">
                             <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                         </asp:DropDownList>
@@ -70,14 +74,69 @@
             <br />
             <br />
             <div class="col-md-12">
-                <asp:Button ID="lbl_mensaje" runat="server" Text="" Visible="false" />
+                <asp:Label ID="lbl_error" runat="server" Text="" Visible="false"></asp:Label>
+                <%--<asp:Button ID="lbl_mensaje" runat="server" Text="" Visible="false" />--%>
             </div>
             <div class="col-md-12">
                 <center>
-                    <asp:Button CssClass="btn btn-primary" ID="bt_Update" runat="server" Text="Actualizar" OnClick="bt_Update_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="bt_Update" runat="server" Text="Actualizar Información General" OnClick="bt_Update_Informacion_General_Click" />
                 </center>
-
             </div>
         </div>
     </div>
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+
+        <ajaxToolkit:TabPanel runat="server" HeaderText="Ficha Medica" ID="TP_Medica">
+            <ContentTemplate>
+
+                <div class="container py-4 bg-light shadow marginTop">
+        <div class="container g-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Nom_Cobertura_Med" runat="server" Text="Nombre de Cobertura Medica"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="tb_Nom_Cobertura_Med" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Num_Cobertura_Med" runat="server" Text="Numero de Cobertura Medica"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="tb_Num_Cobertura_Med" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Nom_Contacto_ER" runat="server" Text="Nombre de Contacto de Emergencia"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="tb_Nom_Contacto_ER" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Tel_Contacto_ER" runat="server" Text="Telefono de Contacto de Emergencia"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="tb_Tel_Contacto_ER" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Rel_Contacto_ER" runat="server" Text="Relacion de Contacto de Emergencia"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="tb_Rel_Contacto_ER" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="lbl_Blood_Type" runat="server" Text="Tipo de Sangre"></asp:Label>
+                        <asp:DropDownList CssClass="form-control" ID="DDL_Blood_Type" runat="server" DataSourceID="SqlDataSource1" DataTextField="Blood_Type" DataValueField="Id_Blood_Type" AppendDataBoundItems="True">
+                            <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [Blood_Type], [Id_Blood_Type] FROM [Blood Type]"></asp:SqlDataSource>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-md-12">
+                        <asp:Label ID="lbl_error_ficha" runat="server" Text="Label" Visible="false"></asp:Label>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-md-12">
+                        <center>
+                            <asp:Button CssClass="btn btn-primary" ID="bt_Update_ficha" runat="server" Text="Actualizar Ficha Medica" OnClick="bt_Update_Ficha_Medica_Click" />
+                        </center>
+                    </div>
+                </div>
+        </div>
+     </div>
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+    </ajaxToolkit:TabContainer>
+    
 </asp:Content>

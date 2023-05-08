@@ -142,6 +142,22 @@ namespace Techo_form.code
 
             return q;
         }
-        
+        internal string Update_Volunteer_ER(string Nom_Cobertura_Med, string Num_Cobertura_Med, string Nom_Contacto_ER, string Tel_Contacto_ER,
+            string Rel_Contacto_ER, int Id_Blood_Type, string Id_Vol)
+        {
+            string q = "";
+            q += "UPDATE [PEOPLE]";
+            q += "SET[Nom_Cobertura_Med] = '" + Nom_Cobertura_Med + "'";
+            q += ",[Num_Cobertura_Med] = '" + Num_Cobertura_Med + "'";
+            q += ",[Nom_Contacto_ER] = '" + Nom_Contacto_ER + "'";
+            q += ",[Tel_Contacto__ER] = '" + Tel_Contacto_ER + "'";
+            q += ",[Rel_Contacto_ER] = '" + Rel_Contacto_ER + "'";
+            q += ",[Id_Blood_Type] = " + Id_Blood_Type;
+            q += " WHERE [Id_People] = " + Id_Vol;
+
+            return q;
+        }
+
+
     }
 }

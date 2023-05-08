@@ -26,6 +26,9 @@ namespace Techo_form.Scripts
                 if(Dt_Vol.Rows.Count > 0)
                 {
                     //Found
+
+                    udf.Execute_Non_Query(vol.Update_Verification_Users("1", email, conf_number));
+
                     lbl_mensaje.Text = "Muchas Gracias!, El voluntario fue creado exitosamente.";
 
                     //TODO go to my profile link

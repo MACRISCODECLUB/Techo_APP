@@ -164,6 +164,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="tab trials.aspx" />
     <Content Include="Volunteer_Created.aspx" />
     <Content Include="Volunteer.aspx" />
     <Content Include="Volunteer_dashboard.aspx" />
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="Site3.Master.designer.cs">
       <DependentUpon>Site3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tab trials.aspx.cs">
+      <DependentUpon>tab trials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tab trials.aspx.designer.cs">
+      <DependentUpon>tab trials.aspx</DependentUpon>
     </Compile>
     <Compile Include="Volunteer_Created.aspx.cs">
       <DependentUpon>Volunteer_Created.aspx</DependentUpon>
