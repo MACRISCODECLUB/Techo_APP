@@ -11,6 +11,7 @@ namespace Techo_form
     {
         Techo_form.code.udf udf = new code.udf();
         Techo_form.code.activity activity = new code.activity();
+        Techo_form.email email = new Techo_form.email();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -111,16 +112,29 @@ namespace Techo_form
         {
             try
             {
-                //TODO AGREGAR LO QUE ESTA HACIENDO KURO
+                 
+                
                 lbl_RegisterOutput.Text = "El voluntario fue registrado satisfactoriamente.";
                 lbl_RegisterOutput.BackColor = System.Drawing.Color.Green;
                 lbl_RegisterOutput.Visible = true;
                 //Send email with Id people from ID User
+                string Subject = "";
+                Subject = "Te has registrado en" + lbl_ActivName.Text;
+                email.SendEmail("marcoefigueroa042@gmail.com", Subject, GetBodyRegisterVolunt());
             }
             catch (Exception ex)
             {
                
             }
+        }
+        private string GetBodyRegisterVolunt()
+        {
+            string b = "";
+            b += "<h1> Confirmamos tu registro en la actividad <h1/>";
+            b += "<p>Gracias por tu intencion de participar en la actividad" + " " + lbl_ActivName.Text + "!";
+            b += "recuerda reportarte con el coordinador de la actividad" + " " + lbl_CoordinatorActiv.Text;
+
+            return (b);
         }
     }
 }
