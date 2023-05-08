@@ -175,7 +175,7 @@ namespace Techo_form
                                                         lbl_mensaje.Visible = true;
                                                         lbl_mensaje.BackColor = System.Drawing.Color.LightGreen;
                                                         lbl_mensaje.ForeColor = System.Drawing.Color.DarkGreen;
-                                                        //TODO agregar un mensaje de voluntario actualizado exitosamente
+                                                        //agregar un mensaje de voluntario actualizado exitosamente
                                                     }
                                                     catch (Exception ex)
                                                     {
