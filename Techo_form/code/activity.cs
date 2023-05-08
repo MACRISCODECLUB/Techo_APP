@@ -112,6 +112,16 @@ namespace Techo_form.code
 
             return q;
         }
+
+        internal string Insert_Vol_into_Activ(int Id_Activity, int Id_People, int Total_Hours)
+        {
+            string q = "";
+            q += "INSERT INTO VOLUNTEERS_IN_ACTIVITIES(Id_Activity, Id_People, Total_Hours) Values(";
+            q += Id_Activity + ", " + Id_People + ", " + Total_Hours + ") ";
+
+            return q;
+        }
+ 
     }
 
         
