@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site3.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form.Volunteer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form.Volunteer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="product.css" rel="stylesheet" />
@@ -15,7 +15,7 @@
         <main class="myMain" id="myMain">
             <div
                 class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
-                style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+                style="background-image: url('https://i.ibb.co/64fHGcW/IMG-0376.jpg');">
                 <div class="col-md-5 p-lg-5 mx-auto my-5"></div>
                 <h1 class="mb-3 h2">Techo.org</h1>
                 <p>

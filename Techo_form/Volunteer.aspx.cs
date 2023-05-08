@@ -162,6 +162,7 @@ namespace Techo_form
             password = udf.RandomPassword(6);
             Session["pwd"] = password;
             return password;
+            
         }
 
         private void do_insertvolunteer()
@@ -200,6 +201,8 @@ namespace Techo_form
             Body += "style = \"padding: 8px 12px; border: 1px solid #415698;border-radius: 2px;font-family: Helvetica, Arial, sans-serif;font-size: 14px; color: #ffffff;text-decoration: none;font-weight:bold;display: inline-block;\"> ";
             Body += "Confirmar cuenta";
             Body += "</a>";
+            Body += "<h2>Contraseña:<h2/>";
+            Body += "<br/>" + Convert.ToString(Session["pwd"]);
 
             return Body;
         }

@@ -81,9 +81,18 @@
                 </div>
                 <br />
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-10">
                         <asp:Label ID="lbl_Cost" CssClass="tb_Name" runat="server" Text="Costo de Inscripcion"></asp:Label>
                         <asp:Label ID="lbl_CostActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
+                    </div>
+                    <div class="col-md-2">
+                            <asp:Button ID="btn_Register" runat="server" Text="Registrate en la Actividad" OnClick="btn_Register_Click" />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:Label ID="lbl_RegisterOutput" runat="server" Text="Nada wey" Visible="False"></asp:Label>
                     </div>
                 </div>
 

@@ -66,7 +66,9 @@ namespace Techo_form.code
 
         internal DateTime FormatDateToDate(string InitialDate)
         {
-               return Convert.ToDateTime(InitialDate);
+            DateTime r = DateTime.Parse(InitialDate);
+
+            return r;
         }
 
         public bool convertBooleansdeBit(string booleano)

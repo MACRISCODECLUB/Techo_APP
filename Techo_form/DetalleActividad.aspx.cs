@@ -106,6 +106,22 @@ namespace Techo_form
                 }
             }
         }
+
+        protected void btn_Register_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //TODO AGREGAR LO QUE ESTA HACIENDO KURO
+                lbl_RegisterOutput.Text = "El voluntario fue registrado satisfactoriamente.";
+                lbl_RegisterOutput.BackColor = System.Drawing.Color.Green;
+                lbl_RegisterOutput.Visible = true;
+                //Send email with Id people from ID User
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
     }
 }
     //FOR DATE

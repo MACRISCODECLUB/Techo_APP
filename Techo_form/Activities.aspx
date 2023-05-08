@@ -141,14 +141,14 @@
                     <br />
                     <asp:TextBox CssClass="form-control" Width="100%" ID="tb_startdate" runat="server"></asp:TextBox>
                     <ajaxToolkit:CalendarExtender ID="AJAX_calend_startdate" runat="server"
-                        BehaviorID="textbox1_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_startdate" />
+                        BehaviorID="textbox1_CalendarExtender" Format="MM dd, yyyy" TargetControlID="tb_startdate" />
                 </div>
                 <div class="col-md-4">
                     <asp:Label ID="lbl_endate" runat="server" Text="Fecha de Finalizacion"></asp:Label>
                     <br />
                     <asp:TextBox CssClass="form-control" Width="100%" ID="tb_enddate" runat="server"></asp:TextBox>
                     <ajaxToolkit:CalendarExtender ID="Ajax_calend_enddate" runat="server"
-                        BehaviorID="TextBox2_CalendarExtender" Format="MMMM d, yyyy" TargetControlID="tb_enddate" />
+                        BehaviorID="TextBox2_CalendarExtender" Format="MM dd, yyyy" TargetControlID="tb_enddate" />
                 </div>
                 <div class="col-md-4">
                     <asp:Label ID="lbl_Cost" runat="server" Text="Costo de Inscripcion"></asp:Label>

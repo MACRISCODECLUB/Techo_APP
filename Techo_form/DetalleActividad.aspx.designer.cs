@@ -258,6 +258,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Label lbl_CostActiv;
 
         /// <summary>
+        /// btn_Register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Register;
+
+        /// <summary>
+        /// lbl_RegisterOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_RegisterOutput;
+
+        /// <summary>
         /// lbl_Idactividad control.
         /// </summary>
         /// <remarks>

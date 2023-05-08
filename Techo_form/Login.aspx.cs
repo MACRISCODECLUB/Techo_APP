@@ -24,7 +24,8 @@ namespace Techo_form
                 case "mfigueroa@macrisschool.org":
                     Session["profileId"] = 1;
                     break;
-                case "aaguero@macrisschool.org":
+                case "aaguero@macrisscho" +
+                "ol.org":
                     Session["profileId"] = 1;
                     break;
                 default:

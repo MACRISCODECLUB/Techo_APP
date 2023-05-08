@@ -358,7 +358,17 @@ namespace Techo_form
         protected void DataValidation(int Action)
         {
             //Data validation start
-            if (udf.FormatDateToDate(tb_startdate.Text) < DateTime.Now)
+            String NowTry = DateTime.Now.ToShortDateString();
+            DateTime selectedDate = udf.FormatDateToDate(tb_startdate.Text);
+            DateTime dNowTry = udf.FormatDateToDate(NowTry);
+            DateTime end;
+            DateTime start;
+            DateTime now;
+            end = udf.FormatDateToDate(tb_enddate.Text);
+            start = udf.FormatDateToDate(tb_startdate.Text);
+            bool comp = (selectedDate.Date < dNowTry.Date) || (end.Date < start.Date);
+            //DateTime dt_Parsed = NowTry.Date;
+            if ((selectedDate.Date < dNowTry.Date) || (end.Date < start.Date))
             {
                 lbl_output_Form.Text = "Fecha de Inicio invalida, de momento no es posible viajar en el tiempo";
                 lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
@@ -368,7 +378,21 @@ namespace Techo_form
             else
             {
                 //Check if End Date is less than current time, and if the end date is set before the start date
-                if (udf.FormatDateToDate(tb_enddate.Text) < DateTime.Now && udf.FormatDateToDate(tb_enddate.Text) < udf.FormatDateToDate(tb_startdate.Text))
+                //DateTime end;
+                //DateTime start;
+                //DateTime now;
+                end = udf.FormatDateToDate(tb_enddate.Text);
+                start = udf.FormatDateToDate(tb_startdate.Text);
+                now = DateTime.Now;
+                if ((udf.FormatDateToDate(tb_enddate.Text) < DateTime.Now))
+                {
+                    lbl_output_Form.Text = "Fecha de Finalizacion invalida.";
+                    lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
+                    lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
+                    lbl_output_Form.Visible = true;
+                }
+                else
+                   if(udf.FormatDateToDate(tb_enddate.Text) < udf.FormatDateToDate(tb_startdate.Text))
                 {
                     lbl_output_Form.Text = "Fecha de Finalizacion invalida.";
                     lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
