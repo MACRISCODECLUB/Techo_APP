@@ -175,7 +175,7 @@ namespace Techo_form
                                                 {
                                                     try
                                                     {
-                                                        udf.Execute_Non_Query(vol.update_volunteer(tb_First_Name.Text, tb_Last_Name.Text, tb_DOB.Text, Convert.ToInt32(rbl_Gender.SelectedValue),
+                                                        udf.Get_DataSet_Query(vol.update_volunteer(tb_First_Name.Text, tb_Last_Name.Text, tb_DOB.Text, Convert.ToInt32(rbl_Gender.SelectedValue),
                                                             tb_Cellphone.Text, tb_Email.Text, Convert.ToInt32(DDL_Country.SelectedValue), Convert.ToInt32(DDL_City.SelectedValue), Convert.ToInt32(DDL_State.SelectedValue),
                                                             tb_RNP.Text, Request.QueryString["idv"].ToString()));
 

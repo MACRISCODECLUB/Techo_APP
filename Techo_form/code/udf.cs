@@ -36,14 +36,14 @@ namespace Techo_form.code
             return dts_Table;
         }
 
-        public void Execute_Non_Query(string str_Query)
-        {
-            SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
-            cmm_Configurable.CommandTimeout = 60;
-            str_Conn.Open();
-            cmm_Configurable.ExecuteNonQuery();
-            str_Conn.Close();
-        }
+        //public void Get_DataSet_Query(string str_Query)
+        //{
+        //    SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
+        //    cmm_Configurable.CommandTimeout = 60;
+        //    str_Conn.Open();
+        //    cmm_Configurable.ExecuteNonQuery();
+        //    str_Conn.Close();
+        //}
 
         public string FormatDate(DateTime dtm_Fecha)
         {

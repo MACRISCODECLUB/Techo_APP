@@ -138,7 +138,7 @@ namespace Techo_form
         {
             try
             {
-                udf.Execute_Non_Query(volunteer.Insert_into_user(tb_Email.Text, password, 4, conf_number));
+                udf.Get_DataSet_Query(volunteer.Insert_into_user(tb_Email.Text, password, 4, conf_number));
             }
             catch (Exception)
             {

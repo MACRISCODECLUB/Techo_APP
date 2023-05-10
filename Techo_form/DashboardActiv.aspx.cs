@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,16 @@ namespace Techo_form
 {
     public partial class DashboardActiv : System.Web.UI.Page
     {
+        Techo_form.code.udf udf = new code.udf();
+        Techo_form.code.activity activity = new code.activity();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                PanelActiv.DataSourceID = "ds_ActivityPanel";
+                PanelActiv.DataBind();
 
+            }
         }
 
         protected void PanelActiv_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,6 +36,20 @@ namespace Techo_form
             {
                 Response.Redirect("Activities.aspx?i=" + Id_Activity);
             }
+        }
+
+        protected void btn_Applyfilters_Click(object sender, EventArgs e)
+        {
+            DataTable dt_Filtered = new DataTable();
+            DateTime Endf;
+            Endf = DateTime.ParseExact(tb_Enddate_Filter.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime Startf;
+            Startf = DateTime.ParseExact(tb_startdate_Filter.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            dt_Filtered = udf.Get_DataSet_Query(activity.Get_Activities_by_Date(Startf, Endf)).Tables[0];
+
+            PanelActiv.DataSourceID = "";
+            PanelActiv.DataSource = dt_Filtered;
+            PanelActiv.DataBind();
         }
     }
 }

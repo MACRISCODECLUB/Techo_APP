@@ -81,11 +81,11 @@
                 </div>
                 <br />
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <asp:Label ID="lbl_Cost" CssClass="tb_Name" runat="server" Text="Costo de Inscripcion"></asp:Label>
                         <asp:Label ID="lbl_CostActiv" CssClass="tb_Detail" runat="server" Text="Nada wey"></asp:Label>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                             <asp:Button ID="btn_Register" runat="server" Text="Registrate en la Actividad" OnClick="btn_Register_Click" />
                     </div>
                 </div>
@@ -98,7 +98,7 @@
 
 
             </div>
-            <!--<asp:Label ID="lbl_Idactividad" runat="server" Text="Nada wey"></asp:Label>-->
+            <asp:Label ID="lbl_Idactividad" runat="server" Text="Nada wey"></asp:Label>
         </div>
     </div>
 </asp:Content>

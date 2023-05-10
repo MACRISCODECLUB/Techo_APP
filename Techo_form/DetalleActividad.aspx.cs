@@ -57,6 +57,8 @@ namespace Techo_form
                 lbl_DescriptionActiv.Text = (r["descripactiv"]).ToString();
                 Cost = (r["Cost"]).ToString() + "L";
                 lbl_CostActiv.Text = Cost;
+                lbl_Idactividad.Text = Convert.ToString(r["Id_Activity"]);
+                lbl_Idactividad.Visible = false;
                 //Visibility function, convert boolean to string
                 if(Visibility == true)
                 {
@@ -112,15 +114,28 @@ namespace Techo_form
         {
             try
             {
-                 
+                string Email = "marcoefigueroa042@gmail.com";
+                string p = "";
+                p += "SELECT Id_People FROM PEOPLE";
+                p += " " + "WHERE [Email] = " + "'" + Email + "'";
+                DataTable dt_people = new DataTable();
+                dt_people = udf.Get_DataSet_Query(p).Tables[0];
+                foreach(DataRow r in dt_people.Rows)
+                {
+                    //activity.Insert_Vol_into_Activ()
+                    udf.Get_DataSet_Query(activity.Insert_Vol_into_Activ(Convert.ToInt32(lbl_Idactividad.Text), Convert.ToInt32(r["Id_People"]), Convert.ToDouble(lbl_WorkHoursActiv.Text)));
+                    //TODO Insert into Roster
+                    udf.Get_DataSet_Query(activity.Insert_Vol_into_Roster(Convert.ToInt32(lbl_Idactividad.Text), Convert.ToInt32(r["Id_People"])));
+                    //Send email with Id people from ID User
+                    string Subject = "";
+                    Subject = "Te has registrado en " + lbl_ActivName.Text;
+                    email.SendEmail(Email, Subject, GetBodyRegisterVolunt());
+                    //TODO CHECK IF ALREADY SUSBCRIBED
+                }
                 
                 lbl_RegisterOutput.Text = "El voluntario fue registrado satisfactoriamente.";
                 lbl_RegisterOutput.BackColor = System.Drawing.Color.Green;
                 lbl_RegisterOutput.Visible = true;
-                //Send email with Id people from ID User
-                string Subject = "";
-                Subject = "Te has registrado en" + lbl_ActivName.Text;
-                email.SendEmail("marcoefigueroa042@gmail.com", Subject, GetBodyRegisterVolunt());
             }
             catch (Exception ex)
             {
@@ -133,6 +148,7 @@ namespace Techo_form
             b += "<h1> Confirmamos tu registro en la actividad <h1/>";
             b += "<p>Gracias por tu intencion de participar en la actividad" + " " + lbl_ActivName.Text + "!";
             b += "recuerda reportarte con el coordinador de la actividad" + " " + lbl_CoordinatorActiv.Text;
+            b += "<p/>";
 
             return (b);
         }

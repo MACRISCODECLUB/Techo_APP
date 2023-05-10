@@ -113,7 +113,7 @@ namespace Techo_form.code
             return q;
         }
 
-        internal string Insert_Vol_into_Activ(int Id_Activity, int Id_People, int Total_Hours)
+        internal string Insert_Vol_into_Activ(int Id_Activity, int Id_People, double Total_Hours)
         {
             string q = "";
             q += "INSERT INTO VOLUNTEERS_IN_ACTIVITIES(Id_Activity, Id_People, Total_Hours) Values(";
@@ -122,6 +122,23 @@ namespace Techo_form.code
             return q;
         }
  
+        internal string Insert_Vol_into_Roster(int Id_Activity, int Id_People)
+        {
+            string q = "";
+            q += "INSERT INTO ROSTER(Id_Activity, Id_People) Values(";
+            q += Id_Activity + ", " + Id_People + ") ";
+
+            return q;
+        }
+
+        internal string Get_Activities_by_Date(DateTime StartFilter, DateTime EndFilter)
+        {
+            string q = "";
+            q += "SELECT * FROM ACTIVITIES";
+            q += " " + "WHERE [STARTS] BETWEEN";
+            q += " " + "'" + StartFilter + "'" + " " + "AND" + " " + "'" + EndFilter + "'";
+            return q;
+        }
     }
 
         
