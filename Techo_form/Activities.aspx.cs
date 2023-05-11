@@ -370,6 +370,7 @@ namespace Techo_form
             //DateTime dt_Parsed = NowTry.Date;
             if ((selectedDate.Date < dNowTry.Date) || (end.Date < start.Date))
             {
+
                 lbl_output_Form.Text = "Fecha de Inicio invalida, de momento no es posible viajar en el tiempo";
                 lbl_output_Form.BackColor = System.Drawing.Color.LightPink;
                 lbl_output_Form.ForeColor = System.Drawing.Color.DarkRed;
