@@ -19,7 +19,6 @@
                 <div class="col-md-5 p-lg-5 mx-auto my-5"></div>
                 <h1 class="mb-3 h2">Techo.org</h1>
                 <p>
-                    Hello
                 </p>
             </div>
             <div class="container">
@@ -86,12 +85,13 @@
                         </asp:DropDownList>
                         <asp:SqlDataSource runat="server" ID="ds_Cities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [CITIES] ORDER BY [City_Name]"></asp:SqlDataSource>
                     </div>
-                    <div class="row g-1" style="padding-top: 20px">
+                    <div class="row g-1" style="padding-top: 20px" >
                         <div class="col-md-6">
-                            <asp:CheckBox ID="cb_Politica_Privacidad" runat="server" Text="Acepto la Politica de Privacidad" Font-Bold="true" />
+                            <asp:CheckBox ID="cb_Politica_Privacidad" runat="server" Text="&nbsp; Acepto la Politica de Privacidad" Font-Bold="true" />
                         </div>
+                        <br />
                         <div class="col-md-16">
-                            <asp:CheckBox ID="cb_confirmacion" runat="server" Text="Acepto que TECHO se contacte conmigo para notificarme de eventos y campañas" Font-Bold="true" />
+                            <asp:CheckBox ID="cb_confirmacion" runat="server" Text="&nbsp; Acepto que TECHO se contacte conmigo para notificarme de eventos y campañas" Font-Bold="true" />
                         </div>
                         <div class="col-md-3">
                             <%--<asp:Button ID="bt_volver" runat="server" Text="Volver" />--%>

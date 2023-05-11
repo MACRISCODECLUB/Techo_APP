@@ -158,7 +158,7 @@
                                 <asp:BoundField DataField="username" HeaderText="Coordinador" SortExpression="username"></asp:BoundField>
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, Starts, Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, CONVERT(varchar(10),Starts,111)AS Starts, CONVERT(varchar(10),Ends,111)AS Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
 AND Status = 1">
                             <SelectParameters>
                                 <asp:QueryStringParameter QueryStringField="idv" Name="Id_People"></asp:QueryStringParameter>
@@ -168,12 +168,12 @@ AND Status = 1">
                     </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <asp:Label CssClass="form-control" ID="lbl_Done" runat="server" Text="Actividades Hechas"></asp:Label>
+                        <asp:Label CssClass="form-control" ID="lbl_Done" runat="server" Text="Actividades Completas"></asp:Label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <asp:GridView CssClass="PanelActivCS table table-condensed table-hover" ID="GV_Actividades_done" runat="server" AutoGenerateColumns="False" DataSourceID="Activities_done">
+                        <asp:GridView Style="padding-top:20px" CssClass="PanelActivCS table table-condensed table-hover" ID="GV_Actividades_done" runat="server" AutoGenerateColumns="False" DataSourceID="Activities_done">
                             <Columns>
                                 <asp:BoundField DataField="Activ_Name" HeaderText="Actividad" SortExpression="Activ_Name"></asp:BoundField>
                                 <asp:BoundField DataField="Work_Hours" HeaderText="Horas" SortExpression="Work_Hours"></asp:BoundField>
@@ -186,7 +186,7 @@ AND Status = 1">
                                 <asp:BoundField DataField="username" HeaderText="Coordinador" SortExpression="username"></asp:BoundField>
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource runat="server" ID="Activities_done" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, Starts, Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
+                        <asp:SqlDataSource runat="server" ID="Activities_done" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, CONVERT(varchar(10),Starts,111)AS Starts, CONVERT(varchar(10),Ends,111)AS Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
 AND Status = 2">
                             <SelectParameters>
                                 <asp:QueryStringParameter QueryStringField="idv" Name="Id_People"></asp:QueryStringParameter>
