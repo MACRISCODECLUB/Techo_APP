@@ -114,7 +114,7 @@ namespace Techo_form
         {
             try
             {
-                string Email = "marcoefigueroa042@gmail.com";
+                string Email = (Session["email"]).ToString();
                 string p = "";
                 p += "SELECT Id_People FROM PEOPLE";
                 p += " " + "WHERE [Email] = " + "'" + Email + "'";
