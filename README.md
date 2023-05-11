@@ -5,4 +5,4 @@ The perfect app for any NGO.
 
 This project was developed by two programmers at Macris School Code Club.
 
--Alfred David Agüerro Valladarez, Marco Esteban Figueroa Bonilla
+-Alfred David Agüero Valladares, Marco Esteban Figueroa Bonilla
