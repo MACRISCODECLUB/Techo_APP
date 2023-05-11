@@ -16,7 +16,7 @@
                 <asp:Label ID="lbl_title_db" runat="server" Text="Panel de Voluntarios" Font-Size="XX-Large"></asp:Label>
             </div>
             <div class="col-md-2">
-                <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />
+                <img src="https://i.ibb.co/GP2G194/Logo-PNG-en-negativo-1.png" alt="Techo Logo" />
             </div>
             <div class="col-md-12">
                 <asp:Label ID="lbl_leaveblankfilter" runat="server" Text="Dejar en blanco para mostrar todos los Voluntarios"></asp:Label><br />

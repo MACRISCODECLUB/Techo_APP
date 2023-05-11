@@ -14,7 +14,7 @@
            <h1>Panel de Actividades</h1> 
         </div>
         <div class="col-md-2 align-content-end float-end">
-            <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />  
+            <img src="https://i.ibb.co/GP2G194/Logo-PNG-en-negativo-1.png" alt="Techo Logo" />  
         </div>
     </div>
         <br />

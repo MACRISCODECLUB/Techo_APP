@@ -20,7 +20,7 @@
                             <asp:Button ID="btn_Back" runat="server" Text="Regresar" CssClass="btn btn-default" ForeColor="White" OnClick="btn_Back_Click" />
                         </div>
                         <div class="col-lg-10" id="logo_cont">
-                            <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />
+                            <img src="https://i.ibb.co/GP2G194/Logo-PNG-en-negativo-1.png" alt="Techo Logo" />
                             
                         </div>
                     </div>
