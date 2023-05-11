@@ -127,10 +127,10 @@ namespace Techo_form
             string password = generate_password();
             //create function to create confirmation number
             int conf_number = generate_conf_number();
-            //TODO insert into users password and confirmation number
+            //Insert into users password and confirmation number
             
-            //TODO update Id_User in people table where Id_People
-            //TODO add this information to sent email
+            //Update Id_User in people table where Id_People
+            //Add this information to sent email
             
         }
 
@@ -145,7 +145,7 @@ namespace Techo_form
 
             throw;
             }
-            //TODO add to session variables, the password and conf number
+            //Add to session variables, the password and conf number
         }
 
         private int generate_conf_number()

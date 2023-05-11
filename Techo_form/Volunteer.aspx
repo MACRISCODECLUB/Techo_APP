@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form.Volunteer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Volunteer.aspx.cs" Inherits="Techo_form.Volunteer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="product.css" rel="stylesheet" />
@@ -71,7 +71,7 @@
                         <asp:SqlDataSource runat="server" ID="ds_Country" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [COUNTRIES] ORDER BY [Country_Name]"></asp:SqlDataSource>
                     </div>
                     <div class="col-md-6">
-                        <asp:Label ID="lbl_State" runat="server" Text="ESTADO ACTUAL" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lbl_State" runat="server" Text="DEPARTAMENTO ACTUAL" Font-Bold="true"></asp:Label>
                         <br />
                         <asp:DropDownList CssClass="form-control" ID="DDL_State" runat="server" DataSourceID="ds_States" DataTextField="State_Name" DataValueField="Id_State" AppendDataBoundItems="True">
                             <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
@@ -79,7 +79,7 @@
                         <asp:SqlDataSource runat="server" ID="ds_States" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [STATES] ORDER BY [State_Name]"></asp:SqlDataSource>
                     </div>
                     <div class="col-md-6">
-                        <asp:Label ID="lbl_City" runat="server" Text="CIUDAD ACTUAL" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lbl_City" runat="server" Text="MUNICIPIO ACTUAL" Font-Bold="true"></asp:Label>
                         <br />
                         <asp:DropDownList CssClass="form-control" ID="DDL_City" runat="server" DataSourceID="ds_Cities" DataTextField="City_Name" DataValueField="Id_City" AppendDataBoundItems="True">
                             <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>

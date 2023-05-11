@@ -14,7 +14,7 @@
            <h1>Panel de Actividades</h1> 
         </div>
         <div class="col-md-2 align-content-end float-end">
-            <img src="https://actividades.techo.org/img/logo_large.png" alt="Techo Logo" />  
+            <img src="https://i.ibb.co/GP2G194/Logo-PNG-en-negativo-1.png" alt="Techo Logo" />  
         </div>
     </div>
         <br />
@@ -54,8 +54,8 @@
        <div class="col-md-10">
            <!--Expr1 = Start Date -->
            <!--Expr2 = End Date -->
-       <asp:GridView ID="PanelActiv" CssClass="PanelActivCS table table-condensed table-hover" runat="server" 
-           AutoGenerateColumns="False" DataSourceID="" DataKeyNames="Id_Activity" OnSelectedIndexChanged="PanelActiv_SelectedIndexChanged">
+       <asp:GridView ID="PanelActiv" CssClass="PanelActivCS table table-condensed table-hover" runat="server"
+        AutoGenerateColumns="False" DataSourceID="ds_ActivityPanel" DataKeyNames="Id_Activity" OnSelectedIndexChanged="PanelActiv_SelectedIndexChanged">
            <Columns>
                <asp:BoundField DataField="Activ_Name" HeaderText="Nombre de Actividad" SortExpression="Activ_Name"></asp:BoundField>               
                <asp:BoundField DataField="Starts" HeaderText="Fecha de Inicio" SortExpression="Starts" ReadOnly="True"></asp:BoundField>
@@ -67,7 +67,9 @@
            </Columns>
        </asp:GridView>
            <br />
-           <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Activ_Name, CONVERT (varchar(10), Starts, 111) AS Starts, CONVERT (varchar(10), Ends, 111) AS Ends, Visibility, Id_Activity FROM ACTIVITIES"></asp:SqlDataSource>
+           <asp:SqlDataSource runat="server" ID="ds_ActivityPanel" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Activ_Name, CONVERT (varchar(10), Starts, 111) AS Starts, CONVERT (varchar(10), Ends, 111) AS Ends, Visibility,
+Id_Activity FROM ACTIVITIES 
+ORDER BY Starts DESC "></asp:SqlDataSource>
       </div>
            
     <br />

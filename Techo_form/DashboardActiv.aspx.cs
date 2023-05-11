@@ -51,5 +51,11 @@ namespace Techo_form
             PanelActiv.DataSource = dt_Filtered;
             PanelActiv.DataBind();
         }
+
+        protected void btn_RemoveFilter_Click(object sender, EventArgs e)
+        {
+            PanelActiv.DataSourceID = "ds_ActivityPanel";
+            PanelActiv.DataBind();
+        }
     }
 }
