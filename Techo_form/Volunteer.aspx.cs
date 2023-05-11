@@ -138,7 +138,8 @@ namespace Techo_form
         {
             try
             {
-                udf.Get_DataSet_Query(volunteer.Insert_into_user(tb_Email.Text, password, 4, conf_number));
+                Session["iduser"] = udf.Execute_Scalar(volunteer.Insert_into_user(tb_Email.Text, password, 4, conf_number));
+                Update_IdUser_in_IdPeople(Session["iduser"].ToString(), Session["idp"].ToString());
             }
             catch (Exception)
             {
@@ -146,6 +147,11 @@ namespace Techo_form
             throw;
             }
             //Add to session variables, the password and conf number
+        }
+
+        private void Update_IdUser_in_IdPeople(string iduser, string idpeople)
+        {
+            udf.Execute_Non_Query(volunteer.update_iduser_into_idpeople(iduser, idpeople));
         }
 
         private int generate_conf_number()

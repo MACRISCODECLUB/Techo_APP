@@ -20,13 +20,26 @@ namespace Techo_form
             {
                 case "rhasbun@macrisschool.org": 
                     Session["profileId"] = 4;
+                    Session["email"] = tb_Username.Text;
                     break;
-                case "mfigueroa@macrisschool.org":
-                    Session["profileId"] = 1;
+                case "marcoestebanfigueroa@macrisschool.org":
+                    Session["profileId"] = 4;
+                    Session["email"] = tb_Username.Text;
                     break;
-                case "aaguero@macrisscho" +
-                "ol.org":
+                case "ramonhasbun@gmail.com":
+                    Session["profileId"] = 4;
+                    Session["email"] = tb_Username.Text;
+                    break;
+                //case "ramonhasbun@gmail.com":
+                //    Session["profileId"] = 4;
+                //    break;
+                case "marcoefigueroa042@gmail.com":
                     Session["profileId"] = 1;
+                    Session["email"] = tb_Username.Text;
+                    break;
+                case "alfreddavidaguero@macrisschool.org":
+                    Session["profileId"] = 1;
+                    Session["email"] = tb_Username.Text;
                     break;
                 default:
                     break;

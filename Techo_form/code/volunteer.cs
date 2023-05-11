@@ -116,7 +116,8 @@ namespace Techo_form.code
             q += " ,[Id_Profile] ";
             q += ",[Confirmation_Number])";
             q += " VALUES ";
-            q += " ( '" + username + "' , '" + password + "', " + Id_Profile + ", " + Confirmation_Number + ");";
+            q += " ( '" + username + "' , '" + password + "', " + Id_Profile + ", " + Confirmation_Number + "); ";
+            q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
             return q;
         }
@@ -176,6 +177,14 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string update_iduser_into_idpeople(string iduser, string idpeople)
+        {
+            string q = "";
+            q += "UPDATE [PEOPLE]";
+            q += " SET Id_User = " + iduser;
+            q += " WHERE [Id_People] = " + idpeople;
 
+            return q;
+        }
     }
 }
