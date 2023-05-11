@@ -42,7 +42,7 @@ namespace Techo_form
                     Session["email"] = tb_Username.Text;
                     break;
                 case "alfreddavidaguero@macrisschool.org":
-                    Session["profileId"] = 1;
+                    Session["profileId"] = 2;
                     Session["email"] = tb_Username.Text;
                     break;
                 default:

@@ -203,5 +203,14 @@ namespace Techo_form.code
 
             return q;
         }
+
+        internal string get_volunteer_by_city(int City)
+        {
+            string q = "";
+            q += "SELECT City_Name FROM CITIES";
+            q += "WHERE Id_City = " + City;
+
+            return q;
+        }
     }
 }
