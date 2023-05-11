@@ -11,7 +11,18 @@ namespace Techo_form
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string email = Session["email"].ToString();
+                string idprofile = Session["idprofile"].ToString();
+                string idpeople = Session["idpeople"].ToString();
+            }
+            catch (Exception ex)
+            {
 
+                Response.Redirect("Login.aspx");
+            }
+            
         }
     }
 }

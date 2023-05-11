@@ -16,5 +16,11 @@ namespace Techo_form
                 pnl_AdminTools.Visible = false;
             }
         }
+
+        protected void btn_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
+        }
     }
 }

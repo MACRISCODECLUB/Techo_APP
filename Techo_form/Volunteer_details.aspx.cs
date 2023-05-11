@@ -17,8 +17,8 @@ namespace Techo_form
             if (!IsPostBack)
             {
                 TC_Details.ActiveTabIndex = 0;
-                tb_First_Name.Text = Request.QueryString["idv"].ToString();
-                get_volunteer_info_by_Id(Request.QueryString["idv"].ToString());
+                tb_First_Name.Text = Session["idpeople"].ToString();
+                get_volunteer_info_by_Id(Session["idpeople"].ToString());
             }
 
         }
@@ -177,7 +177,7 @@ namespace Techo_form
                                                     {
                                                         udf.Get_DataSet_Query(vol.update_volunteer(tb_First_Name.Text, tb_Last_Name.Text, tb_DOB.Text, Convert.ToInt32(rbl_Gender.SelectedValue),
                                                             tb_Cellphone.Text, tb_Email.Text, Convert.ToInt32(DDL_Country.SelectedValue), Convert.ToInt32(DDL_City.SelectedValue), Convert.ToInt32(DDL_State.SelectedValue),
-                                                            tb_RNP.Text, Request.QueryString["idv"].ToString()));
+                                                            tb_RNP.Text, Session["idpeople"].ToString()));
 
                                                         lbl_error.Text = "Muchas Gracias!, El voluntario fue actualizado exitosamente.";
                                                         lbl_error.Visible = true;
@@ -267,8 +267,8 @@ namespace Techo_form
                                     try
                                     {
                                         udf.Execute_Non_Query(vol.Update_Volunteer_ER(tb_Nom_Cobertura_Med.Text, tb_Num_Cobertura_Med.Text, tb_Nom_Contacto_ER.Text, tb_Tel_Contacto_ER.Text,
-                                            tb_Rel_Contacto_ER.Text, Convert.ToInt32(DDL_Blood_Type.SelectedValue), Request.QueryString["idv"].ToString()));
-                                        lbl_error_ficha.Text = "Muchas Gracias!, El voluntario fue actualizado exitosamente.";
+                                            tb_Rel_Contacto_ER.Text, Convert.ToInt32(DDL_Blood_Type.SelectedValue), Session["idpeople"].ToString()));
+                                        lbl_error_ficha.Text = "Muchas Gracias!, El voluntario fue actualizado exitósamente.";
                                         lbl_error_ficha.Visible = true;
                                         lbl_error_ficha.BackColor = System.Drawing.Color.LightGreen;
                                         lbl_error_ficha.ForeColor = System.Drawing.Color.DarkGreen;

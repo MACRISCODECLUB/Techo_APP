@@ -51,6 +51,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.Panel pnl_AdminTools;
 
         /// <summary>
+        /// btn_CerrarSesion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_CerrarSesion;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

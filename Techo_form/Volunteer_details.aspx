@@ -8,7 +8,7 @@
     <br />
     <br />
     <br />
-    <ajaxToolkit:TabContainer runat="server" Width=100% ActiveTabIndex="1" ID="TC_Details">
+    <ajaxToolkit:TabContainer runat="server" Width=100% ActiveTabIndex="2" ID="TC_Details">
         <ajaxToolkit:TabPanel runat="server" HeaderText="Informacion General" ID="TP_General"> 
             <ContentTemplate>
                 <div class="container py-4 bg-light shadow marginTop">
@@ -161,7 +161,7 @@
                         <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, CONVERT(varchar(10),Starts,111)AS Starts, CONVERT(varchar(10),Ends,111)AS Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
 AND Status = 1">
                             <SelectParameters>
-                                <asp:QueryStringParameter QueryStringField="idv" Name="Id_People"></asp:QueryStringParameter>
+                                <asp:SessionParameter Name="Id_People" SessionField="idpeople" />
 
                             </SelectParameters>
                         </asp:SqlDataSource>
@@ -189,7 +189,7 @@ AND Status = 1">
                         <asp:SqlDataSource runat="server" ID="Activities_done" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_User, Id_Activity, Activ_Name, Id_Coordinator, Work_Hours, Status, CONVERT(varchar(10),Starts,111)AS Starts, CONVERT(varchar(10),Ends,111)AS Ends, adminconfirm, Id_Office, Cost, Name, City_Name, username FROM vw_Volunteer_Activities_Dashboard WHERE (Id_People = @Id_People)
 AND Status = 2">
                             <SelectParameters>
-                                <asp:QueryStringParameter QueryStringField="idv" Name="Id_People"></asp:QueryStringParameter>
+                                <asp:SessionParameter Name="Id_People" SessionField="idpeople" />
                             </SelectParameters>
                         </asp:SqlDataSource>
                     </div>

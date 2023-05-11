@@ -79,6 +79,15 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string get_UserBy_username_password(string username, string password)
+        {
+            string q = "";
+            q += "Select * from USERS where username = '" + username + "' AND ";
+            q += " password = '" + password + "'";
+
+            return q;
+        }
+
         internal string get_country_by_Id_State(string Id_State)
         {
             string q = "";
@@ -103,6 +112,14 @@ namespace Techo_form.code
             q += ",[Id_State] = " + Id_State;
             q += ",[RNP_Number] = '" + RNP_Number + "'";
             q += " WHERE [Id_People] = " + Id_Vol;
+
+            return q;
+        }
+
+        internal string Get_People_By_Id_User(string iduser)
+        {
+            string q = "";
+            q += "Select * from PEOPLE where Id_User = " + iduser;
 
             return q;
         }
