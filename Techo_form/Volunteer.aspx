@@ -100,9 +100,7 @@
                             <asp:Button ID="bt_siguiente" runat="server" CssClass="btn btn-primary"
                                 Text="Siguiente" OnClick="bt_siguiente_Click" />
                             <br />
-                            <asp:Label ID="lbl_mensaje" runat="server" Text="" Visible="false">
-
-                            </asp:Label>
+                            <asp:Label ID="lbl_mensaje" runat="server" Text="" Visible="false"> </asp:Label>
                         </div>
                     </div>
                 </div>
