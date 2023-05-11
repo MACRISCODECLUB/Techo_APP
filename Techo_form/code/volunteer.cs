@@ -39,6 +39,14 @@ namespace Techo_form.code
             return q;
         }
 
+        internal string get_user_info_by_iduser(string iduser)
+        {
+            string q = "";
+            q += "Select * from USERS where Id_User = " + iduser;
+
+            return q;
+        }
+
         internal string get_gender_by_Id_Gender(string Id_Gender)
         {
             string q = "";
@@ -142,6 +150,16 @@ namespace Techo_form.code
 
             return q;
         }
+
+        internal string Update_Profile_Users(string idprofile, string iduser)
+        {
+            string q = "";
+            q += "UPDATE [USERS] ";
+            q += "SET Id_Profile = " + idprofile;
+            q += " WHERE Id_User = " + iduser;
+            return q;
+        }
+
         internal string Update_Volunteer_ER(string Nom_Cobertura_Med, string Num_Cobertura_Med, string Nom_Contacto_ER, string Tel_Contacto_ER,
             string Rel_Contacto_ER, int Id_Blood_Type, string Id_Vol)
         {

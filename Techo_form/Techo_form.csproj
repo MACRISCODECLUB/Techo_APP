@@ -105,7 +105,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\register.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="Activities.aspx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
@@ -213,11 +213,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\register.aspx.cs">
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="code\IdentityModels.cs" />
+    <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\register.aspx.designer.cs">
+    <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Activities.aspx.cs">
@@ -230,7 +232,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="code\activity.cs" />
     <Compile Include="code\AuthHelper.cs" />
-    <Compile Include="code\IdentityModels.cs" />
     <Compile Include="code\volunteer.cs" />
     <Compile Include="code\udf.cs" />
     <Compile Include="DashboardActiv.aspx.cs">
@@ -337,6 +338,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Account\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

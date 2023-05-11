@@ -15,6 +15,24 @@ namespace Techo_form.Account
     {
 
         /// <summary>
+        /// ddl_Voluntarios_People control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Voluntarios_People;
+
+        /// <summary>
+        /// ds_Voluntarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_Voluntarios;
+
+        /// <summary>
         /// ddl_Perfiles control.
         /// </summary>
         /// <remarks>
@@ -24,49 +42,13 @@ namespace Techo_form.Account
         protected global::System.Web.UI.WebControls.DropDownList ddl_Perfiles;
 
         /// <summary>
-        /// tb_Email control.
+        /// ds_Perfiles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Email;
-
-        /// <summary>
-        /// tb_Nombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Nombre;
-
-        /// <summary>
-        /// tb_Apellido control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Apellido;
-
-        /// <summary>
-        /// tb_Password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_Password;
-
-        /// <summary>
-        /// tb_ConfPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_ConfPassword;
+        protected global::System.Web.UI.WebControls.SqlDataSource ds_Perfiles;
 
         /// <summary>
         /// btn_Register control.

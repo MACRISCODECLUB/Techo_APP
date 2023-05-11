@@ -6,10 +6,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Freedom_2.Models;
 using Techo_form.App_Start;
 
-namespace Freedom_2.Models
+namespace Techo_form.code
 {
     // You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -43,7 +42,7 @@ namespace Freedom_2.Models
 }
 
 #region Helpers
-namespace Freedom_2
+namespace Techo_form
 {
     public static class IdentityHelper
     {
