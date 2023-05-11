@@ -26,14 +26,14 @@
                 <asp:TextBox Cssclass="form-control" ID="tb_filter_volunteer" runat="server"></asp:TextBox>
             </div>
             <div class="col-md-3">
-                <asp:Label ID="lbl_city_filter" runat="server" Text="Ciudad"></asp:Label>
+                <asp:Label ID="lbl_city_filter" runat="server" Text="Municipio"></asp:Label>
                 <asp:DropDownList CssClass="form-control" ID="DDL_City" runat="server" DataSourceID="ds_Cities" DataTextField="City_Name" DataValueField="Id_City" AppendDataBoundItems="True">
                     <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                 </asp:DropDownList>
                 <asp:SqlDataSource runat="server" ID="ds_Cities" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [CITIES] ORDER BY [City_Name]"></asp:SqlDataSource>
             </div>
             <div class="col-md-3">
-                <asp:Label ID="lbl_State_filter" runat="server" Text="Estado"></asp:Label>
+                <asp:Label ID="lbl_State_filter" runat="server" Text="Departamento"></asp:Label>
                 <asp:DropDownList Cssclass="form-control" ID="DDL_State" runat="server" DataSourceID="ds_States" DataTextField="State_Name" DataValueField="Id_State" AppendDataBoundItems="True">
                     <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                 </asp:DropDownList>
@@ -50,8 +50,8 @@
                 <asp:GridView CssClass="PanelActivCS table table-condensed table-hover" ID="GV_Volunteers" runat="server" AutoGenerateColumns="False" DataKeyNames="Id_People" DataSourceID="ds_voluntarios" OnSelectedIndexChanged="GV_Volunteers_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="Name" HeaderText="Nombre de Voluntario" SortExpression="FirstName"></asp:BoundField>
-                        <asp:BoundField DataField="City_Name" HeaderText="Ciudad" SortExpression="Id_City"></asp:BoundField>
-                        <asp:BoundField DataField="State_Name" HeaderText="Estado" SortExpression="Id_State"></asp:BoundField>
+                        <asp:BoundField DataField="City_Name" HeaderText="Municipio" SortExpression="Id_City"></asp:BoundField>
+                        <asp:BoundField DataField="State_Name" HeaderText="Departamento" SortExpression="Id_State"></asp:BoundField>
                         <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email"></asp:BoundField>
                         <asp:BoundField DataField="Cellphone" HeaderText="Telefono" SortExpression="Cellphone"></asp:BoundField>
                         <asp:CommandField SelectText="Ver Detalle" ShowSelectButton="True" />

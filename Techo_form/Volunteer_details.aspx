@@ -42,7 +42,7 @@
                     <asp:Label ID="lbl_Email" runat="server" Text="Correo Electrónico"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="tb_Email" runat="server"></asp:TextBox>
                     <br />
-                    <asp:Label ID="lbl_State" runat="server" Text="Estado"></asp:Label>
+                    <asp:Label ID="lbl_State" runat="server" Text="Departamento"></asp:Label>
                     <asp:DropDownList CssClass="form-control" ID="DDL_State" runat="server" DataSourceID="ds_States" DataTextField="State_Name" DataValueField="Id_State" AutoPostBack="True">
                         <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                     </asp:DropDownList>
@@ -59,7 +59,7 @@
                         <asp:SqlDataSource runat="server" ID="ds_gender" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [GENDER]"></asp:SqlDataSource>
                     </div>
                     <div style="margin-top: -4px">
-                        <asp:Label ID="lbl_City" runat="server" Text="Ciudad"></asp:Label>
+                        <asp:Label ID="lbl_City" runat="server" Text="Municipio"></asp:Label>
                         <asp:DropDownList CssClass="form-control" ID="DDL_City" runat="server" DataSourceID="ds_Cities" DataTextField="City_Name" DataValueField="Id_City">
                             <asp:ListItem Selected="True" Value="-1">SELECCIONE UNO</asp:ListItem>
                         </asp:DropDownList>
@@ -75,7 +75,6 @@
             <br />
             <div class="col-md-12">
                 <asp:Label ID="lbl_error" runat="server" Text="" Visible="false"></asp:Label>
-                <%--<asp:Button ID="lbl_mensaje" runat="server" Text="" Visible="false" />--%>
             </div>
             <div class="col-md-12">
                 <center>
@@ -135,6 +134,46 @@
                 </div>
         </div>
      </div>
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>
+        <ajaxToolkit:TabPanel runat="server" HeaderText="Mis Actividades" ID="TP_Actividades">
+            <ContentTemplate>
+                <div class="row">
+                    <div class="co-md-12">
+                        <asp:GridView CssClass="PanelActivCS table table-condensed table-hover" ID="GV_Actividades_todo" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+                            <Columns>
+                                <asp:BoundField DataField="Activ_Name" HeaderText="Actividad" SortExpression="Activ_Name"></asp:BoundField>
+                                <asp:BoundField DataField="Work_Hours" HeaderText="Horas" SortExpression="Work_Hours"></asp:BoundField>
+                                <asp:CheckBoxField DataField="Status" HeaderText="Estado" SortExpression="Status"></asp:CheckBoxField>
+                                <asp:BoundField DataField="Starts" HeaderText="Comienza" SortExpression="Starts"></asp:BoundField>
+                                <asp:BoundField DataField="Ends" HeaderText="Termina" SortExpression="Ends"></asp:BoundField>
+                                <asp:BoundField DataField="Cost" HeaderText="Costo" SortExpression="Cost"></asp:BoundField>
+                                <asp:BoundField DataField="Name" HeaderText="Nombre de Voluntario" SortExpression="FirstName"></asp:BoundField>
+                                <asp:BoundField DataField="City_Name" HeaderText="Municipio" SortExpression="City_Name"></asp:BoundField>
+                                <asp:BoundField DataField="username" HeaderText="Coordinador" SortExpression="username"></asp:BoundField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource2" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [vw_Volunteer_Activities_Dashboard]"></asp:SqlDataSource>
+                    </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:GridView CssClass="PanelActivCS table table-condensed table-hover" ID="GV_Actividades_done" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
+
+                            <Columns>
+                                <asp:BoundField DataField="Activ_Name" HeaderText="Actividad" SortExpression="Activ_Name"></asp:BoundField>
+                                <asp:BoundField DataField="Work_Hours" HeaderText="Horas" SortExpression="Work_Hours"></asp:BoundField>
+                                <asp:CheckBoxField DataField="Status" HeaderText="Estado" SortExpression="Status"></asp:CheckBoxField>
+                                <asp:BoundField DataField="Starts" HeaderText="Comienza" SortExpression="Starts"></asp:BoundField>
+                                <asp:BoundField DataField="Ends" HeaderText="Termina" SortExpression="Ends"></asp:BoundField>
+                                <asp:BoundField DataField="Cost" HeaderText="Costo" SortExpression="Cost"></asp:BoundField>
+                                <asp:BoundField DataField="Name" HeaderText="Nombre de Voluntario" SortExpression="FirstName"></asp:BoundField>
+                                <asp:BoundField DataField="City_Name" HeaderText="Municipio" SortExpression="City_Name"></asp:BoundField>
+                                <asp:BoundField DataField="username" HeaderText="username" SortExpression="username"></asp:BoundField>
+                            </Columns>
+                        </asp:GridView>
+                    </div>
+                </div>
+                </div>
             </ContentTemplate>
         </ajaxToolkit:TabPanel>
     </ajaxToolkit:TabContainer>
