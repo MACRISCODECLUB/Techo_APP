@@ -131,7 +131,15 @@ namespace Techo_form.code
             return x;
         }
 
-
+        public void Execute_Non_Query(string str_Query)
+        {
+            SqlCommand cmm_Configurable = new SqlCommand(str_Query, str_Conn);
+            cmm_Configurable.CommandTimeout = 60;
+            //cmm_Configurable.CommandType = CommandType.Text;
+            str_Conn.Open();
+            cmm_Configurable.ExecuteNonQuery();
+            str_Conn.Close();
+        }
 
     }
 

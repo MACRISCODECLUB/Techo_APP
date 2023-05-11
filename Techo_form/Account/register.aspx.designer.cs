@@ -7,56 +7,74 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Techo_form
+namespace Techo_form.Account
 {
 
 
-    public partial class Site1
+    public partial class register
     {
 
         /// <summary>
-        /// ContentPlaceHolder2 control.
+        /// ddl_Perfiles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Perfiles;
 
         /// <summary>
-        /// head control.
+        /// tb_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox tb_Email;
 
         /// <summary>
-        /// form1 control.
+        /// tb_Nombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox tb_Nombre;
 
         /// <summary>
-        /// pnl_AdminTools control.
+        /// tb_Apellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_AdminTools;
+        protected global::System.Web.UI.WebControls.TextBox tb_Apellido;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// tb_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox tb_Password;
+
+        /// <summary>
+        /// tb_ConfPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_ConfPassword;
+
+        /// <summary>
+        /// btn_Register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Register;
     }
 }
