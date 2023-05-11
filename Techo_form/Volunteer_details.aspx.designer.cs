@@ -429,6 +429,15 @@ namespace Techo_form
         protected global::AjaxControlToolkit.TabPanel TP_Actividades;
 
         /// <summary>
+        /// lbl_Todo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Todo;
+
+        /// <summary>
         /// GV_Actividades_todo control.
         /// </summary>
         /// <remarks>
@@ -447,6 +456,15 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
+        /// lbl_Done control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Done;
+
+        /// <summary>
         /// GV_Actividades_done control.
         /// </summary>
         /// <remarks>
@@ -454,5 +472,14 @@ namespace Techo_form
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GV_Actividades_done;
+
+        /// <summary>
+        /// Activities_done control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Activities_done;
     }
 }
