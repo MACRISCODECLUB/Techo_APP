@@ -665,6 +665,7 @@ namespace Techo_form
             s += "border: $input-border-width solid $input-border-color;";
             s += "appearance: none;";
 
+            //TODO ADD CUPOS DISPONIBLES FUNCTION
             //b for the Body of the Email
             string b = "";
             b += "";
@@ -681,6 +682,8 @@ namespace Techo_form
             b += "<br>" + "<p>" + DescriptionActiv.Text + "<p/>";
             b += "<br>" + "<h2>Costo de la Actividad<h2/>" + "<br>";
             b += "<h3>" + tb_Cost.Text + "<h3/>";
+            b += "<br>" + "<h2>Cupos en la Actividad<h2/>" + "<br>";
+            b += "<h3>" + tb_capacityactiv.Text + "<h3>";
             b += "<a href=\"sumate.aspx\"> <img src=\"\"> </img></a>";
 
             return b;

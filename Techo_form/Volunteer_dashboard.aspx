@@ -40,10 +40,10 @@
                 <asp:SqlDataSource runat="server" ID="ds_States" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT * FROM [STATES] ORDER BY [State_Name]"></asp:SqlDataSource>
             </div>
             <div class="col-md-2 g-5">
-                <asp:Button CssClass="form-control" ID="bt_apply_filter" runat="server" Text="Aplicar Filtros" OnClick="bt_apply_filter_Click" />
+                <asp:Button CssClass="form-control" ID="bt_apply_filter" runat="server" Text="Aplicar Filtros"/>
             </div>
         </div>
-        <br />
+        <br />  
 
         <div class="row">
             <div class="col-md-12">
