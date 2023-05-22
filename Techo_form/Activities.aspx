@@ -85,7 +85,7 @@
                     </asp:SqlDataSource>
                 </div>
                 <div class="col-md-4">
-                    <asp:Label ID="lbl_Cityactiv" runat="server" Text="Ciudad"></asp:Label>
+                    <asp:Label ID="lbl_Cityactiv" runat="server" Text="Municipio"></asp:Label>
                     <asp:DropDownList Width="100%" ID="ddl_Cityactiv" CssClass="form-control dp_big" runat="server" DataSourceID="ds_Cityactiv" DataTextField="City_Name" DataValueField="Id_City"></asp:DropDownList>
 
                     <asp:SqlDataSource runat="server" ID="ds_Cityactiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT [City_Name], [Id_State], [Id_City] FROM [CITIES] WHERE ([Id_State] = @Id_State)">
@@ -98,7 +98,7 @@
             <br />
             <div class="row">
                 <div class="dropdown_type col-md-6">
-                    <asp:Label ID="lbl_officeactiv" runat="server" Text="Oficina"></asp:Label>
+                    <asp:Label ID="lbl_officeactiv" runat="server" Text="Punto de Encuentro"></asp:Label>
                     <!--Dropwdown select Office-->
                     <asp:DropDownList Width="100%" CssClass="form-control dp_big" 
                         ID="ddl_officeactiv" runat="server" DataSourceID="ds_OfficeActiv" 

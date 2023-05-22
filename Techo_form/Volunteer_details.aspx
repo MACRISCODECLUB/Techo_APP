@@ -194,6 +194,11 @@ AND Status = 1">
                 </div>
             </ContentTemplate>
         </ajaxToolkit:TabPanel>
-    </ajaxToolkit:TabContainer>
+
+    <ajaxToolkit:TabPanel runat="server" HeaderText="Cambiar Contraseña" ID="TB_UserInfo">
+
+
+    </ajaxToolkit:TabPanel>
+         </ajaxToolkit:TabContainer>
     
 </asp:Content>

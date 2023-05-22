@@ -179,7 +179,7 @@ namespace Techo_form
                                                             tb_Cellphone.Text, tb_Email.Text, Convert.ToInt32(DDL_Country.SelectedValue), Convert.ToInt32(DDL_City.SelectedValue), Convert.ToInt32(DDL_State.SelectedValue),
                                                             tb_RNP.Text, Session["idpeople"].ToString()));
 
-                                                        lbl_error.Text = "Muchas Gracias!, El voluntario fue actualizado exitosamente.";
+                                                        lbl_error.Text = "Muchas Gracias!, Tu usuario fue actualizado exitosamente.";
                                                         lbl_error.Visible = true;
                                                         lbl_error.BackColor = System.Drawing.Color.LightGreen;
                                                         lbl_error.ForeColor = System.Drawing.Color.DarkGreen;
@@ -283,11 +283,14 @@ namespace Techo_form
                                         throw;
                                     }
                                 }
+
                             }
                         }
                     }
                 }
             }
         }
+
+
     }
 }   
