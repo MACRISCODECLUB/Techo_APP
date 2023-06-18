@@ -15,15 +15,15 @@ namespace Techo_form.code
 
             return q;
         }
-        internal string Insert_New_Activity(string Activ_Name, int Id_City, int Id_Coordinator,
+        internal string Insert_New_Activity(string Activ_Name, int Id_City, int Id_Coordinator, int Id_Coordiantor2,
             double Work_Hours, string descripactiv, Boolean Visibility, Boolean Status,
             string Starts, string Ends, int capacityactiv, Boolean adminconfirm, int Id_Office, double Cost)
         {
             string q = "";
 
-            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Work_Hours, descripactiv, ";
+            q += "INSERT INTO ACTIVITIES(Activ_Name, Id_City, Id_Coordinator, Id_Coordinator2, Work_Hours, descripactiv, ";
             q += "Visibility, Status, Starts, Ends, capacityactiv, adminconfirm, Id_Office, Cost) VALUES('";
-            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "', '"
+            q += Activ_Name + "', " + Id_City + ", " + Id_Coordinator + ", " + Id_Coordiantor2 + ", " + Work_Hours + ", '" + descripactiv + "', '" + Visibility + "', '"
             + Status + "', '" + Starts + "', '" + Ends + "', " + capacityactiv + ", '" + adminconfirm + "', " + Id_Office + ", " + Cost + ") ";
             q += "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY]";
 
@@ -88,7 +88,7 @@ namespace Techo_form.code
             return q;
         }
 
-        internal string UpdateActivity(string Activ_Name, int Id_City, int Id_Coordinator,
+        internal string UpdateActivity(string Activ_Name, int Id_City, int Id_Coordinator, int Id_Coordinator2,
             double Work_Hours, string descripactiv, Boolean Visibility, Boolean Status,
             string Starts, string Ends, int capacityactiv, Boolean adminconfirm, int Id_Office, double Cost, string IdActividad)
         {
@@ -97,6 +97,7 @@ namespace Techo_form.code
             q += "SET [Activ_Name] = '" + Activ_Name + "'";
             q += " ,[Id_City] = " + Id_City;
             q += " ,[Id_Coordinator] = " + Id_Coordinator;
+            q += " ,[Id_Coordinator2] = " + Id_Coordinator2;
             q += " ,[Work_Hours] = " + Work_Hours;
             q += " ,[descripactiv] = '" + descripactiv + "'";
             q += " ,[Visibility] = '" + Visibility + "'";

@@ -438,6 +438,24 @@ namespace Techo_form
         protected global::System.Web.UI.WebControls.TextBox tb_Workhours;
 
         /// <summary>
+        /// lbl_Coordinatoractiv2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Coordinatoractiv2;
+
+        /// <summary>
+        /// ddl_coordinatoractiv2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_coordinatoractiv2;
+
+        /// <summary>
         /// btn_Submit control.
         /// </summary>
         /// <remarks>

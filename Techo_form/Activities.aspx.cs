@@ -527,7 +527,7 @@ namespace Techo_form
             try
             {
                 activity.UpdateActivity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
-                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+                    , Convert.ToInt32(ddl_Coordinatoractiv.Text),Convert.ToInt32(ddl_coordinatoractiv2.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
                     , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
                     , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text), Request.QueryString["I"].ToString());
                 lbl_output_Form.Text = "La actividad fue actualizada satisfactoriamente";
@@ -585,7 +585,7 @@ namespace Techo_form
             try
             {
                 udf.Get_DataSet_Query(activity.Insert_New_Activity(tb_nameactiv.Text, Convert.ToInt32(ddl_Cityactiv.SelectedItem.Value)
-                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
+                    , Convert.ToInt32(ddl_Coordinatoractiv.Text), Convert.ToInt32(ddl_coordinatoractiv2.Text), Convert.ToDouble(tb_Workhours.Text), DescriptionActiv.Text
                     , udf.convertBooleansdeBit(ddl_visibility.Text), udf.convertBooleansdeBit(ddl_status.Text), udf.FormatDate(udf.FormatDateToDate(tb_startdate.Text)), udf.FormatDate(udf.FormatDateToDate(tb_enddate.Text))
                     , Convert.ToInt32(tb_capacityactiv.Text), udf.convertBooleansdeBit(ddl_adminconfirm.Text), Convert.ToInt32(ddl_officeactiv.SelectedItem.Value), Convert.ToInt32(tb_Cost.Text)));
                 lbl_output_Form.Text = "La actividad fue creada satisfactoriamente";

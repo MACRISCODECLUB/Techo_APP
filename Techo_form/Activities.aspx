@@ -172,7 +172,7 @@
                     <asp:TextBox CssClass="form-control" ID="tb_capacityactiv" Style="width: 100%;" runat="server"></asp:TextBox>
                 </div>
                 <div class="col-md-6">
-                    <asp:Label ID="lbl_Coordinatoractiv" runat="server" Text="Coordinador a Cargo"></asp:Label>
+                    <asp:Label ID="lbl_Coordinatoractiv" runat="server" Text="Coordinador a Cargo #1"></asp:Label>
                     <br />
                     <asp:DropDownList Width="100%" ID="ddl_Coordinatoractiv" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People" CssClass="form-control dp_big"></asp:DropDownList>
                     <asp:SqlDataSource runat="server" ID="ds_cordinatoractiv" ConnectionString='<%$ ConnectionStrings:CODECLUBConnectionString %>' SelectCommand="SELECT Id_People, (FirstName + ' ' + LastName) as Name FROM USERS u INNER JOIN PEOPLE p on p.Id_User = u.Id_User WHERE Id_Profile < 4 ORDER BY FirstName ASC, LastName ASC"></asp:SqlDataSource>
@@ -182,6 +182,20 @@
                     <br />
                     <asp:TextBox Width="100%" CssClass="form-control" ID="tb_Workhours" Text="0.00" runat="server"></asp:TextBox>
 
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-3">
+                    &nbsp
+                </div>
+                <div class="col-md-6">
+                    <asp:Label ID="lbl_Coordinatoractiv2" runat="server" Text="Coordinador a Cargo #2"></asp:Label>
+                    <br />
+                    <asp:DropDownList ID="ddl_coordinatoractiv2" Width="100%" CssClass="dp_big form-control" runat="server" DataSourceID="ds_cordinatoractiv" DataTextField="Name" DataValueField="Id_People"></asp:DropDownList>
+                </div>
+                <div class="col-md-3">
+                    &nbsp
                 </div>
             </div>
             <br />
