@@ -105,7 +105,7 @@ namespace Techo_form.code
         public string RandomPassword(int size = 1)
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append(RandomString(4));
+            builder.Append(RandomString(2));
             builder.Append(RandomNumber(1000,9999));
             builder.Append(RandomString(2));
             builder.ToString();

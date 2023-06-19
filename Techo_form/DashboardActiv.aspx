@@ -20,7 +20,7 @@
         <br />
     <div class="row">
         <div class="col-md-3">
-            <!--TODO FINISH FILTERS AND FILTER BUTTON -->
+            
             <asp:Label ID="lbl_startdate_Filter" runat="server" Text="Fecha Inicial"></asp:Label>
             <asp:TextBox ID="tb_startdate_Filter" CssClass="form-control" runat="server"></asp:TextBox>
             <ajaxToolkit:CalendarExtender ID="AJAX_calend_startdate_filter" runat="server"
@@ -45,7 +45,7 @@
             <asp:DropDownList ID="ddl_Profiles" runat="server" DataSourceID="ds_Profiles" DataTextField="Profile_Name" DataValueField="Id_profile" Visible="False">
             </asp:DropDownList>
             <asp:SqlDataSource ID="ds_Profiles" runat="server" ConnectionString="<%$ ConnectionStrings:CODECLUBConnectionString %>" SelectCommand="SELECT * FROM [PROFILES]"></asp:SqlDataSource>
-             <asp:Button ID="btn_RemoveFilter" CssClass="btnApplyFilter form-control align-content" runat="server" Text="Quitar Filtros" Width="125px"/>
+             <asp:Button ID="btn_RemoveFilter" CssClass="btnApplyFilter form-control align-content" runat="server" Text="Quitar Filtros" Width="125px" OnClick="btn_RemoveFilter_Click"/>
         </div>
     </div>
    <br />
