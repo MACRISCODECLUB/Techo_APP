@@ -9,6 +9,7 @@ namespace Techo_form
 {
     public class email
     {
+        //TODO UPDATE REQUIERED, FUNTION NOT WORKING
         public bool SendEmail(string Email1, string subject, string body)
         {
 
