@@ -58,7 +58,7 @@ namespace Techo_form
                 //ddl_officeactiv.ClearSelection();
                 string val = o["Id_Office"].ToString();
                 ddl_officeactiv.SelectedValue = val;
-                //ddl_officeactiv.Items.FindByText(val).Selected = true;
+                ddl_officeactiv.Items.FindByText(val).Selected = true;
             }
 
             Boolean Visibility;
